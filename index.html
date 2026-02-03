@@ -1,0 +1,488 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technolite</title>
+
+  <!-- Google Sans Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,23;1,17..18,400..700,23&display=swap" rel="stylesheet">
+	<style>
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Google Sans", sans-serif;
+}
+
+/* BODY */
+body {
+  background-color: #0a192f;
+  color: #ffffff;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo img {
+  height: 150px;
+  width: auto;
+}
+
+/* NAVIGATION */
+.nav {
+  display: flex;
+  gap: 26px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 200;
+}
+
+.nav a.active {
+  color: #64ffda;
+}
+
+/* RIGHT SECTION */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* CONTACT INFO */
+.contact {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  background-color: #25d366;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 200;
+}
+
+.whatsapp img {
+  height: 30px;
+  width: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+}
+
+.video-section {
+  width: 100%;
+  padding: 0;
+}
+
+.video-section iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border: none;
+}
+
+/* Our Brands Section Styling */
+.brands-section {
+  background-color: #0a192f;   /* Dark Navy Background */
+  padding: 30px 0;            /* Space above and below */
+  text-align: center;
+}
+
+/* Title Styling */
+.brands-title {
+  font-family: "Google Sans", sans-serif;
+  font-size: 27px;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+}
+
+
+.logo-slider {
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  padding: 30px 0;
+  position: relative;
+}
+
+/* Fade edges */
+.logo-slider::before,
+.logo-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logo-slider::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.logo-slider::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+/* Moving track */
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 23s linear infinite;
+}
+
+/* Each logo box */
+.slide {
+  flex: 0 0 auto;
+  width: 300px; /* ✅ Makes only ~5 logos visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo styling */
+.slide img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+.slide img:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* Infinite seamless loop */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Google Sans", sans-serif;
+}
+
+.services-section {
+  background-image: url("https://i.ibb.co/FbRBMGDF/Your-paragraph-text-21.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 150px 60px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 50px 40px;
+  text-align: center;
+}
+
+.service-item img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.service-item p {
+  font-size: 18px;
+  font-weight: 550;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* About Us Section Styling */
+.brands-section {
+  background-color: #0a192f;   /* Dark Navy Background */
+  padding: 40px 0;            /* Space above and below */
+  text-align: center;
+}
+
+/* Title Styling */
+.brands-title {
+  font-family: "Google Sans", sans-serif;
+  font-size: 35px;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+}
+
+	</style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="header">
+    <div class="header-container">
+
+      <!-- LOGO -->
+      <div class="logo">
+        <img src="https://i.ibb.co/rRrSc5YV/20e90031-02bb-4545-9afb-b9036ab406f5.png" alt="Technolite Logo">
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="nav">
+        <a href="#" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="#">Products</a>
+        <a href="#">Partners</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact Us</a>
+      </nav>
+
+      <!-- RIGHT SIDE -->
+      <div class="header-right">
+        <div class="contact">
+          <span>+971 525145572</span>
+          <span>salestaninq@gmail.com</span>
+        </div>
+
+        <a href="#" class="whatsapp">
+          <img src="https://i.ibb.co/5h6NDy9J/sm-5af2d4c95ac7b-removebg-preview.png" alt="WhatsApp">
+          <span>Fast Quote</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+<section class="video-section">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/drRK5QFv4As?controls=0&rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1"
+    title="Product Video"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</section>
+
+<!-- Google Sans Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,23;1,17..18,400..700,23&display=swap" rel="stylesheet">
+
+
+<!-- Our Brands Section -->
+<section class="brands-section">
+  <h2 class="brands-title">Our Brands</h2>
+</section>
+
+<section class="logo-slider">
+  <div class="slider-track">
+
+    <!-- ✅ ALL 15 Logos (Original Set) -->
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/tw4bKBgy/image.png"></a></div>
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/Y79VRQyh/ducab-news-placeholder.jpg"></a></div>
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/pv933MXr/unnamed.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/DgMM0YVD"><img src="https://i.ibb.co/LhggVrkz/image.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/tpp947wR"><img src="https://i.ibb.co/m553GLrp/image.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/mr13VjX4"><img src="https://i.ibb.co/zWjzTM7Z/unnamed.jpg"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/39FdX9mp"><img src="https://i.ibb.co/Mx1STxkc/image.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/N6frj3N2"><img src="https://i.ibb.co/ccRwFv8h/Legrand-logo.jpg"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/BdLFmHH"><img src="https://i.ibb.co/5tTwdXX/hager.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/Pzr4bx3B"><img src="https://i.ibb.co/84m2RMTF/69-SPYb-AJYHys-Ew3a-Fh0bj7s0lf2u2r4-BYi-Umty-LA.webp"></a></div>
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/HT3YbG4v/unnamed.png"></a></div>
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/V0J9NwfF/MK-Logo.jpg"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/CpKMLjGR"><img src="https://i.ibb.co/Xfx3HnRc/Cellpack.png"></a></div>
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/k6rH1yyg/PCE.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/nsJQ57Mv"><img src="https://i.ibb.co/rGr51x2S/unnamed.jpg"></a></div>
+
+
+    <!-- ✅ DUPLICATE SAME 15 Logos (Required for Seamless Loop) -->
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/tw4bKBgy/image.png"></a></div>
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/Y79VRQyh/ducab-news-placeholder.jpg"></a></div>
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/pv933MXr/unnamed.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/DgMM0YVD"><img src="https://i.ibb.co/LhggVrkz/image.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/tpp947wR"><img src="https://i.ibb.co/m553GLrp/image.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/mr13VjX4"><img src="https://i.ibb.co/zWjzTM7Z/unnamed.jpg"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/39FdX9mp"><img src="https://i.ibb.co/Mx1STxkc/image.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/N6frj3N2"><img src="https://i.ibb.co/ccRwFv8h/Legrand-logo.jpg"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/BdLFmHH"><img src="https://i.ibb.co/5tTwdXX/hager.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/Pzr4bx3B"><img src="https://i.ibb.co/84m2RMTF/69-SPYb-AJYHys-Ew3a-Fh0bj7s0lf2u2r4-BYi-Umty-LA.webp"></a></div>
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/HT3YbG4v/unnamed.png"></a></div>
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/V0J9NwfF/MK-Logo.jpg"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/CpKMLjGR"><img src="https://i.ibb.co/Xfx3HnRc/Cellpack.png"></a></div>
+
+    <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/k6rH1yyg/PCE.png"></a></div>
+
+    <div class="slide"><a href="https://ibb.co/nsJQ57Mv"><img src="https://i.ibb.co/rGr51x2S/unnamed.jpg"></a></div>
+
+  </div>
+</section>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services Section</title>
+
+  <!-- Google Sans Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,23;1,17..18,400..700,23&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="services-section">
+  <div class="services-grid">
+
+    <div class="service-item">
+      <img src="https://i.ibb.co/JF5KXCJ2/house.png" alt="Residential Wiring">
+      <p>Residential Wiring</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://i.ibb.co/RGcyRCXz/smart-grid.png" alt="Power Distribution">
+      <p>Power Distribution</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://i.ibb.co/M5cGNmsJ/skyline-1.png" alt="Commercial Buildings">
+      <p>Commercial Buildings</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://i.ibb.co/HZRysy5/factory-1.png" alt="Industrial Plants">
+      <p>Industrial Plants</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://i.ibb.co/MxLr2Wfp/telecommunication-1.png" alt="Telecommunication Systems">
+      <p>Telecommunication Systems</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://i.ibb.co/dsn9hnpj/health-insurance-1.png" alt="Safety & Security Systems">
+      <p>Safety &amp; Security Systems</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://i.ibb.co/q3N9Nxhg/construction.png" alt="Construction Projects">
+      <p>Construction Projects</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://i.ibb.co/Gf3PVT6Y/train-station-1.png" alt="Transport & Railways">
+      <p>Transport &amp; Railways</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://i.ibb.co/7NdsR0XM/smarthome-1.png" alt="Lighting Solutions">
+      <p>Lighting Solutions</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://i.ibb.co/WWMP3gqF/renewable-energy.png" alt="Renewable Energy Systems">
+      <p>Renewable Energy Systems</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Google Sans Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,23;1,17..18,400..700,23&display=swap" rel="stylesheet">
+
+
+<!-- About Us Section -->
+<section class="brands-section">
+  <h2 class="brands-title">About Us</h2>
+</section>
+
+
+</body>
+</html>
