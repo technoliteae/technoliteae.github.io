@@ -1,35 +1,33 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Technolite</title>
-
   <!-- Google Sans Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,23;1,17..18,400..700,23&display=swap" rel="stylesheet">
-	<style>
-
-
+<style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Google Sans", sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 /* BODY */
 body {
   background-color: #0a192f;
   color: #ffffff;
 }
-
 /* HEADER */
 .header {
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -38,37 +36,31 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
 /* LOGO */
 .logo img {
   height: 150px;
   width: auto;
 }
-
 /* NAVIGATION */
 .nav {
   display: flex;
   gap: 26px;
 }
-
 .nav a {
   text-decoration: none;
   color: #ffffff;
   font-size: 19px;
   font-weight: 200;
 }
-
 .nav a.active {
   color: #64ffda;
 }
-
 /* RIGHT SECTION */
 .header-right {
   display: flex;
   align-items: center;
   gap: 22px;
 }
-
 /* CONTACT INFO */
 .contact {
   display: flex;
@@ -76,7 +68,6 @@ body {
   font-size: 13px;
   line-height: 1.4;
 }
-
 /* WHATSAPP BUTTON */
 .whatsapp {
   display: flex;
@@ -90,24 +81,20 @@ body {
   font-size: 17px;
   font-weight: 200;
 }
-
 .whatsapp img {
   height: 30px;
   width: auto;
 }
-
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .nav {
     display: none;
   }
 }
-
 .video-section {
   width: 100%;
   padding: 0;
 }
-
 .video-section iframe {
   display: block;
   width: 100%;
@@ -116,24 +103,20 @@ body {
   margin: 0 auto;
   border: none;
 }
-
 /* Our Brands Section Styling */
 .brands-section {
-  background-color: #0a192f;   /* Dark Navy Background */
-  padding: 30px 0;            /* Space above and below */
+  background-color: #0a192f; /* Dark Navy Background */
+  padding: 40px 0; /* Adjusted for consistency */
   text-align: center;
 }
-
 /* Title Styling */
 .brands-title {
   font-family: "Google Sans", sans-serif;
-  font-size: 27px;
+  font-size: 35px; /* Increased for consistency */
   font-weight: 500;
   color: white;
   margin: 0;
 }
-
-
 .logo-slider {
   width: 100%;
   overflow: hidden;
@@ -141,7 +124,6 @@ body {
   padding: 30px 0;
   position: relative;
 }
-
 /* Fade edges */
 .logo-slider::before,
 .logo-slider::after {
@@ -152,24 +134,20 @@ body {
   height: 100%;
   z-index: 2;
 }
-
 .logo-slider::before {
   left: 0;
   background: linear-gradient(to right, white, transparent);
 }
-
 .logo-slider::after {
   right: 0;
   background: linear-gradient(to left, white, transparent);
 }
-
 /* Moving track */
 .slider-track {
   display: flex;
   width: max-content;
   animation: scroll 23s linear infinite;
 }
-
 /* Each logo box */
 .slide {
   flex: 0 0 auto;
@@ -178,7 +156,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 /* Logo styling */
 .slide img {
   height: 100px;
@@ -187,12 +164,10 @@ body {
   opacity: 0.9;
   transition: 0.3s ease;
 }
-
 .slide img:hover {
   transform: scale(1.08);
   opacity: 1;
 }
-
 /* Infinite seamless loop */
 @keyframes scroll {
   0% {
@@ -202,14 +177,6 @@ body {
     transform: translateX(-50%);
   }
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Google Sans", sans-serif;
-}
-
 .services-section {
   background-image: url("https://i.ibb.co/FbRBMGDF/Your-paragraph-text-21.png");
   background-size: cover;
@@ -217,97 +184,411 @@ body {
   background-repeat: no-repeat;
   padding: 150px 60px;
 }
-
 .services-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 50px 40px;
   text-align: center;
 }
-
 .service-item img {
   width: 60px;
   height: auto;
   margin-bottom: 15px;
 }
-
 .service-item p {
   font-size: 18px;
   font-weight: 550;
   color: #000;
 }
-
 /* Responsive */
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 @media (max-width: 600px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-
 /* About Us Section Styling */
-.brands-section {
-  background-color: #0a192f;   /* Dark Navy Background */
-  padding: 40px 0;            /* Space above and below */
+.about-section {
+  background-color: #112240; /* Slightly different shade for depth */
+  padding: 60px 0; /* More padding for better spacing */
+  text-align: center;
+  position: relative;
+}
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(10, 25, 47, 0.8), rgba(17, 34, 64, 0.8));
+  z-index: 1;
+}
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+/* Title Styling */
+.about-title {
+  font-family: "Google Sans", sans-serif;
+  font-size: 35px;
+  font-weight: 500;
+  color: #64ffda; /* Accent color for title */
+  margin-bottom: 30px;
+}
+/* About Content Styling */
+.about-content {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ccd6f6;
+  margin-bottom: 20px;
+}
+.about-content strong {
+  color: #ffffff;
+}
+.about-content p {
+  margin-bottom: 20px;
+}
+/* Products Section Styling */
+.products-section {
+  background-color: #0a192f; /* Dark Navy Background */
+  padding: 60px 0; /* Increased padding for modern feel */
   text-align: center;
 }
-
-/* Title Styling */
-.brands-title {
+/* Products Title */
+.products-title {
   font-family: "Google Sans", sans-serif;
   font-size: 35px;
   font-weight: 500;
   color: white;
-  margin: 0;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
 }
-
-	</style>
+.product-category {
+  margin-bottom: 80px;
+}
+.category-title {
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  color: #64ffda;
+  margin-bottom: 40px;
+  text-transform: none;
+  letter-spacing: 1px;
+  position: relative;
+}
+.category-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #64ffda, transparent);
+  margin: 10px auto 0;
+}
+/* Products Grid */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.product-item {
+  flex-basis: calc(25% - 30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Make all items stretch to fill the grid row */
+}
+.product-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+}
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Makes it square */
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+.product-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Fits the entire image without cropping */
+}
+.product-item p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: auto; /* Push text to bottom if needed */
+}
+/* Responsive for Products */
+@media (max-width: 1200px) {
+  .product-item {
+    flex-basis: calc(33.33% - 26.67px);
+  }
+}
+@media (max-width: 900px) {
+  .product-item {
+    flex-basis: calc(50% - 20px);
+  }
+}
+@media (max-width: 600px) {
+  .product-item {
+    flex-basis: 100%;
+  }
+}
+/* Contact Section Styling */
+.contact-section {
+  background-color: #0a192f; /* Match theme */
+  padding: 60px 0;
+  text-align: center;
+}
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.contact-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.contact-left {
+  flex: 1;
+  text-align: left;
+}
+.contact-left h2 {
+  font-size: 35px;
+  font-weight: 500;
+  color: #64ffda; /* Accent color */
+  margin-bottom: 20px;
+}
+.contact-left p {
+  font-size: 18px;
+  color: #ccd6f6;
+}
+.contact-right {
+  flex: 1;
+}
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-right input,
+.contact-right textarea {
+  background-color: #112240;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.contact-right input::placeholder,
+.contact-right textarea::placeholder {
+  color: #ccd6f6;
+}
+.contact-right button {
+  background-color: #64ffda;
+  color: #0a192f;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact-right button:hover {
+  background-color: #52e0c4;
+}
+.contact-right #form-status {
+  font-size: 16px;
+  color: #64ffda;
+}
+/* Responsive Contact */
+@media (max-width: 900px) {
+  .contact-box {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .contact-left {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+/* Footer Styling */
+.footer {
+  background-color: #0a192f;
+  color: #ffffff;
+  padding: 80px 20px 20px; /* Adjusted padding */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+.footer-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-logo img.main-logo {
+  height: 150px; /* Larger logo */
+  width: auto;
+}
+.footer-products {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-products h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+.footer-products ul {
+  list-style: none;
+  text-align: center;
+}
+.footer-products li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.footer-contact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-contact h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+.footer-contact p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+.footer-contact .whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.footer-contact .whatsapp img {
+  height: 20px;
+  width: auto;
+}
+.footer-contact .phone {
+  color: #64ffda;
+  text-decoration: none;
+}
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  color: #ccd6f6;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Responsive Footer */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-logo,
+  .footer-products,
+  .footer-contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .footer-products h3,
+  .footer-contact h3 {
+    width: auto;
+  }
+  .footer-products ul {
+    text-align: center;
+  }
+}
+</style>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <!-- TOP NAVIGATION HEADER -->
   <header class="header">
     <div class="header-container">
-
       <!-- LOGO -->
       <div class="logo">
         <img src="https://i.ibb.co/rRrSc5YV/20e90031-02bb-4545-9afb-b9036ab406f5.png" alt="Technolite Logo">
       </div>
-
       <!-- NAVIGATION -->
       <nav class="nav">
-        <a href="#" class="active">Home</a>
-        <a href="#">About</a>
-        <a href="#">Products</a>
-        <a href="#">Partners</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact Us</a>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#partners">Partners</a>
+        <a href="#contact">Contact Us</a>
       </nav>
-
       <!-- RIGHT SIDE -->
       <div class="header-right">
         <div class="contact">
           <span>+971 525145572</span>
           <span>salestaninq@gmail.com</span>
         </div>
-
         <a href="#" class="whatsapp">
           <img src="https://i.ibb.co/5h6NDy9J/sm-5af2d4c95ac7b-removebg-preview.png" alt="WhatsApp">
           <span>Fast Quote</span>
         </a>
       </div>
-
     </div>
   </header>
-
-<section class="video-section">
+<section id="home" class="video-section">
   <iframe
     src="https://www.youtube-nocookie.com/embed/drRK5QFv4As?controls=0&rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1"
     title="Product Video"
@@ -316,173 +597,451 @@ body {
     allowfullscreen>
   </iframe>
 </section>
-
-<!-- Google Sans Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,23;1,17..18,400..700,23&display=swap" rel="stylesheet">
-
-
 <!-- Our Brands Section -->
-<section class="brands-section">
+<section id="partners" class="brands-section">
   <h2 class="brands-title">Our Brands</h2>
 </section>
-
 <section class="logo-slider">
   <div class="slider-track">
-
     <!-- ✅ ALL 15 Logos (Original Set) -->
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/tw4bKBgy/image.png"></a></div>
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/Y79VRQyh/ducab-news-placeholder.jpg"></a></div>
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/pv933MXr/unnamed.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/DgMM0YVD"><img src="https://i.ibb.co/LhggVrkz/image.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/tpp947wR"><img src="https://i.ibb.co/m553GLrp/image.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/mr13VjX4"><img src="https://i.ibb.co/zWjzTM7Z/unnamed.jpg"></a></div>
-
     <div class="slide"><a href="https://ibb.co/39FdX9mp"><img src="https://i.ibb.co/Mx1STxkc/image.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/N6frj3N2"><img src="https://i.ibb.co/ccRwFv8h/Legrand-logo.jpg"></a></div>
-
     <div class="slide"><a href="https://ibb.co/BdLFmHH"><img src="https://i.ibb.co/5tTwdXX/hager.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/Pzr4bx3B"><img src="https://i.ibb.co/84m2RMTF/69-SPYb-AJYHys-Ew3a-Fh0bj7s0lf2u2r4-BYi-Umty-LA.webp"></a></div>
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/HT3YbG4v/unnamed.png"></a></div>
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/V0J9NwfF/MK-Logo.jpg"></a></div>
-
     <div class="slide"><a href="https://ibb.co/CpKMLjGR"><img src="https://i.ibb.co/Xfx3HnRc/Cellpack.png"></a></div>
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/k6rH1yyg/PCE.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/nsJQ57Mv"><img src="https://i.ibb.co/rGr51x2S/unnamed.jpg"></a></div>
-
-
     <!-- ✅ DUPLICATE SAME 15 Logos (Required for Seamless Loop) -->
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/tw4bKBgy/image.png"></a></div>
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/Y79VRQyh/ducab-news-placeholder.jpg"></a></div>
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/pv933MXr/unnamed.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/DgMM0YVD"><img src="https://i.ibb.co/LhggVrkz/image.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/tpp947wR"><img src="https://i.ibb.co/m553GLrp/image.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/mr13VjX4"><img src="https://i.ibb.co/zWjzTM7Z/unnamed.jpg"></a></div>
-
     <div class="slide"><a href="https://ibb.co/39FdX9mp"><img src="https://i.ibb.co/Mx1STxkc/image.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/N6frj3N2"><img src="https://i.ibb.co/ccRwFv8h/Legrand-logo.jpg"></a></div>
-
     <div class="slide"><a href="https://ibb.co/BdLFmHH"><img src="https://i.ibb.co/5tTwdXX/hager.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/Pzr4bx3B"><img src="https://i.ibb.co/84m2RMTF/69-SPYb-AJYHys-Ew3a-Fh0bj7s0lf2u2r4-BYi-Umty-LA.webp"></a></div>
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/HT3YbG4v/unnamed.png"></a></div>
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/V0J9NwfF/MK-Logo.jpg"></a></div>
-
     <div class="slide"><a href="https://ibb.co/CpKMLjGR"><img src="https://i.ibb.co/Xfx3HnRc/Cellpack.png"></a></div>
-
     <div class="slide"><a href="https://imgbb.com/"><img src="https://i.ibb.co/k6rH1yyg/PCE.png"></a></div>
-
     <div class="slide"><a href="https://ibb.co/nsJQ57Mv"><img src="https://i.ibb.co/rGr51x2S/unnamed.jpg"></a></div>
-
   </div>
 </section>
-
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Services Section</title>
-
-  <!-- Google Sans Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,23;1,17..18,400..700,23&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
 <section class="services-section">
   <div class="services-grid">
-
     <div class="service-item">
       <img src="https://i.ibb.co/JF5KXCJ2/house.png" alt="Residential Wiring">
       <p>Residential Wiring</p>
     </div>
-
     <div class="service-item">
       <img src="https://i.ibb.co/RGcyRCXz/smart-grid.png" alt="Power Distribution">
       <p>Power Distribution</p>
     </div>
-
     <div class="service-item">
       <img src="https://i.ibb.co/M5cGNmsJ/skyline-1.png" alt="Commercial Buildings">
       <p>Commercial Buildings</p>
     </div>
-
     <div class="service-item">
       <img src="https://i.ibb.co/HZRysy5/factory-1.png" alt="Industrial Plants">
       <p>Industrial Plants</p>
     </div>
-
     <div class="service-item">
       <img src="https://i.ibb.co/MxLr2Wfp/telecommunication-1.png" alt="Telecommunication Systems">
       <p>Telecommunication Systems</p>
     </div>
-
     <div class="service-item">
       <img src="https://i.ibb.co/dsn9hnpj/health-insurance-1.png" alt="Safety & Security Systems">
       <p>Safety &amp; Security Systems</p>
     </div>
-
     <div class="service-item">
       <img src="https://i.ibb.co/q3N9Nxhg/construction.png" alt="Construction Projects">
       <p>Construction Projects</p>
     </div>
-
     <div class="service-item">
       <img src="https://i.ibb.co/Gf3PVT6Y/train-station-1.png" alt="Transport & Railways">
       <p>Transport &amp; Railways</p>
     </div>
-
     <div class="service-item">
       <img src="https://i.ibb.co/7NdsR0XM/smarthome-1.png" alt="Lighting Solutions">
       <p>Lighting Solutions</p>
     </div>
-
     <div class="service-item">
       <img src="https://i.ibb.co/WWMP3gqF/renewable-energy.png" alt="Renewable Energy Systems">
       <p>Renewable Energy Systems</p>
     </div>
-
   </div>
 </section>
-
-<!-- Google Sans Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,400..700,23;1,17..18,400..700,23&display=swap" rel="stylesheet">
-
-
 <!-- About Us Section -->
-<section class="brands-section">
-  <h2 class="brands-title">About Us</h2>
+<section id="about" class="about-section">
+  <div class="about-container">
+    <h2 class="about-title">About Us</h2>
+    <div class="about-content">
+      <p><strong>Technolite</strong> is a leading provider of high-quality electrical and lighting solutions, committed to delivering innovative products and exceptional service to our clients.</p>
+      <p>With years of experience in the industry, we specialize in a wide range of electrical cables, accessories, and systems designed for residential, commercial, and industrial applications.</p>
+      <p>Our mission is to power the future with reliable, efficient, and sustainable technologies. Partnering with top brands, we ensure our customers receive the best-in-class products tailored to their needs.</p>
+    </div>
+  </div>
 </section>
+<!-- Our Products Section -->
+<section id="products" class="products-section">
+  <h2 class="products-title">Our Products</h2>
+  
+  <!-- Cable Category -->
+  <div class="product-category">
+    <h3 class="category-title">Electrical Cable</h3>
+    <div class="products-grid">
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="WhatsApp Image 2026-02-03 at 16.01.17.jpeg" alt="HV & LV Cables & Wires">
+        </div>
+        <p>Armoured cable</p>
+      </div>
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://github.com/technoliteae/technoliteae.github.io/blob/main/WhatsApp%20Image%202026-02-03%20at%2016.01.18.jpeg?raw=true" alt="Cable Accessories">
+        </div>
+        <p>Rubber cables</p>
+      </div>
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Cables+3" alt="Cable Support Systems">
+        </div>
+        <p>Control cables</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://github.com/technoliteae/technoliteae.github.io/blob/main/WhatsApp%20Image%202026-02-03%20at%2016.01.18.jpeg?raw=true" alt="Cable Accessories">
+        </div>
+        <p>Shield cable</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://github.com/technoliteae/technoliteae.github.io/blob/main/WhatsApp%20Image%202026-02-03%20at%2016.01.18.jpeg?raw=true" alt="Cable Accessories">
+        </div>
+        <p>Fire cable</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://github.com/technoliteae/technoliteae.github.io/blob/main/WhatsApp%20Image%202026-02-03%20at%2016.01.18.jpeg?raw=true" alt="Cable Accessories">
+        </div>
+        <p>Pvc flexible cable</p>
+      </div>      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://github.com/technoliteae/technoliteae.github.io/blob/main/WhatsApp%20Image%202026-02-03%20at%2016.01.18.jpeg?raw=true" alt="Cable Accessories">
+        </div>
+        <p>Cat 6 cables</p>
+      </div>      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://github.com/technoliteae/technoliteae.github.io/blob/main/WhatsApp%20Image%202026-02-03%20at%2016.01.18.jpeg?raw=true" alt="Cable Accessories">
+        </div>
+        <p>Yg Earth cable</p>
+      </div>
+      
+      
+    </div>
+  </div>
+  
+      <!-- Electrical Components Category -->
+  <div class="product-category">
+    <h3 class="category-title">Cable Support System</h3>
+    <div class="products-grid">
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Metal enclosure</p>
+      </div>
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+2" alt="Industrial Plug and Socket">
+        </div>
+        <p>Cable tray (GI)</p>
+      </div>
+            
+      
+    </div>
+  </div>
+  
+  <!-- Electrical Components Category -->
+  <div class="product-category">
+    <h3 class="category-title">Cable Accessories</h3>
+    <div class="products-grid">
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Cable lugs</p>
+      </div>
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+2" alt="Industrial Plug and Socket">
+        </div>
+        <p>Cable gland brass</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Cable lugs</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Pg Cable gland</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Decoduct pvc conduit</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Pvc flexible conduit</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Gi Flexible conduit</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Cable markers</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Pvc cable tie</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Pvc connector strip</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Plug top</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Cable cutter</p>
+      </div>
+                  <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Crimping tool</p>
+      </div>
+      
+      
+    </div>
+  </div>
+  
+  <!-- Light Category -->
+  <div class="product-category">
+    <h3 class="category-title">Electrical Switches</h3>
+    <div class="products-grid">
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Lights" alt="Lights">
+        </div>
+        <p>Switch socket #1</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Lights" alt="Lights">
+        </div>
+        <p>Switch socket #2</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Lights" alt="Lights">
+        </div>
+        <p>Switch socket #3</p>
+      </div>
+      
 
+    </div>
+  </div>
+  
+    <!-- Electrical Components Category -->
+  <div class="product-category">
+    <h3 class="category-title">Electrical Plugs & Sockets</h3>
+    <div class="products-grid">
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Industrial plug</p>
+      </div>
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+2" alt="Industrial Plug and Socket">
+        </div>
+        <p>Industrial socket</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Industrial socket 3 way</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Electrical+1" alt="Electrical Switches">
+        </div>
+        <p>Wall mounted socket</p>
+      </div>
+            
+      
+    </div>
+  </div>
+  
+    <!-- Light Category -->
+  <div class="product-category">
+    <h3 class="category-title">Lights</h3>
+    <div class="products-grid">
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Lights" alt="Lights">
+        </div>
+        <p>Flood light</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Lights" alt="Lights">
+        </div>
+        <p>Tube light with fittings W/P</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Lights" alt="Lights">
+        </div>
+        <p>High bay light</p>
+      </div>
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Lights" alt="Lights">
+        </div>
+        <p>Ceiling down light</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Lights" alt="Lights">
+        </div>
+        <p>Led panel light</p>
+      </div>
+            <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Lights" alt="Lights">
+        </div>
+        <p>Led spot light</p>
+      </div>
+      <div class="product-item">
+        <div class="image-wrapper">
+          <img src="https://via.placeholder.com/400x300?text=Lights" alt="Lights">
+        </div>
+        <p>Led bulb</p>
+      </div>
+      
 
+    </div>
+  </div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="contact-box">
+      <div class="contact-left">
+        <h2>Get a Quote</h2>
+        <p>Contact our technical team today for the best rates in the UAE.</p>
+      </div>
+      <div class="contact-right">
+        <form id="contact-form" action="https://formspree.io/f/xkoonpwe" method="POST">
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit">Submit Inquiry</button>
+          <p id="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img class="main-logo" src="https://i.ibb.co/rRrSc5YV/20e90031-02bb-4545-9afb-b9036ab406f5.png" alt="Technolite Logo">
+    </div>
+    <div class="footer-products">
+      <h3>Our Products</h3>
+      <ul>
+        <li>HV & LV Cables & Wires</li>
+        <li>Cable Accessories</li>
+        <li>Cable Support Systems</li>
+        <li>Electrical Switches</li>
+        <li>Industrial Plug and Socket</li>
+        <li>Lights</li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>salestaninq@gmail.com</p>
+      <a href="#" class="whatsapp">
+        <img src="https://i.ibb.co/5h6NDy9J/sm-5af2d4c95ac7b-removebg-preview.png" alt="WhatsApp">
+        WhatsApp
+      </a>
+      <p><a href="tel:+971525145572" class="phone">+971 525145572</a></p>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2024 Technolite. All rights reserved.
+  </div>
+</footer>
+<script>
+  // FORM SUBMISSION
+  var form = document.getElementById("contact-form");
+  form.onsubmit = async (e) => {
+      e.preventDefault();
+      var status = document.getElementById("form-status");
+      var data = new FormData(e.target);
+      status.style.display = "block";
+      status.innerHTML = "Sending...";
+     
+      fetch(e.target.action, {
+          method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+      }).then(response => {
+          if (response.ok) {
+              status.innerHTML = "Sent Successfully!";
+              form.reset();
+          } else {
+              status.innerHTML = "Error. Please try again.";
+          }
+      });
+  };
+</script>
 </body>
 </html>
