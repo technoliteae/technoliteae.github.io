@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Technolite | Leading Electrical Distributor</title>
-  <link rel="icon" href="https://i.ibb.co/rRrSc5YV/20e90031-02bb-4545-9afb-b9036ab406f5.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/rRrSc5YV/20e90031-02bb-4545-9afb-b9036ab406f5.png">
+  <link rel="shortcut icon" href="https://i.ibb.co/rRrSc5YV/20e90031-02bb-4545-9afb-b9036ab406f5.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/rRrSc5YV/20e90031-02bb-4545-9afb-b9036ab406f5.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,11 +36,10 @@ body{
   font-family: "Manrope", system-ui, sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(900px 600px at 10% -10%, rgba(216,188,171,0.14), transparent 60%),
-    radial-gradient(900px 600px at 90% 10%, rgba(216,188,171,0.10), transparent 60%),
+    radial-gradient(900px 600px at 10% -10%, rgba(31,159,74,0.18), transparent 60%),
+    radial-gradient(900px 600px at 90% 10%, rgba(31,159,74,0.12), transparent 60%),
     linear-gradient(180deg, #0b1530 0%, #0a142b 100%);
-  min-height: calc(100vh - var(--header-h));
-  height: calc(100vh - var(--header-h));
+  min-height: 100vh;
 }
 img{ max-width:100%; display:block; }
 a{ color: inherit; text-decoration: none; }
@@ -58,8 +59,10 @@ h3[id]{
 
 /* Header */
 .header{
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
   background: rgba(11,21,48,0.95);
   border-bottom: 1px solid var(--line);
@@ -195,14 +198,14 @@ h3[id]{
   background: var(--surface);
   border-bottom: 1px solid var(--line);
   box-shadow: none;
-  min-height: calc(100vh - var(--header-h));
-  height: calc(100vh - var(--header-h));
+  min-height: 100vh;
+  height: 100vh;
 }
 .hero-slide{
   position: absolute;
   inset: 0;
-  padding: 90px 10% 50px;
-  min-height: calc(100vh - var(--header-h));
+  padding: 120px 10% 60px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -298,9 +301,9 @@ h3[id]{
 .hero-dot.is-active{ background: #ffffff; border-color: #ffffff; }
 
 @media (max-width: 960px){
-  .hero-shell{ min-height: calc(100vh - var(--header-h));
-  height: calc(100vh - var(--header-h)); }
-  .hero-slide{ padding: 90px 8% 50px; min-height: calc(100vh - var(--header-h)); }
+  .hero-shell{ min-height: 100vh;
+  height: 100vh; }
+  .hero-slide{ padding: 110px 8% 60px; min-height: 100vh; }
 }
 
 /* Trust */
@@ -330,6 +333,16 @@ h3[id]{
   .trust{ grid-template-columns: 1fr; }
 }
 
+/* Reveal on scroll */
+.reveal{
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Brands */
 .brands-section{
   padding: 60px 0 30px;
@@ -465,14 +478,17 @@ h3[id]{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
+  align-items: stretch;
 }
 .product-item{
   background: #ffffff;
   border: 1px solid var(--line);
   padding: 16px;
   border-radius: 16px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
+  height: 100%;
   transition: transform .25s ease, border .25s ease;
 }
 .product-item:hover{ transform: translateY(-6px); border-color: rgba(31,159,74,0.45); }
@@ -483,9 +499,10 @@ h3[id]{
   aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 .product-item img{ width: 100%; height: 100%; object-fit: contain; }
-.product-item p{ font-weight: 700; }
+.product-item p{ font-weight: 700; color: var(--accent); text-align: center; margin-top: auto; }
 
 @media (max-width: 1100px){ .products-grid{ grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 800px){ .products-grid{ grid-template-columns: repeat(2, 1fr); } }
@@ -671,7 +688,13 @@ h3[id]{
         </div>
       </div>
     </div>
-  </div>
+      <div class="hero-anim" aria-hidden="true">
+      <div class="hero-wire"><div class="hero-wire-fill"></div></div>
+      <div class="hero-bulb"></div>
+      <div class="hero-socket"></div>
+    </div>
+
+</div>
 
   <div class="hero-dots" aria-label="Hero slideshow controls">
     <button class="hero-dot is-active" data-slide="0" aria-label="Slide 1"></button>
@@ -680,24 +703,7 @@ h3[id]{
   </div>
 </section>
 
-  <section class="about-section">
-  <div class="container about-wrap">
-    <div class="about-card">
-      <h3 id="about">About Technolite</h3>
-      <p><strong>Technolite</strong> is a leading distributor of electrical and lighting solutions in the UAE.
-      We provide dependable supply, expert technical support, and fast delivery for projects of any size.</p>
-      <p>Our portfolio spans cables, accessories, switchgear, industrial plugs, and advanced lighting systems
-      backed by trusted global brands.</p>
-    </div>
-    <div class="about-highlight">
-      <span>Why clients choose us</span>
-      <p>Project-ready stock, competitive rates, and a team that helps you match the right products
-      to your specifications without delays.</p>
-      <span>From tender to delivery</span>
-      <p>We support your project through every phase with responsive service and consistent quality.</p>
-    </div>
-  </div>
-</section>
+
 
 <section class="brands-section">
   <div class="container">
@@ -929,6 +935,19 @@ h3[id]{
 
   showSlide(0);
   startAuto();
+
+
+  const revealEls = document.querySelectorAll('.service-card, .product-item, .about-card, .about-highlight, .contact-box, .logo-slider');
+  revealEls.forEach(el => el.classList.add('reveal'));
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  revealEls.forEach(el => revealObserver.observe(el));
 
   const form = document.getElementById("contact-form");
   form.onsubmit = async (e) => {
