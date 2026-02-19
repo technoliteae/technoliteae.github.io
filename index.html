@@ -343,6 +343,57 @@ h3[id]{
   opacity: 1;
   transform: translateY(0);
 }
+/* Category Actions */
+.category-actions{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 16px 0 24px;
+}
+.category-links{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.chip{
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #ffffff;
+  background: rgba(255,255,255,0.12);
+  font-weight: 600;
+  font-size: 13px;
+}
+.chip:hover{ border-color: rgba(255,255,255,0.6); }
+
+/* Hero Category Cards */
+.hero-cards{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+  max-width: 520px;
+}
+.hero-card{
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 12px;
+}
+.hero-card h4{
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.hero-card a{
+  font-size: 12px;
+  color: #ffffff;
+  text-decoration: underline;
+}
+@media (max-width: 900px){
+  .hero-cards{ grid-template-columns: 1fr; }
+}
+
 /* Brands */
 .brands-section{
   padding: 60px 0 30px;
@@ -389,7 +440,7 @@ h3[id]{
 .logo-slider::after{ right:0; background: linear-gradient(to left, white, transparent); }
 .slider-track{ display:flex; width:max-content; animation: scroll 22s linear infinite; }
 .slide{ flex:0 0 auto; width:280px; display:flex; justify-content:center; align-items:center; }
-.slide img{ height: 76px; width:auto; opacity:0.9; transition: transform .3s ease, opacity .3s ease; }
+.slide img{ height: 64px; width:auto; opacity:0.9; transition: transform .3s ease, opacity .3s ease; }
 .slide img:hover{ transform: scale(1.06); opacity:1; }
 @keyframes scroll{ 0%{ transform: translateX(0); } 100%{ transform: translateX(-50%); } }
 
@@ -583,14 +634,13 @@ h3[id]{
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
       <div class="nav-item has-dropdown">
-        <a href="#products">Products</a>
+        <a href="products.html">Products</a>
         <div class="dropdown">
-          <a href="#products-cable">Electrical Cable</a>
-          <a href="#products-support">Cable Support System</a>
-          <a href="#products-accessories">Cable Accessories</a>
-          <a href="#products-switches">Electrical Switches</a>
-          <a href="#products-sockets">Plugs & Sockets</a>
-          <a href="#products-lights">Lights</a>
+          <a href="#products">Electrical (Featured)</a>
+          <a href="products.html#electrical">Electrical (All)</a>
+          <a href="products.html#mechanical">Mechanical</a>
+          <a href="products.html#plumbing">Plumbing</a>
+          <a href="products.html">All Products</a>
         </div>
       </div>
       <a href="#partners">Partners</a>
@@ -688,18 +738,13 @@ h3[id]{
         </div>
       </div>
     </div>
-      <div class="hero-anim" aria-hidden="true">
-      <div class="hero-wire"><div class="hero-wire-fill"></div></div>
-      <div class="hero-bulb"></div>
-      <div class="hero-socket"></div>
-    </div>
-
-</div>
+  </div>
 
   <div class="hero-dots" aria-label="Hero slideshow controls">
     <button class="hero-dot is-active" data-slide="0" aria-label="Slide 1"></button>
     <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
     <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+    <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
   </div>
 </section>
 <section class="about-section">
@@ -790,9 +835,18 @@ h3[id]{
 
 
 
-<section class="products-section">
+<section class="products-section" id="products">
   <div class="container">
-    <h2 id="products" class="section-title">Our Products</h2>
+    <h2 id="products" class="section-title">Electrical Products</h2>
+    <p class="section-sub">Electrical products featured on the homepage.</p>
+    <div class="category-actions">
+      <a class="btn primary" href="products.html">View All Categories</a>
+      <div class="category-links">
+        <a class="chip" href="#products">Electrical</a>
+        <a class="chip" href="mechanical.html">Mechanical</a>
+        <a class="chip" href="plumbing.html">Plumbing</a>
+      </div>
+    </div>
 
     <div class="product-category" id="products-cable">
       <h3 class="category-title">Electrical Cable</h3>
@@ -953,7 +1007,7 @@ h3[id]{
   }
 
   function startAuto() {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || slides.length < 2) return;
     timer = setInterval(nextSlide, 3000);
   }
 
@@ -973,8 +1027,10 @@ h3[id]{
   heroShell.addEventListener("mouseenter", stopAuto);
   heroShell.addEventListener("mouseleave", startAuto);
 
-  showSlide(0);
-  startAuto();
+  if (slides.length) {
+    showSlide(0);
+    startAuto();
+  }
 
 
   const revealEls = document.querySelectorAll('.service-card, .product-item, .about-card, .about-highlight, .contact-box, .logo-slider');
