@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Technolite | Plumbing Products</title>
+  <title>Technolite | Leading Electrical Distributor</title>
   <link rel="icon" type="image/png" sizes="32x32" href="Technolite3.png">
   <link rel="shortcut icon" href="Technolite3.png">
   <link rel="apple-touch-icon" sizes="180x180" href="Technolite3.png">
@@ -343,57 +343,6 @@ h3[id]{
   opacity: 1;
   transform: translateY(0);
 }
-/* Category Actions */
-.category-actions{
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 16px 0 24px;
-}
-.category-links{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.chip{
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  color: #ffffff;
-  background: rgba(255,255,255,0.12);
-  font-weight: 600;
-  font-size: 13px;
-}
-.chip:hover{ border-color: rgba(255,255,255,0.6); }
-
-/* Hero Category Cards */
-.hero-cards{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 22px;
-  max-width: 520px;
-}
-.hero-card{
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 12px;
-  padding: 12px;
-}
-.hero-card h4{
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-.hero-card a{
-  font-size: 12px;
-  color: #ffffff;
-  text-decoration: underline;
-}
-@media (max-width: 900px){
-  .hero-cards{ grid-template-columns: 1fr; }
-}
-
 /* Brands */
 .brands-section{
   padding: 60px 0 30px;
@@ -440,7 +389,7 @@ h3[id]{
 .logo-slider::after{ right:0; background: linear-gradient(to left, white, transparent); }
 .slider-track{ display:flex; width:max-content; animation: scroll 22s linear infinite; }
 .slide{ flex:0 0 auto; width:280px; display:flex; justify-content:center; align-items:center; }
-.slide img{ height: 64px; width:auto; opacity:0.9; transition: transform .3s ease, opacity .3s ease; }
+.slide img{ height: 76px; width:auto; opacity:0.9; transition: transform .3s ease, opacity .3s ease; }
 .slide img:hover{ transform: scale(1.06); opacity:1; }
 @keyframes scroll{ 0%{ transform: translateX(0); } 100%{ transform: translateX(-50%); } }
 
@@ -631,20 +580,18 @@ h3[id]{
       <img src="Technolite3.png" alt="Technolite Logo">
     </div>
     <nav class="nav">
-      <a href="index-2.html">Home</a>
-      <a href="index-2.html#about">About</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
       <div class="nav-item has-dropdown">
-        <a href="products.html">Products</a>
+        <a href="#products">Products</a>
         <div class="dropdown">
-          <a href="index-2.html#products">Electrical</a>
-          <a href="products.html#electrical">Electrical (All)</a>
-          <a href="products.html#mechanical">Mechanical</a>
-          <a href="products.html#plumbing">Plumbing</a>
-          <a href="products.html">All Products</a>
+          <a href="#electrical">Electrical</a>
+          <a href="#hardware">Hardware & Safety</a>
+          <a href="#plumbing">Plumbing</a>
         </div>
       </div>
-      <a href="index-2.html#partners">Partners</a>
-      <a href="index-2.html#contact">Contact Us</a>
+      <a href="#partners">Partners</a>
+      <a href="#contact">Contact Us</a>
     </nav>
     <div class="header-right">
       <div class="contact">
@@ -659,40 +606,17 @@ h3[id]{
   </div>
 </header>
 
-<section class="hero" id="top">
-  <div class="hero-shell">
-    <div class="hero-slide is-active" style="--bg-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80');">
-      <div>
-        <span class="hero-tag">Products</span>
-        <h1 class="hero-title">Plumbing Products</h1>
-        <p class="hero-text">Pipes, fittings, valves and water distribution solutions.</p>
-        <div class="hero-cta">
-          <a href="products.html" class="btn primary">All Categories</a>
-          <a href="index-2.html#products" class="btn">Electrical</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-dots" style="display:none;"></div>
-</section>
 
 
 
 
-
-
-<section class="products-section" id="products">
+<section class="products-section">
   <div class="container">
-    <h2 id="products" class="section-title">Electrical Products</h2>
-    <p class="section-sub">Electrical products featured on the homepage.</p>
-    <div class="category-actions">
-      <a class="btn primary" href="products.html">View All Categories</a>
-      <div class="category-links">
-        <a class="chip" href="#products">Electrical</a>
-        <a class="chip" href="mechanical.html">Mechanical</a>
-        <a class="chip" href="plumbing.html">Plumbing</a>
-      </div>
-    </div>
+  <br>
+    <br>
+      <br>
+        <br>
+    <h2 id="products" class="section-title">Plumbing Products</h2>
 
     <div class="product-category" id="products-cable">
       <h3 class="category-title">Electrical Cable</h3>
@@ -719,6 +643,8 @@ h3[id]{
         <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.26.38.jpeg" alt=""></div><p>Cable Tray</p></div>
         <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.27.44.jpeg" alt=""></div><p>PVC Cable Trunking</p></div>
         <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.28.22.jpeg" alt=""></div><p>PVC Floor Trunking</p></div>
+        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.35.54.jpeg" alt=""></div><p>Conduit Pipe</p></div>
+        
       </div>
     </div>
 
@@ -738,6 +664,11 @@ h3[id]{
         <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.32.jpeg" alt=""></div><p>Cable cutter</p></div>
         <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.33.jpeg" alt=""></div><p>Crimping tool</p></div>
         <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.36.28.jpeg" alt=""></div><p>Electrical Tape</p></div>
+        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.50.10.jpeg" alt=""></div><p>Copper Earth Rod
+</p></div>
+        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.46.44.jpeg" alt=""></div><p>PVC Junction Box</p></div>
+        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.45.08.jpeg" alt=""></div><p>Insulated Lugs</p></div>
+        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.44.27.jpeg" alt=""></div><p>Heat Shrink Sleeves</p></div>
       </div>
     </div>
 
@@ -753,6 +684,11 @@ h3[id]{
         <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.34.jpeg" alt=""></div><p>Switch socket #1</p></div>
         <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.37.jpeg" alt=""></div><p>Switch socket #2</p></div>
         <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.35.jpeg" alt=""></div><p>Switch socket #3</p></div>
+        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.40.32.jpeg" alt=""></div><p>Power distribution Board</p></div>
+        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.41.31.jpeg" alt=""></div><p>Changeover Switch</p></div>
+        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.42.43.jpeg" alt=""></div><p>OT Isolator Switch
+</p></div>
+<div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.48.30.jpeg" alt=""></div><p>Soft Starter</p></div>
       </div>
     </div>
 
@@ -782,30 +718,9 @@ h3[id]{
         <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.46.22.jpeg" alt=""></div><p>High Lumen Floodlight</p></div>
       </div>
     </div>
-      <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
   </div>
 </section>
 
-<section class="products-section" id="plumbing">
-  <div class="container">
-    <h2 class="section-title">Plumbing Products</h2>
-    <p class="section-sub">Browse products in this category.</p>
-    <div class="products-grid">
-      <div class="product-item"><div class="image-wrapper"><img src="https://images.unsplash.com/photo-1581093458791-9d15482778b1?auto=format&fit=crop&w=900&q=80" alt=""></div><p>Pipes & conduits</p></div>
-      <div class="product-item"><div class="image-wrapper"><img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=900&q=80" alt=""></div><p>Valves & fittings</p></div>
-      <div class="product-item"><div class="image-wrapper"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt=""></div><p>Water control systems</p></div>
-      <div class="product-item"><div class="image-wrapper"><img src="https://images.unsplash.com/photo-1581091870627-3b5d7f1b4877?auto=format&fit=crop&w=900&q=80" alt=""></div><p>Installation accessories</p></div>
-    </div>
-    <div class="category-actions" style="margin-top:24px;">
-      <a class="btn primary" href="products.html">View All Categories</a>
-      <div class="category-links">
-        <a class="chip" href="index-2.html#products">Electrical</a>
-        <a class="chip" href="mechanical.html">Mechanical</a>
-        <a class="chip" href="plumbing.html">Plumbing</a>
-      </div>
-    </div>
-  </div>
-</section>
 <section class="contact-section">
   <div class="container">
     <div class="contact-box">
@@ -823,7 +738,6 @@ h3[id]{
         </form>
       </div>
     </div>
-      <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
   </div>
 </section>
 
@@ -875,7 +789,7 @@ h3[id]{
   }
 
   function startAuto() {
-    if (prefersReducedMotion || slides.length < 2) return;
+    if (prefersReducedMotion) return;
     timer = setInterval(nextSlide, 3000);
   }
 
@@ -895,10 +809,8 @@ h3[id]{
   heroShell.addEventListener("mouseenter", stopAuto);
   heroShell.addEventListener("mouseleave", startAuto);
 
-  if (slides.length) {
-    showSlide(0);
-    startAuto();
-  }
+  showSlide(0);
+  startAuto();
 
 
   const revealEls = document.querySelectorAll('.service-card, .product-item, .about-card, .about-highlight, .contact-box, .logo-slider');
