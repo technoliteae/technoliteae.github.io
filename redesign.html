@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Technolite | Leading Electrical Distributor UAE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─────────────────────────────────────────────── */
+:root {
+  --navy:       #003366;
+  --navy-dark:  #002244;
+  --navy-light: #004080;
+  --blue:       #0099cc;
+  --blue-light: #33b5e5;
+  --blue-dim:   rgba(0,153,204,0.10);
+  --blue-glow:  rgba(0,153,204,0.22);
+  --white:      #ffffff;
+  --off-white:  #f4f6f9;
+  --grey:       #eef2f7;
+  --border:     #e0e6ef;
+  --text:       #1c1c2e;
+  --muted:      #6b7a99;
+  --heading:    'Poppins', sans-serif;
+  --body:       'Nunito Sans', sans-serif;
+  --r-sm:       10px;
+  --r-md:       16px;
+  --r-lg:       20px;
+  --shadow-sm:  0 2px 12px rgba(0,51,102,0.08);
+  --shadow-md:  0 8px 32px rgba(0,51,102,0.12);
+  --shadow-lg:  0 20px 60px rgba(0,51,102,0.18);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body);background:var(--white);color:var(--text);overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:#f0f4f8;}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:999px;}
+
+.container{width:min(1200px,92%);margin:0 auto;position:relative;z-index:1;}
+section[id],h2[id],.product-category[id]{scroll-margin-top:90px;}
+
+/* ─── HEADER ─────────────────────────────────────────────── */
+.header{
+position:fixed;top:0;left:0;right:0;z-index:100;
+background:#fff;
+box-shadow:0 2px 16px rgba(0,51,102,0.10);
+}
+.header-wrap{
+display:flex;align-items:center;justify-content:space-between;
+gap:20px;padding:12px 0;
+}
+.logo img{height:72px;width:auto;}
+
+.nav{display:flex;gap:4px;align-items:center;}
+.nav-link{
+color:var(–text);font-family:var(–heading);font-weight:600;
+font-size:14px;letter-spacing:.2px;
+padding:8px 14px;border-radius:8px;
+transition:color .2s,background .2s;
+position:relative;
+}
+.nav-link::after{
+content:””;position:absolute;bottom:4px;left:50%;transform:translateX(-50%);
+width:0;height:2px;background:var(–blue);border-radius:999px;transition:width .25s;
+}
+.nav-link:hover{color:var(–blue);}
+.nav-link:hover::after{width:55%;}
+.nav-link.active{color:var(–blue);}
+.nav-link.active::after{width:55%;}
+
+.nav-item{position:relative;}
+.nav-item.has-dropdown>.nav-link{padding-right:20px;}
+.nav-item.has-dropdown>.nav-link::before{
+content:“▾”;position:absolute;right:6px;top:50%;transform:translateY(-50%);
+font-size:10px;color:var(–muted);
+}
+.dropdown{
+position:absolute;top:calc(100% + 8px);left:0;
+background:#fff;border:1px solid var(–border);
+border-radius:var(–r-sm);padding:8px;min-width:220px;
+box-shadow:var(–shadow-md);
+opacity:0;transform:translateY(6px);pointer-events:none;
+transition:opacity .2s,transform .2s;z-index:200;
+}
+.dropdown a{
+display:block;padding:9px 14px;border-radius:8px;
+font-weight:600;font-size:13px;color:var(–text);
+transition:background .2s,color .2s;
+}
+.dropdown a:hover{background:var(–blue-dim);color:var(–blue);}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;transform:translateY(0);pointer-events:auto;}
+
+.header-right{display:flex;align-items:center;gap:16px;}
+.contact-info{display:grid;gap:2px;text-align:right;}
+.contact-info span{font-size:12px;color:var(–muted);font-family:var(–heading);}
+.contact-info span:first-child{color:var(–navy);font-weight:700;font-size:13px;}
+
+.btn-quote{
+display:inline-flex;align-items:center;gap:8px;
+padding:10px 22px;border-radius:999px;
+background:var(–blue);
+color:#fff;font-weight:700;font-size:13px;letter-spacing:.3px;
+font-family:var(–heading);
+box-shadow:0 4px 14px var(–blue-glow);
+transition:background .2s,transform .2s,box-shadow .2s;
+}
+.btn-quote:hover{background:var(–navy);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,51,102,.25);}
+
+.btn-wa{
+display:inline-flex;align-items:center;gap:8px;
+padding:10px 20px;border-radius:999px;
+background:var(–blue);
+color:#fff;font-weight:700;font-size:13px;
+font-family:var(–heading);
+box-shadow:0 4px 14px var(–blue-glow);
+transition:background .2s,transform .2s;
+}
+.btn-wa:hover{background:var(–navy);transform:translateY(-2px);}
+.btn-wa img{height:17px;}
+
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+.menu-toggle span{display:block;width:26px;height:2px;background:var(–navy);border-radius:999px;transition:all .3s;}
+.mobile-nav{
+display:none;flex-direction:column;gap:4px;
+position:fixed;top:80px;left:0;right:0;z-index:99;
+background:#fff;padding:16px;border-bottom:1px solid var(–border);
+box-shadow:var(–shadow-md);
+}
+.mobile-nav a{padding:14px 16px;font-weight:600;font-size:16px;border-radius:8px;color:var(–text);}
+.mobile-nav a:hover{background:var(–blue-dim);color:var(–blue);}
+.mobile-nav.open{display:flex;}
+
+@media(max-width:980px){
+.nav{display:none;}.contact-info{display:none;}
+.logo img{height:56px;}
+.menu-toggle{display:flex;}
+}
+
+/* ─── HERO ───────────────────────────────────────────────── */
+.hero{
+min-height:100vh;
+display:grid;grid-template-columns:1fr 1fr;
+padding-top:96px;
+background:var(–navy);
+overflow:hidden;position:relative;
+}
+
+/* Subtle geometric pattern */
+.hero::before{
+content:””;position:absolute;inset:0;pointer-events:none;
+background-image:
+radial-gradient(circle at 20% 80%, rgba(0,153,204,0.15) 0%, transparent 50%),
+radial-gradient(circle at 80% 20%, rgba(0,64,128,0.3) 0%, transparent 50%);
+}
+
+.hero-left{
+display:flex;flex-direction:column;justify-content:center;
+padding:60px max(40px, 6vw) 60px max(40px, calc((100vw - 1200px)/2 + 40px));
+position:relative;z-index:2;
+}
+
+.hero-eyebrow{
+display:inline-flex;align-items:center;gap:10px;
+font-family:var(–heading);font-size:11px;font-weight:600;
+letter-spacing:3px;color:var(–blue-light);
+text-transform:uppercase;margin-bottom:20px;
+}
+.hero-eyebrow .dash{display:block;width:32px;height:2px;background:var(–blue-light);border-radius:999px;}
+
+.hero-h1{
+font-family:var(–heading);font-weight:800;
+font-size:clamp(48px,5.5vw,76px);
+line-height:1.05;letter-spacing:-.5px;
+color:#fff;
+}
+.hero-h1 .accent{color:var(–blue-light);}
+
+.hero-p{
+margin-top:18px;font-size:17px;
+color:rgba(255,255,255,.72);line-height:1.7;max-width:460px;
+font-family:var(–body);
+}
+
+.hero-btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+.btn-hero-primary{
+padding:14px 32px;border-radius:999px;
+background:var(–blue);color:#fff;
+font-family:var(–heading);font-weight:700;font-size:15px;
+box-shadow:0 4px 20px rgba(0,153,204,.35);
+transition:transform .2s,box-shadow .2s,background .2s;
+}
+.btn-hero-primary:hover{background:var(–blue-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,153,204,.45);}
+.btn-hero-ghost{
+padding:14px 32px;border-radius:999px;
+border:2px solid rgba(255,255,255,.35);color:#fff;
+font-family:var(–heading);font-weight:600;font-size:15px;
+background:rgba(255,255,255,.07);
+transition:border .2s,background .2s,transform .2s;
+}
+.btn-hero-ghost:hover{border-color:var(–blue-light);background:rgba(0,153,204,.15);transform:translateY(-2px);}
+
+/* Hero stats row */
+.hero-stats-row{
+display:flex;gap:0;margin-top:48px;
+border-top:1px solid rgba(255,255,255,.12);
+padding-top:28px;
+}
+.hero-stat{
+flex:1;padding-right:24px;
+border-right:1px solid rgba(255,255,255,.12);
+margin-right:24px;
+}
+.hero-stat:last-child{border-right:none;margin-right:0;padding-right:0;}
+.hero-stat h4{font-family:var(–heading);font-weight:800;font-size:28px;color:var(–blue-light);}
+.hero-stat p{font-size:12px;color:rgba(255,255,255,.55);margin-top:3px;letter-spacing:.3px;}
+
+.hero-right{
+position:relative;overflow:hidden;
+}
+.hero-right img{
+width:100%;height:100%;object-fit:cover;
+filter:brightness(.6) saturate(1.2);
+}
+.hero-right::after{
+content:””;position:absolute;inset:0;
+background:linear-gradient(to right, var(–navy) 0%, transparent 30%),
+linear-gradient(to top, var(–navy) 0%, transparent 25%);
+}
+
+@media(max-width:860px){
+.hero{grid-template-columns:1fr;min-height:auto;}
+.hero-right{height:280px;}
+.hero-left{padding:50px 28px 40px;}
+.hero-stats-row{flex-direction:column;gap:18px;}
+.hero-stat{border-right:none;margin-right:0;padding-right:0;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:18px;}
+.hero-stat:last-child{border-bottom:none;padding-bottom:0;}
+}
+
+/* ─── TRUST BAR ──────────────────────────────────────────── */
+.trust-bar{
+background:#fff;
+border-top:3px solid var(–blue);
+border-bottom:1px solid var(–border);
+padding:32px 0;
+}
+.trust-inner{
+display:grid;grid-template-columns:repeat(3,1fr);
+divide-x:1px solid var(–border);
+}
+.trust-cell{
+text-align:center;padding:16px 20px;
+border-right:1px solid var(–border);
+}
+.trust-cell:last-child{border-right:none;}
+.trust-num{
+font-family:var(–heading);font-weight:800;
+font-size:40px;color:var(–navy);line-height:1;
+}
+.trust-num span{color:var(–blue);}
+.trust-cell p{color:var(–muted);font-size:13px;margin-top:5px;letter-spacing:.3px;font-family:var(–heading);font-weight:600;}
+@media(max-width:640px){.trust-inner{grid-template-columns:1fr;}.trust-cell{border-right:none;border-bottom:1px solid var(–border);}.trust-cell:last-child{border-bottom:none;}}
+
+/* ─── SECTION SHARED ─────────────────────────────────────── */
+.sec-label{
+display:inline-flex;align-items:center;gap:10px;
+font-family:var(–heading);font-size:11px;font-weight:700;
+letter-spacing:3px;color:var(–blue);
+text-transform:uppercase;margin-bottom:10px;
+}
+.sec-label::after{content:””;display:block;width:28px;height:2px;background:var(–blue);border-radius:999px;}
+.sec-title{
+font-family:var(–heading);font-weight:800;
+font-size:clamp(36px,4vw,54px);
+line-height:1.05;letter-spacing:-.3px;color:var(–navy);
+}
+.sec-sub{color:var(–muted);font-size:16px;margin-top:10px;max-width:540px;line-height:1.65;}
+
+/* ─── ABOUT ──────────────────────────────────────────────── */
+.about-section{padding:100px 0;background:var(–off-white);}
+.about-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:start;}
+.about-text h3{
+font-family:var(–heading);font-weight:800;
+font-size:clamp(32px,3vw,46px);color:var(–navy);
+margin-top:14px;line-height:1.1;
+}
+.about-text p{color:var(–muted);font-size:16px;line-height:1.75;margin-top:16px;}
+.about-text strong{color:var(–blue);}
+.about-divider{width:48px;height:3px;background:var(–blue);margin:22px 0;border-radius:999px;}
+
+.about-cards{display:grid;gap:14px;}
+.about-card{
+background:#fff;border-radius:var(–r-md);
+border-top:3px solid var(–blue);
+padding:22px 24px;
+box-shadow:var(–shadow-sm);
+transition:transform .25s,box-shadow .25s;
+}
+.about-card:hover{transform:translateY(-4px);box-shadow:var(–shadow-md);}
+.about-card h4{font-family:var(–heading);font-weight:700;font-size:16px;color:var(–navy);}
+.about-card p{color:var(–muted);font-size:14px;margin-top:6px;line-height:1.6;}
+
+@media(max-width:900px){.about-inner{grid-template-columns:1fr;}}
+
+/* ─── BRANDS ─────────────────────────────────────────────── */
+.brands-section{padding:80px 0 70px;background:#fff;}
+.brands-head{text-align:center;margin-bottom:36px;}
+.brands-head .sec-label{justify-content:center;}
+.brands-head .sec-label::after{display:none;}
+
+.logo-slider{
+position:relative;overflow:hidden;
+background:var(–off-white);border-radius:var(–r-md);
+padding:26px 0;border:1px solid var(–border);
+box-shadow:var(–shadow-sm);
+}
+.logo-slider::before,.logo-slider::after{
+content:””;position:absolute;top:0;width:120px;height:100%;z-index:2;
+}
+.logo-slider::before{left:0;background:linear-gradient(to right,var(–off-white),transparent);}
+.logo-slider::after{right:0;background:linear-gradient(to left,var(–off-white),transparent);}
+
+.slider-track{display:flex;width:max-content;animation:scroll 32s linear infinite;}
+.slide{flex:0 0 auto;width:190px;display:flex;justify-content:center;align-items:center;padding:0 18px;}
+.slide img{height:50px;width:auto;object-fit:contain;filter:grayscale(60%) contrast(1.0);opacity:.7;transition:filter .3s,opacity .3s,transform .3s;}
+.slide img:hover{filter:none;opacity:1;transform:scale(1.08);}
+@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ─── INDUSTRIES ─────────────────────────────────────────── */
+.services-section{padding:100px 0;background:var(–off-white);}
+.services-grid{
+display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px;
+}
+.service-card{
+background:#fff;border:1px solid var(–border);
+border-radius:var(–r-md);padding:28px 16px;
+display:grid;place-items:center;text-align:center;
+transition:transform .3s,border-color .3s,box-shadow .3s;
+cursor:default;position:relative;overflow:hidden;
+}
+.service-card:hover{
+transform:translateY(-6px);
+border-color:var(–blue);
+box-shadow:0 12px 32px rgba(0,153,204,.14);
+}
+.service-card::after{
+content:””;position:absolute;bottom:0;left:0;right:0;height:3px;
+background:var(–blue);transform:scaleX(0);transform-origin:left;
+transition:transform .3s;
+}
+.service-card:hover::after{transform:scaleX(1);}
+.service-card img{width:40px;margin-bottom:12px;transition:filter .3s,transform .3s;}
+.service-card:hover img{filter:brightness(0) saturate(100%) invert(38%) sepia(97%) saturate(450%) hue-rotate(165deg) brightness(95%);transform:scale(1.12);}
+.service-card p{font-weight:700;font-size:13px;letter-spacing:.2px;color:var(–text);font-family:var(–heading);}
+
+@media(max-width:1100px){.services-grid{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:780px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ─── PRODUCTS ───────────────────────────────────────────── */
+.products-section{padding:100px 0;background:#fff;}
+.products-header{margin-bottom:56px;}
+
+.category-block{margin-bottom:52px;}
+.category-label{
+display:inline-flex;align-items:center;gap:10px;
+font-family:var(–heading);font-size:10px;font-weight:700;
+letter-spacing:3px;color:var(–blue);
+text-transform:uppercase;margin-bottom:12px;
+}
+.cat-title{
+font-family:var(–heading);font-weight:800;
+font-size:clamp(24px,2.5vw,34px);color:var(–navy);
+letter-spacing:-.2px;margin-bottom:24px;
+padding-left:16px;
+border-left:4px solid var(–blue);
+}
+
+.products-grid{
+display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.product-item{
+background:#fff;border-radius:var(–r-md);overflow:hidden;
+display:flex;flex-direction:column;
+transition:transform .3s,box-shadow .3s,border-color .3s;
+border:1px solid var(–border);
+}
+.product-item:hover{
+transform:translateY(-6px);
+box-shadow:0 16px 40px rgba(0,51,102,.14);
+border-color:var(–blue);
+}
+.image-wrapper{
+background:var(–grey);padding:18px;
+aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden;
+}
+.product-item img{width:100%;height:100%;object-fit:contain;transition:transform .4s;}
+.product-item:hover img{transform:scale(1.07);}
+.prod-label{
+padding:11px 14px;text-align:center;
+font-weight:700;font-size:12px;letter-spacing:.3px;
+color:var(–navy);background:#fff;
+border-top:2px solid var(–blue);
+margin-top:auto;font-family:var(–heading);
+}
+
+@media(max-width:1100px){.products-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:760px){.products-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.products-grid{grid-template-columns:1fr;}}
+
+/* ─── CONTACT ────────────────────────────────────────────── */
+.contact-section{
+padding:100px 0;background:var(–off-white);
+}
+.contact-inner{
+display:grid;grid-template-columns:1fr 1fr;gap:0;
+background:#fff;border:1px solid var(–border);
+border-radius:var(–r-lg);overflow:hidden;
+box-shadow:var(–shadow-lg);
+}
+.contact-left{
+padding:52px 44px;
+background:var(–navy);
+display:flex;flex-direction:column;justify-content:space-between;
+}
+.contact-left .sec-label{color:var(–blue-light);}
+.contact-left .sec-label::after{background:var(–blue-light);}
+.contact-left h2{
+font-family:var(–heading);font-weight:800;
+font-size:clamp(34px,3.5vw,50px);line-height:1.05;
+color:#fff;margin-top:10px;
+}
+.contact-left p{color:rgba(255,255,255,.65);font-size:16px;line-height:1.65;margin-top:14px;max-width:360px;}
+
+.contact-badge{
+display:inline-flex;align-items:center;gap:10px;
+background:rgba(0,153,204,.15);border:1px solid rgba(0,153,204,.35);
+padding:10px 18px;border-radius:999px;
+font-size:13px;font-family:var(–heading);font-weight:600;color:var(–blue-light);
+margin-top:28px;width:fit-content;
+}
+.contact-badge::before{content:“●”;font-size:8px;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+.contact-details{margin-top:28px;display:grid;gap:14px;}
+.contact-detail{display:flex;align-items:center;gap:12px;}
+.contact-detail-icon{
+width:36px;height:36px;border-radius:50%;
+background:rgba(0,153,204,.15);border:1px solid rgba(0,153,204,.25);
+display:grid;place-items:center;font-size:14px;flex-shrink:0;
+}
+.contact-detail span{font-family:var(–heading);font-size:14px;font-weight:600;color:rgba(255,255,255,.85);}
+
+.contact-right{padding:52px 44px;background:#fff;}
+.contact-right form{display:grid;gap:16px;}
+.form-field{display:flex;flex-direction:column;gap:6px;}
+.form-field label{font-size:11px;letter-spacing:1.5px;color:var(–muted);text-transform:uppercase;font-family:var(–heading);font-weight:700;}
+.form-field input,.form-field textarea{
+background:var(–off-white);color:var(–text);
+border:1.5px solid var(–border);border-radius:var(–r-sm);
+padding:13px 16px;font-size:15px;font-family:var(–body);
+transition:border .2s,box-shadow .2s;outline:none;resize:none;
+}
+.form-field input:focus,.form-field textarea:focus{
+border-color:var(–blue);
+box-shadow:0 0 0 3px rgba(0,153,204,.1);
+background:#fff;
+}
+.submit-btn{
+background:var(–blue);color:#fff;
+font-weight:700;font-size:15px;letter-spacing:.3px;
+border:none;padding:15px;border-radius:var(–r-sm);
+cursor:pointer;font-family:var(–heading);
+transition:background .2s,transform .2s,box-shadow .2s;
+box-shadow:0 4px 16px var(–blue-glow);
+}
+.submit-btn:hover{background:var(–navy);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,51,102,.25);}
+#form-status{font-size:14px;color:var(–blue);font-family:var(–heading);font-weight:600;min-height:20px;}
+
+@media(max-width:900px){
+.contact-inner{grid-template-columns:1fr;}
+.contact-left{padding:36px 28px;}
+.contact-right{padding:36px 28px;}
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+.footer{
+background:var(–navy-dark);
+border-top:3px solid var(–blue);
+padding:70px 0 28px;
+}
+.footer-grid{
+display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:56px;
+}
+.footer-logo img{height:80px;}
+.footer-logo p{color:rgba(255,255,255,.55);font-size:14px;margin-top:14px;max-width:260px;line-height:1.65;}
+
+.footer-col h3{font-family:var(–heading);font-weight:700;font-size:16px;letter-spacing:.3px;margin-bottom:18px;color:#fff;}
+.footer-col ul{list-style:none;display:grid;gap:10px;}
+.footer-col ul li{color:rgba(255,255,255,.55);font-size:14px;display:flex;align-items:center;gap:8px;}
+.footer-col ul li::before{content:“→”;color:var(–blue);font-size:12px;}
+
+.footer-col .wa-link{
+display:inline-flex;align-items:center;gap:8px;
+color:var(–blue-light);font-weight:700;margin-top:14px;
+font-family:var(–heading);font-size:14px;
+transition:color .2s;
+}
+.footer-col .wa-link:hover{color:#fff;}
+.footer-col .wa-link img{height:17px;}
+
+.footer-bottom{
+border-top:1px solid rgba(255,255,255,.1);padding-top:24px;
+display:flex;justify-content:space-between;align-items:center;
+flex-wrap:wrap;gap:12px;
+}
+.footer-bottom p{color:rgba(255,255,255,.4);font-size:13px;font-family:var(–heading);}
+.footer-bottom .blue{color:var(–blue-light);font-weight:700;}
+
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr;}.footer-logo img{height:64px;}}
+@media(max-width:640px){.footer-bottom{flex-direction:column;text-align:center;}}
+
+/* ─── SCROLL REVEAL ──────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(prefers-reduced-motion:reduce){
+.slider-track{animation:none;}
+.reveal{transition:none;}
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+  <div class="container header-wrap">
+    <a href="#home" class="logo"><img src="Technolite3.png" alt="Technolite"></a>
+    <nav class="nav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <div class="nav-item has-dropdown">
+        <a href="#products" class="nav-link">Products</a>
+        <div class="dropdown">
+          <a href="#products-cable">Electrical Cables</a>
+          <a href="#products-support">Cable Support</a>
+          <a href="#products-accessories">Cable Accessories</a>
+          <a href="#products-switches">Switches & Switchgear</a>
+          <a href="#products-sockets">Plugs & Sockets</a>
+          <a href="#products-lights">Lighting</a>
+        </div>
+      </div>
+      <a href="#partners" class="nav-link">Partners</a>
+      <a href="#services" class="nav-link">Industries</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-right">
+      <div class="contact-info">
+        <span>+971 525145572</span>
+        <span>salestaninq@gmail.com</span>
+      </div>
+      <a href="https://wa.me/971525145572" class="btn-quote">Get a Quote</a>
+      <div class="menu-toggle" id="menuBtn"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#partners">Partners</a>
+  <a href="#services">Industries</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span class="dash"></span>UAE's Leading Electrical Distributor</div>
+    <h1 class="hero-h1">Powering UAE's<br><span class="accent">Infrastructure.</span></h1>
+    <p class="hero-p">The most trusted and reliable range of electrical solutions — cables, switchgear, lighting and accessories delivered on time, built to spec.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-hero-primary">View Products</a>
+      <a href="#contact" class="btn-hero-ghost">Get a Quote</a>
+    </div>
+    <div class="hero-stats-row">
+      <div class="hero-stat"><h4>20+</h4><p>Global Brand Partners</p></div>
+      <div class="hero-stat"><h4>UAE-Wide</h4><p>Delivery Network</p></div>
+      <div class="hero-stat"><h4>100%</h4><p>Compliance Ready</p></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://media.istockphoto.com/id/1130957259/photo/composition-with-tools-and-industrial-material-with-industrial-ship-background.jpg?s=612x612&w=0&k=20&c=XDZNptsfq3TASTKWGsmnDajREC820JuDQf9IyRanCsg=" alt="Electrical infrastructure">
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-cell"><div class="trust-num">20<span>+</span></div><p>Authorized Brands</p></div>
+      <div class="trust-cell"><div class="trust-num" style="font-size:32px;">UAE</div><p>Nationwide Coverage</p></div>
+      <div class="trust-cell"><div class="trust-num">24<span>/7</span></div><p>Technical Support</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-text reveal">
+        <div class="sec-label">Who We Are</div>
+        <h3>The UAE's Most Reliable Electrical Distributor</h3>
+        <div class="about-divider"></div>
+        <p><strong>Technolite</strong> is a leading distributor of electrical and lighting solutions across the UAE. We deliver dependable supply, expert technical support, and rapid fulfillment for projects at every scale.</p>
+        <p>Our portfolio spans cables, switchgear, industrial plugs, accessories, and advanced lighting systems — all backed by verified global brands and stocked for immediate dispatch.</p>
+      </div>
+      <div class="about-cards reveal">
+        <div class="about-card">
+          <h4>Project-Ready Stock</h4>
+          <p>Critical inventory held on-shelf for immediate supply — no waiting on lead times.</p>
+        </div>
+        <div class="about-card">
+          <h4>Competitive Rates</h4>
+          <p>Volume pricing and account support tailored to contractors and large-scale projects.</p>
+        </div>
+        <div class="about-card">
+          <h4>Full Project Coverage</h4>
+          <p>Tender support through to final delivery — we partner with you every step of the way.</p>
+        </div>
+        <div class="about-card">
+          <h4>Global Standards Compliance</h4>
+          <p>Products aligned to UAE regulations and international certification requirements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+
+<section class="brands-section">
+  <div class="container">
+    <div class="brands-head reveal">
+      <div class="sec-label">Our Partners</div>
+      <h2 id="partners" class="sec-title">Trusted Global Brands</h2>
+      <p class="sec-sub">We partner with the world's leading manufacturers to bring you verified, certified quality.</p>
+    </div>
+    <div class="logo-slider reveal">
+      <div class="slider-track">
+        <div class="slide"><img src="https://i.ibb.co/tw4bKBgy/image.png" alt="Brand"></div>
+        <div class="slide"><img src="https://i.ibb.co/Y79VRQyh/ducab-news-placeholder.jpg" alt="Ducab"></div>
+        <div class="slide"><img src="https://i.ibb.co/pv933MXr/unnamed.png" alt="Brand"></div>
+        <div class="slide"><img src="https://i.ibb.co/LhggVrkz/image.png" alt="Brand"></div>
+        <div class="slide"><img src="https://i.ibb.co/m553GLrp/image.png" alt="Brand"></div>
+        <div class="slide"><img src="https://i.ibb.co/zWjzTM7Z/unnamed.jpg" alt="Brand"></div>
+        <div class="slide"><img src="https://i.ibb.co/Mx1STxkc/image.png" alt="Brand"></div>
+        <div class="slide"><img src="https://i.ibb.co/ccRwFv8h/Legrand-logo.jpg" alt="Legrand"></div>
+        <div class="slide"><img src="https://i.ibb.co/5tTwdXX/hager.png" alt="Hager"></div>
+        <div class="slide"><img src="https://i.ibb.co/84m2RMTF/69-SPYb-AJYHys-Ew3a-Fh0bj7s0lf2u2r4-BYi-Umty-LA.webp" alt="Brand"></div>
+        <div class="slide"><img src="https://i.ibb.co/HT3YbG4v/unnamed.png" alt="Brand"></div>
+        <div class="slide"><img src="https://i.ibb.co/V0J9NwfF/MK-Logo.jpg" alt="MK"></div>
+        <div class="slide"><img src="https://i.ibb.co/Xfx3HnRc/Cellpack.png" alt="Cellpack"></div>
+        <div class="slide"><img src="https://i.ibb.co/k6rH1yyg/PCE.png" alt="PCE"></div>
+        <div class="slide"><img src="https://i.ibb.co/rGr51x2S/unnamed.jpg" alt="Brand"></div>
+        <div class="slide"><img src="https://biofuels-news.com/conference/sustainableaviationfuels/wp-content/uploads/sites/2/2023/12/Alfanar-Logo.png" alt="Alfanar"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/3M_wordmark.svg/1280px-3M_wordmark.svg.png" alt="3M"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Mapei_logo.svg/960px-Mapei_logo.svg.png" alt="Mapei"></div>
+        <!-- duplicates for loop -->
+        <div class="slide"><img src="https://i.ibb.co/Y79VRQyh/ducab-news-placeholder.jpg" alt="Ducab"></div>
+        <div class="slide"><img src="https://i.ibb.co/pv933MXr/unnamed.png" alt="Brand"></div>
+        <div class="slide"><img src="https://i.ibb.co/LhggVrkz/image.png" alt="Brand"></div>
+        <div class="slide"><img src="https://i.ibb.co/m553GLrp/image.png" alt="Brand"></div>
+        <div class="slide"><img src="https://i.ibb.co/ccRwFv8h/Legrand-logo.jpg" alt="Legrand"></div>
+        <div class="slide"><img src="https://i.ibb.co/5tTwdXX/hager.png" alt="Hager"></div>
+        <div class="slide"><img src="https://i.ibb.co/V0J9NwfF/MK-Logo.jpg" alt="MK"></div>
+        <div class="slide"><img src="https://i.ibb.co/Xfx3HnRc/Cellpack.png" alt="Cellpack"></div>
+        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/3M_wordmark.svg/1280px-3M_wordmark.svg.png" alt="3M"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+
+<section class="services-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">What We Cover</div>
+      <h2 id="services" class="sec-title">Industries We Serve</h2>
+      <p class="sec-sub">End-to-end supply solutions for every sector, every scale.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal"><img src="https://i.ibb.co/JF5KXCJ2/house.png" alt=""><p>Residential Wiring</p></div>
+      <div class="service-card reveal"><img src="https://i.ibb.co/RGcyRCXz/smart-grid.png" alt=""><p>Power Distribution</p></div>
+      <div class="service-card reveal"><img src="https://i.ibb.co/M5cGNmsJ/skyline-1.png" alt=""><p>Commercial Buildings</p></div>
+      <div class="service-card reveal"><img src="https://i.ibb.co/HZRysy5/factory-1.png" alt=""><p>Industrial Plants</p></div>
+      <div class="service-card reveal"><img src="https://i.ibb.co/MxLr2Wfp/telecommunication-1.png" alt=""><p>Telecommunication</p></div>
+      <div class="service-card reveal"><img src="https://i.ibb.co/dsn9hnpj/health-insurance-1.png" alt=""><p>Safety & Security</p></div>
+      <div class="service-card reveal"><img src="https://i.ibb.co/q3N9Nxhg/construction.png" alt=""><p>Construction Projects</p></div>
+      <div class="service-card reveal"><img src="https://i.ibb.co/Gf3PVT6Y/train-station-1.png" alt=""><p>Transport & Railways</p></div>
+      <div class="service-card reveal"><img src="https://i.ibb.co/7NdsR0XM/smarthome-1.png" alt=""><p>Lighting Solutions</p></div>
+      <div class="service-card reveal"><img src="https://i.ibb.co/WWMP3gqF/renewable-energy.png" alt=""><p>Renewable Energy</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products-section">
+  <div class="container">
+    <div class="products-header reveal">
+      <div class="sec-label">Our Catalogue</div>
+      <h2 id="products" class="sec-title">Our Products</h2>
+      <p class="sec-sub">A comprehensive range stocked and ready for immediate supply across the UAE.</p>
+    </div>
+
+```
+<!-- Electrical Cable -->
+<div class="category-block" id="products-cable">
+  <div class="category-label">Category 01</div>
+  <h3 class="cat-title">Electrical Cable</h3>
+  <div class="products-grid">
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.17.jpeg" alt="Armoured cable"></div><p class="prod-label">Armoured Cable</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.18.jpeg" alt="Rubber cables"></div><p class="prod-label">Rubber Cables</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.18 (1).jpeg" alt="Control cables"></div><p class="prod-label">Control Cables</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.19.jpeg" alt="Shield cable"></div><p class="prod-label">Shield Cable</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.19 (1).jpeg" alt="Fire cable"></div><p class="prod-label">Fire Cable</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.20.jpeg" alt="PVC flexible cable"></div><p class="prod-label">PVC Flexible Cable</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.20 (1).jpeg" alt="Cat 6 cables"></div><p class="prod-label">Cat 6 Cables</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.22.jpeg" alt="YG Earth cable"></div><p class="prod-label">YG Earth Cable</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.14.12.jpeg" alt="Flat Cable"></div><p class="prod-label">Flat Cable</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.15.04.jpeg" alt="Pendant cable"></div><p class="prod-label">Pendant Cable</p></div>
+  </div>
+</div>
+
+<!-- Cable Support -->
+<div class="category-block" id="products-support">
+  <div class="category-label">Category 02</div>
+  <h3 class="cat-title">Cable Support System</h3>
+  <div class="products-grid">
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.30.jpeg" alt="Metal enclosure"></div><p class="prod-label">Metal Enclosure</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.30 (1).jpeg" alt="Cable tray GI"></div><p class="prod-label">Cable Tray (GI)</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.26.38.jpeg" alt="Cable Tray"></div><p class="prod-label">Cable Tray</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.27.44.jpeg" alt="PVC Cable Trunking"></div><p class="prod-label">PVC Cable Trunking</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.28.22.jpeg" alt="PVC Floor Trunking"></div><p class="prod-label">PVC Floor Trunking</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.35.54.jpeg" alt="Conduit Pipe"></div><p class="prod-label">Conduit Pipe</p></div>
+  </div>
+</div>
+
+<!-- Cable Accessories -->
+<div class="category-block" id="products-accessories">
+  <div class="category-label">Category 03</div>
+  <h3 class="cat-title">Cable Accessories</h3>
+  <div class="products-grid">
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.23.jpeg" alt="Cable lugs"></div><p class="prod-label">Cable Lugs</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.25.jpeg" alt="Cable gland brass"></div><p class="prod-label">Cable Gland Brass</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.25 (1).jpeg" alt="PG cable gland"></div><p class="prod-label">PG Cable Gland</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.25 (2).jpeg" alt="Decoduct PVC conduit"></div><p class="prod-label">Decoduct PVC Conduit</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.26.jpeg" alt="PVC flexible conduit"></div><p class="prod-label">PVC Flexible Conduit</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.26 (1).jpeg" alt="GI flexible conduit"></div><p class="prod-label">GI Flexible Conduit</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.27.jpeg" alt="Cable markers"></div><p class="prod-label">Cable Markers</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.29.jpeg" alt="PVC cable tie"></div><p class="prod-label">PVC Cable Tie</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.31.jpeg" alt="PVC connector strip"></div><p class="prod-label">PVC Connector Strip</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.31 (1).jpeg" alt="Plug top"></div><p class="prod-label">Plug Top</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.32.jpeg" alt="Cable cutter"></div><p class="prod-label">Cable Cutter</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.33.jpeg" alt="Crimping tool"></div><p class="prod-label">Crimping Tool</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.36.28.jpeg" alt="Electrical Tape"></div><p class="prod-label">Electrical Tape</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.50.10.jpeg" alt="Copper Earth Rod"></div><p class="prod-label">Copper Earth Rod</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.46.44.jpeg" alt="PVC Junction Box"></div><p class="prod-label">PVC Junction Box</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.45.08.jpeg" alt="Insulated Lugs"></div><p class="prod-label">Insulated Lugs</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.44.27.jpeg" alt="Heat Shrink Sleeves"></div><p class="prod-label">Heat Shrink Sleeves</p></div>
+  </div>
+</div>
+
+<!-- Switches & Switchgear -->
+<div class="category-block" id="products-switches">
+  <div class="category-label">Category 04</div>
+  <h3 class="cat-title">Electrical Switches & Switchgear</h3>
+  <div class="products-grid">
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.17.27.jpeg" alt="MCB"></div><p class="prod-label">MCB</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.18.04.jpeg" alt="MCCB"></div><p class="prod-label">MCCB</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.18.39.jpeg" alt="Waterproof Isolator"></div><p class="prod-label">Waterproof Isolator</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.19.08.jpeg" alt="Main Isolator"></div><p class="prod-label">Main Isolator</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.19.37.jpeg" alt="Enclosed Isolator"></div><p class="prod-label">Enclosed Isolator</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.20.42.jpeg" alt="Step Down Transformer"></div><p class="prod-label">Step Down Transformer</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.34.jpeg" alt="Switch socket 1"></div><p class="prod-label">Switch Socket #1</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.37.jpeg" alt="Switch socket 2"></div><p class="prod-label">Switch Socket #2</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.35.jpeg" alt="Switch socket 3"></div><p class="prod-label">Switch Socket #3</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.40.32.jpeg" alt="Power distribution Board"></div><p class="prod-label">Power Distribution Board</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.41.31.jpeg" alt="Changeover Switch"></div><p class="prod-label">Changeover Switch</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.42.43.jpeg" alt="OT Isolator Switch"></div><p class="prod-label">OT Isolator Switch</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.48.30.jpeg" alt="Soft Starter"></div><p class="prod-label">Soft Starter</p></div>
+  </div>
+</div>
+
+<!-- Plugs & Sockets -->
+<div class="category-block" id="products-sockets">
+  <div class="category-label">Category 05</div>
+  <h3 class="cat-title">Electrical Plugs & Sockets</h3>
+  <div class="products-grid">
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.37 (1).jpeg" alt="Industrial plug"></div><p class="prod-label">Industrial Plug</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.38.jpeg" alt="Industrial socket"></div><p class="prod-label">Industrial Socket</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.39.jpeg" alt="Industrial socket 3 way"></div><p class="prod-label">Industrial Socket 3-Way</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.39 (1).jpeg" alt="Wall mounted socket"></div><p class="prod-label">Wall Mounted Socket</p></div>
+  </div>
+</div>
+
+<!-- Lighting -->
+<div class="category-block" id="products-lights">
+  <div class="category-label">Category 06</div>
+  <h3 class="cat-title">Lighting Solutions</h3>
+  <div class="products-grid">
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.40.jpeg" alt="Flood light"></div><p class="prod-label">Flood Light</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.40 (1).jpeg" alt="Tube light with fittings"></div><p class="prod-label">Tube Light W/P</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.41.jpeg" alt="High bay light"></div><p class="prod-label">High Bay Light</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.41 (1).jpeg" alt="Ceiling down light"></div><p class="prod-label">Ceiling Down Light</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.42.jpeg" alt="LED panel light"></div><p class="prod-label">LED Panel Light</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.42 (1).jpeg" alt="LED spot light"></div><p class="prod-label">LED Spot Light</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.43.jpeg" alt="LED bulb"></div><p class="prod-label">LED Bulb</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.41.05.jpeg" alt="LED Strip Lights"></div><p class="prod-label">LED Strip Lights</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.42.26.jpeg" alt="Garden Spike Lights"></div><p class="prod-label">Garden Spike Lights</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.43.17.jpeg" alt="Swimming Pool Light"></div><p class="prod-label">Swimming Pool Light</p></div>
+    <div class="product-item reveal"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.46.22.jpeg" alt="High Lumen Floodlight"></div><p class="prod-label">High Lumen Floodlight</p></div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-inner reveal">
+      <div class="contact-left">
+        <div>
+          <div class="sec-label">Reach Out</div>
+          <h2 id="contact">Get a<br>Quote Today</h2>
+          <p>Contact our technical team for the best rates, fastest delivery, and expert product guidance across the UAE.</p>
+          <div class="contact-badge">Available Now — UAE Coverage</div>
+        </div>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <a href="tel:+971525145572"><span>+971 525145572</span></a>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">✉</div>
+            <span>salestaninq@gmail.com</span>
+          </div>
+          <a href="https://wa.me/971525145572" class="btn-wa" style="margin-top:6px;width:fit-content;">
+            <img src="https://i.ibb.co/5h6NDy9J/sm-5af2d4c95ac7b-removebg-preview.png" alt="WhatsApp">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form id="contact-form" action="https://formspree.io/f/xkoonpwe" method="POST">
+          <div class="form-field">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-field">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="john@company.com" required>
+          </div>
+          <div class="form-field">
+            <label>Your Message</label>
+            <textarea name="message" rows="5" placeholder="Tell us about your project or inquiry..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Submit Inquiry →</button>
+          <p id="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="Technolite3.png" alt="Technolite">
+        <p>UAE's leading electrical distributor — supplying premium cables, switchgear, accessories, and lighting solutions.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Products</h3>
+        <ul>
+          <li>HV & LV Cables & Wires</li>
+          <li>Cable Accessories</li>
+          <li>Cable Support Systems</li>
+          <li>Electrical Switches</li>
+          <li>Industrial Plug & Socket</li>
+          <li>Lighting Solutions</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li>salestaninq@gmail.com</li>
+          <li>+971 525145572</li>
+          <li>UAE Nationwide Delivery</li>
+        </ul>
+        <a href="https://wa.me/971525145572" class="wa-link">
+          <img src="https://i.ibb.co/5h6NDy9J/sm-5af2d4c95ac7b-removebg-preview.png" alt="WhatsApp"> WhatsApp Us
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <span class="blue">Technolite</span>. All rights reserved.</p>
+      <p style="font-size:12px;color:rgba(255,255,255,.25);">Powering UAE's infrastructure — one connection at a time.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ─── MOBILE NAV ─────────────────────────────────────────── */
+const btn = document.getElementById("menuBtn");
+const nav = document.getElementById("mobileNav");
+btn.addEventListener("click", () => nav.classList.toggle("open"));
+nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
+
+/* ─── SCROLL REVEAL ──────────────────────────────────────── */
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("visible"); ro.unobserve(e.target); }
+  });
+}, { threshold: 0.10 });
+document.querySelectorAll(".reveal").forEach(el => ro.observe(el));
+
+/* ─── CONTACT FORM ───────────────────────────────────────── */
+const form = document.getElementById("contact-form");
+form.onsubmit = async (e) => {
+  e.preventDefault();
+  const status = document.getElementById("form-status");
+  status.textContent = "Sending...";
+  fetch(e.target.action, { method:"POST", body:new FormData(e.target), headers:{"Accept":"application/json"} })
+    .then(r => {
+      if (r.ok) { status.textContent = "✓ Sent successfully! We'll be in touch shortly."; form.reset(); }
+      else status.textContent = "Error sending. Please try again or WhatsApp us.";
+    });
+};
+
+/* ─── ACTIVE NAV ─────────────────────────────────────────── */
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove("active"));
+      const active = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+      if (active) active.classList.add("active");
+    }
+  });
+}, { rootMargin:"-40% 0px -55% 0px" });
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
