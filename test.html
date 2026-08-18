@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Technolite TRD FZE | Electrical, Cable & Lighting Distributor — UAE</title>
 <meta name="description" content="Technolite TRD FZE supplies contractors across the UAE with cables, cable support systems, accessories, switchgear, industrial plugs and lighting from 20+ trusted brands." />
-<meta name="theme-color" content="#242222" />
+<meta name="theme-color" content="#121010" />
 
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="apple-touch-icon" href="favicon.png" />
@@ -772,6 +772,193 @@ body{ background: var(--bg); }
   *, *::before, *::after{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   .rv{ opacity: 1; transform: none; }
 }
+
+/* ============================================================
+   DARK THEME + CONDUCTOR COLOUR CODING
+   Extra colour is assigned, not sprinkled: each product
+   category carries a wiring colour (live, neutral, earth...).
+   ============================================================ */
+:root{
+  --bg:        #121010;
+  --surface:   #1b1919;
+  --surface-2: #232020;
+  --paper:     #1b1919;
+  --panel:     #1b1919;
+  --plate:     #f1ecec;          /* light plates for product photos */
+  --hairline:  rgba(255,255,255,.13);
+  --muted:     #9d9595;
+  --muted-on-ink: #9d9595;
+
+  /* conductor palette */
+  --c-cbl: #d51e1c;  --f-cbl: #ffffff;   /* live */
+  --c-sup: #f5a623;  --f-sup: #1a1717;   /* amber */
+  --c-acc: #c3dd4a;  --f-acc: #1a1717;   /* earth */
+  --c-swg: #3b86e8;  --f-swg: #ffffff;   /* neutral */
+  --c-plg: #ff6a2b;  --f-plg: #1a1717;   /* orange */
+  --c-lgt: #ffd23f;  --f-lgt: #1a1717;   /* lamp */
+}
+
+body{
+  background:
+    radial-gradient(900px 620px at 8% 0%, rgba(213,30,28,.16), transparent 62%),
+    radial-gradient(760px 560px at 96% 74%, rgba(245,166,35,.10), transparent 66%),
+    var(--bg);
+  background-attachment: fixed;
+  color: #f2eeee;
+}
+
+/* ---------- texture on dark ---------- */
+.tex::before{
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 68px 68px;
+}
+.tex--diag::before{
+  background-image: repeating-linear-gradient(-45deg, rgba(213,30,28,.13) 0 2px, transparent 2px 13px);
+  background-size: auto;
+}
+.mark::after{ background-image: url("favicon-light.png"); opacity: .07; }
+
+/* ---------- header ---------- */
+.header{ background: rgba(18,16,16,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--hairline); }
+.nav a.navlink{ color: #f0eaea; }
+.menu{ background: var(--surface-2); border-color: var(--hairline); }
+.menu a{ color: #f0eaea; }
+.menu a:hover{ background: rgba(255,255,255,.08); }
+.header-phone{ color: #fff; }
+.header-phone span{ color: var(--muted); }
+.burger{ border-color: rgba(255,255,255,.42); }
+.burger span, .burger span::before, .burger span::after{ background: #fff; }
+.burger[aria-expanded="true"] span{ background: transparent; }
+.mobile-nav{ background: var(--bg); border-bottom: 1px solid var(--hairline); }
+.mobile-nav a{ color: #fff; border-bottom: 1px solid var(--hairline); }
+.mobile-nav a small{ color: var(--muted); }
+
+/* ---------- buttons ---------- */
+.btn{ background: var(--red); border-color: var(--red); color: #fff; }
+.btn:hover{ background: #fff; border-color: #fff; color: #171515; }
+.btn--ghost{ background: transparent; color: #fff; border-color: rgba(255,255,255,.45); }
+.btn--ghost:hover{ background: #fff; color: #171515; border-color: #fff; }
+
+/* ---------- seams: a spectrum conductor strip ---------- */
+.seam--ink{
+  background: linear-gradient(90deg,
+    var(--c-cbl) 0%, var(--c-plg) 24%, var(--c-lgt) 46%,
+    var(--c-acc) 68%, var(--c-swg) 100%);
+}
+
+/* ---------- sections ---------- */
+.section--panel{ background: var(--surface); }
+.section--ink{ background: #171515; }
+.about-list li{ border-bottom-color: var(--hairline); }
+.about-list{ border-top-color: var(--hairline); }
+.about-body p{ color: var(--muted); }
+
+/* brand rail stays a bright plate so the logos read */
+.rail{ background: #fff; border-color: rgba(255,255,255,.18); box-shadow: 0 22px 50px rgba(0,0,0,.5); }
+
+/* ---------- industries: each tile takes a conductor colour ---------- */
+.ind-grid{ background: var(--hairline); border-color: var(--hairline); }
+.ind{ background: var(--surface); }
+.ind:nth-child(6n+1){ --c: var(--c-cbl); }
+.ind:nth-child(6n+2){ --c: var(--c-swg); }
+.ind:nth-child(6n+3){ --c: var(--c-lgt); }
+.ind:nth-child(6n+4){ --c: var(--c-plg); }
+.ind:nth-child(6n+5){ --c: var(--c-acc); }
+.ind:nth-child(6n+6){ --c: var(--c-sup); }
+.ind::after{ background: var(--c); }
+.ind:hover{ background: var(--surface-2); }
+.ind:hover img{ filter: none; }
+.ind p{ color: #fff; }
+
+/* ---------- products ---------- */
+#products{ background: transparent; }
+#products.tex::before{
+  background-image:
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.035) 0 2px, transparent 2px 14px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: auto, 68px 68px, 68px 68px;
+}
+
+.terms{
+  background: linear-gradient(140deg, var(--red) 0%, #8e1211 100%);
+  color: #fff;
+}
+.terms h4{ color: rgba(255,255,255,.72); }
+.terms li{ color: rgba(255,255,255,.95); }
+.terms li::before{ background: #fff; }
+
+.finder{ background: rgba(18,16,16,.96); backdrop-filter: blur(10px); border-color: var(--hairline); }
+.search{ background: var(--surface-2); border-color: rgba(255,255,255,.35); }
+.search input{ color: #fff; }
+.search svg{ color: var(--muted); }
+.chip{ background: var(--surface-2); border-color: var(--hairline); color: var(--muted); }
+.chip:hover{ color: #fff; border-color: rgba(255,255,255,.6); }
+.chip.is-active{ background: #fff; border-color: #fff; color: #171515; }
+.chip[data-cat="cbl"].is-active{ background: var(--c-cbl); border-color: var(--c-cbl); color: var(--f-cbl); }
+.chip[data-cat="sup"].is-active{ background: var(--c-sup); border-color: var(--c-sup); color: var(--f-sup); }
+.chip[data-cat="acc"].is-active{ background: var(--c-acc); border-color: var(--c-acc); color: var(--f-acc); }
+.chip[data-cat="swg"].is-active{ background: var(--c-swg); border-color: var(--c-swg); color: var(--f-swg); }
+.chip[data-cat="plg"].is-active{ background: var(--c-plg); border-color: var(--c-plg); color: var(--f-plg); }
+.chip[data-cat="lgt"].is-active{ background: var(--c-lgt); border-color: var(--c-lgt); color: var(--f-lgt); }
+.chip.is-active:hover{ filter: brightness(1.1); background: inherit; }
+
+/* drawers, colour-coded */
+.cat{ --c: var(--red); --f: #fff; }
+.cat[data-cat="cbl"]{ --c: var(--c-cbl); --f: var(--f-cbl); }
+.cat[data-cat="sup"]{ --c: var(--c-sup); --f: var(--f-sup); }
+.cat[data-cat="acc"]{ --c: var(--c-acc); --f: var(--f-acc); }
+.cat[data-cat="swg"]{ --c: var(--c-swg); --f: var(--f-swg); }
+.cat[data-cat="plg"]{ --c: var(--c-plg); --f: var(--f-plg); }
+.cat[data-cat="lgt"]{ --c: var(--c-lgt); --f: var(--f-lgt); }
+
+.cat{
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-top: 4px solid var(--c);
+  box-shadow: 0 24px 50px rgba(0,0,0,.42);
+}
+.cat:nth-of-type(even){ background: var(--surface-2); }
+.cat::after{ color: var(--c); opacity: .10; }
+
+.cat-head{ background: var(--c); }
+.cat-head h3{ color: var(--f); }
+.cat-head .count{ color: var(--f); opacity: .72; }
+.cat-code{ background: rgba(0,0,0,.32); color: var(--f); }
+
+.p-item{ background: rgba(255,255,255,.04); border-color: var(--hairline); }
+.p-thumb{ background: var(--plate); }
+.p-item p{ color: #fff; border-top-color: var(--hairline); }
+.p-item::before{ border-right-color: var(--c); }
+.p-item:hover{ border-color: var(--c); box-shadow: 0 20px 38px rgba(0,0,0,.45); }
+.p-item:hover p{ background: var(--c); color: var(--f); }
+
+.empty{ background: var(--surface); border-color: rgba(255,255,255,.28); }
+.empty p{ color: var(--muted); }
+
+.plate-img{ background: var(--plate); }
+.ind{ border-left: 3px solid var(--c); }
+
+/* ---------- quote ---------- */
+.quote{ background: #171515; }
+.form{ background: #fff; color: var(--ink); }
+.form h3{ color: var(--ink); }
+.field label{ color: #6d6867; }
+.field input, .field textarea, .field select{ background: #f2eded; border-color: #e2dcdc; color: var(--ink); }
+.field input:focus, .field textarea:focus, .field select:focus{ background: #fff; border-color: var(--ink); }
+#form-status{ color: #6d6867; }
+.form .btn:hover{ background: var(--ink); border-color: var(--ink); color: #fff; }
+
+/* ---------- footer ---------- */
+.footer{ background: #0d0c0c; border-top: 6px solid var(--red); }
+.footer li a, .footer li{ color: var(--muted); }
+
+/* ---------- float ---------- */
+.wa-float{ background: var(--red); box-shadow: 0 16px 34px rgba(213,30,28,.45); }
+.wa-float:hover{ background: #fff; color: var(--red); }
+
 </style>
 </head>
 <body>
@@ -783,7 +970,7 @@ body{ background: var(--bg); }
 <header class="header">
   <div class="wrap header-in">
     <a class="brand" href="#top" aria-label="Technolite TRD FZE — home">
-      <img src="technolite-logo-h.png" alt="Technolite TRD FZE" width="1214" height="300" />
+      <img src="technolite-logo-h-light.png" alt="Technolite TRD FZE" width="1214" height="300" />
     </a>
 
     <nav class="nav" aria-label="Main">
