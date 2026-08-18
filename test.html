@@ -1257,6 +1257,55 @@ body{
   .cat-head .count{ margin-left: auto; width: auto; }
 }
 
+
+/* ============================================================
+   FIXES — uniform product tiles, full-colour brand logos
+   ============================================================ */
+
+/* Every card in a row gets the same height, and the image box is
+   a fixed square, so captions can never push images out of line. */
+.p-grid{ grid-auto-rows: 1fr; align-items: stretch; }
+.p-item{ display: flex; flex-direction: column; height: 100%; }
+
+.p-thumb{
+  aspect-ratio: 1 / 1;
+  flex: 0 0 auto;
+  min-height: 0;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden;
+}
+/* max-* rather than width/height:100% — a percentage height inside an
+   aspect-ratio box is indefinite, so the image ends up sizing the box */
+.p-thumb img{
+  width: auto; height: auto;
+  max-width: 100%; max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+/* caption reserves two lines so single- and double-line names
+   produce identical cards */
+.p-item p{
+  margin-top: auto;
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  padding: 26px 16px 18px;
+}
+
+/* brand logos in full colour */
+.rail-item img{ filter: none; opacity: 1; }
+.rail-item img:hover{ filter: none; opacity: 1; transform: scale(1.06); }
+
+@media (max-width: 560px){
+  .p-item p{ min-height: 78px; font-size: 15px; }
+  .p-thumb{ padding: 11px; }
+}
+
 </style>
 </head>
 <body>
