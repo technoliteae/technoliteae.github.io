@@ -1,1020 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Technolite | Leading Electrical Distributor</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="Technolite3.png">
-  <link rel="shortcut icon" href="Technolite3.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="Technolite3.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg: #0b1530;
-  --surface: #0f1f3a;
-  --surface-2: #0c1a33;
-  --ink: #f8fafc;
-  --muted: #b7c2d6;
-  --accent: #1f9f4a;
-  --accent-2: #22c55e;
-  --accent-soft: #162845;
-  --accent-warm: #1f9f4a;
-  --tint-1: #0f1f3a;   /* dark blue */
-  --tint-2: #1f8f46;   /* solid green */
-  --tint-3: #0c1932;   /* darker blue */
-  --line: #2b3a5c;
-  --shadow: 0 18px 44px rgba(3, 8, 20, 0.5);
-  --radius: 18px;
-  --header-h: 88px;
-}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Technolite TRD FZE | Electrical, Cable & Lighting Distributor — UAE</title>
+<meta name="description" content="Technolite TRD FZE supplies contractors across the UAE with cables, cable support systems, accessories, switchgear, industrial plugs and lighting from 20+ trusted brands." />
+<meta name="theme-color" content="#121010" />
 
-*{ box-sizing: border-box; margin:0; padding:0; }
-html{ scroll-behavior: smooth; }
-body{
-  font-family: "Manrope", system-ui, sans-serif;
-  color: var(--ink);
-  background:
-    radial-gradient(900px 600px at 10% -10%, rgba(31,159,74,0.18), transparent 60%),
-    radial-gradient(900px 600px at 90% 10%, rgba(31,159,74,0.12), transparent 60%),
-    linear-gradient(180deg, #0b1530 0%, #0a142b 100%);
-  min-height: 100vh;
-}
-img{ max-width:100%; display:block; }
-a{ color: inherit; text-decoration: none; }
+<link rel="icon" href="favicon.ico?v=3" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3" />
+<link rel="icon" type="image/png" sizes="512x512" href="favicon.png?v=3" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3" />
 
-.container{
-  width: min(1200px, 92%);
-  margin: 0 auto;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
-/* Ensure anchor targets show section titles under sticky header */
-section[id],
-.product-category[id],
-h2[id],
-h3[id]{
-  scroll-margin-top: 120px;
-}
-
-/* Header */
-.header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  background: rgba(11,21,48,0.95);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(8px);
-}
-.header-wrap{
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 12px 0;
-}
-.logo{
-  background: transparent;
-  padding: 2px 0;
-  border-radius: 0;
-  display: inline-flex;
-  align-items: center;
-  border: none;
-  box-shadow: none;
-}
-.logo img{ height: 92px; width:auto; filter: drop-shadow(0 1px 3px rgba(15,23,42,0.35)); }
-
-.nav{
-  display:flex;
-  gap: 22px;
-  font-size: 16px;
-  letter-spacing: 0.3px;
-  align-items: center;
-}
-.nav a{
-  color: var(--muted);
-  font-weight: 600;
-  transition: color .2s ease;
-}
-.nav a:hover,
-.nav a.active{ color: var(--accent); }
-
-.nav-item{ position: relative; padding: 10px 0; }
-.nav-item.has-dropdown > a{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.nav-item.has-dropdown > a::after{
-  content: "▾";
-  font-size: 12px;
-  color: var(--muted);
-}
-/* Hover bridge to prevent accidental close */
-.nav-item.has-dropdown::after{
-  content: "";
-  position: absolute;
-  left: -12px;
-  right: -12px;
-  top: 100%;
-  height: 12px;
-}
-
-.dropdown{
-  position: absolute;
-  top: 100%;
-  margin-top: 6px;
-  left: 0;
-  background: #0f203f;
-  border: 1px solid #1f3358;
-  border-radius: 12px;
-  padding: 10px;
-  min-width: 230px;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  transform: translateY(8px);
-  pointer-events: none;
-  transition: opacity .2s ease, transform .2s ease;
-  z-index: 60;
-}
-.dropdown a{
-  display: block;
-  padding: 10px 12px;
-  border-radius: 8px;
-  color: var(--ink);
-  font-weight: 600;
-  white-space: nowrap;
-}
-.dropdown a:hover{ background: rgba(31,159,74,0.18); color: #f0fff5; }
-
-.nav-item:hover .dropdown,
-.nav-item:focus-within .dropdown{
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.header-right{
-  display:flex;
-  align-items:center;
-  gap: 18px;
-}
-.contact{
-  font-size: 13px;
-  color: var(--muted);
-  display:grid;
-  gap: 3px;
-}
-.btn-pill{
-  display:inline-flex;
-  align-items:center;
-  gap: 8px;
-  padding: 9px 16px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 13px;
-  box-shadow: 0 12px 24px rgba(14,165,233,0.25);
-}
-.btn-pill img{ height: 18px; width:auto; }
-
-@media (max-width: 980px){
-  :root{ --header-h: 72px; }
-  .nav{ display:none; }
-  .contact{ display:none; }
-  .logo img{ height: 78px; }
-}
-
-/* Hero Slideshow */
-.hero{ padding: 0; }
-.hero-shell{
-  position: relative;
-  width: 100%;
-  border-radius: 0;
-  overflow: hidden;
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
-  box-shadow: none;
-  min-height: 100vh;
-  height: 100vh;
-}
-.hero-slide{
-  position: absolute;
-  inset: 0;
-  padding: 120px 10% 60px;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-  color: #ffffff;
-  background:
-    linear-gradient(180deg, rgba(11,21,48,0.45) 0%, rgba(11,21,48,0.60) 55%, rgba(11,21,48,0.70) 100%),
-    var(--bg-image) center/cover no-repeat;
-}
-.hero-slide.is-active{
-  opacity: 1;
-  transform: translateY(0);
-  position: relative;
-}
-.hero-slide > div{ max-width: 640px; }
-.hero-tag{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #ffffff;
-  padding: 6px 0;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.hero-tag::before,
-.hero-tag::after{
-  content: "";
-  width: 28px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  border-radius: 999px;
-}
-.hero-title{
-  font-family: "Sora", sans-serif;
-  font-size: clamp(38px, 4.6vw, 68px);
-  line-height: 1.05;
-  margin: 10px 0 10px;
-  font-weight: 700;
-}
-.hero-text{
-  color: rgba(255,255,255,0.9);
-  font-size: 17px;
-  line-height: 1.6;
-  max-width: 560px;
-}
-.hero-cta{
-  display: flex;
-  gap: 14px;
-  margin-top: 22px;
-  flex-wrap: wrap;
-}
-.btn{
-  padding: 12px 26px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.45);
-  color: #ffffff;
-  background: rgba(255,255,255,0.12);
-  font-weight: 700;
-  transition: transform 0.2s ease, border 0.2s ease;
-}
-.btn:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,0.75); }
-.btn.primary{
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #ffffff;
-  border: none;
-}
-.hero-panel{ display: none; }
-.panel-metric{ display: grid; gap: 4px; }
-.panel-metric h4{ font-family: "Sora", sans-serif; font-size: 22px; }
-.panel-metric p{ color: var(--muted); font-size: 13px; }
-
-.hero-dots{
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 22px;
-}
-.hero-dot{
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.65);
-  background: rgba(255,255,255,0.35);
-  cursor: pointer;
-}
-.hero-dot.is-active{ background: #ffffff; border-color: #ffffff; }
-
-@media (max-width: 960px){
-  .hero-shell{ min-height: 100vh;
-  height: 100vh; }
-  .hero-slide{ padding: 110px 8% 60px; min-height: 100vh; }
-}
-
-/* Trust */
-.trust-strip{ padding: 40px 0; background: var(--tint-1); }
-
-.trust{
-  margin-top: 22px;
-  background: linear-gradient(180deg, rgba(31,159,74,0.10), rgba(31,159,74,0.02));
-  padding: 16px;
-  border-radius: 18px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.trust-card{
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--accent);
-  padding: 18px;
-  border-radius: 16px;
-  text-align: center;
-}
-.trust-card h3{ font-family: "Sora", sans-serif; font-size: 20px; }
-.trust-card p{ color: var(--muted); font-size: 14px; }
-
-@media (max-width: 820px){
-  .trust{ grid-template-columns: 1fr; }
-}
-
-/* Reveal on scroll */
-.reveal{
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.is-visible{
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Brands */
-.brands-section{
-  padding: 60px 0 30px;
-  background: var(--tint-2);
-}
-.section-title{
-  font-family: "Sora", sans-serif;
-  font-size: clamp(26px, 2.4vw, 36px);
-  margin-bottom: 10px;
-  position: relative;
-  display: inline-block;
-}
-.section-title::after{
-  content: "";
-  display: block;
-  width: 70px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  border-radius: 999px;
-  margin: 10px auto 0;
-}
-.section-sub{ color: var(--muted); }
-
-.logo-slider{
-  width: 100%;
-  overflow: hidden;
-  background: #ffffff;
-  padding: 26px 0;
-  position: relative;
-  margin-top: 28px;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-}
-.logo-slider::before,
-.logo-slider::after{
-  content:"";
-  position:absolute;
-  top:0;
-  width:120px;
-  height:100%;
-  z-index:2;
-}
-.logo-slider::before{ left:0; background: linear-gradient(to right, white, transparent); }
-.logo-slider::after{ right:0; background: linear-gradient(to left, white, transparent); }
-.slider-track{ display:flex; width:max-content; animation: scroll 22s linear infinite; }
-.slide{ flex:0 0 auto; width:280px; display:flex; justify-content:center; align-items:center; }
-.slide img{ height: 100px; width:auto; opacity:0.9; transition: transform .3s ease, opacity .3s ease; }
-.slide img:hover{ transform: scale(1.06); opacity:1; }
-@keyframes scroll{ 0%{ transform: translateX(0); } 100%{ transform: translateX(-50%); } }
-
-/* Contrast section text */
-.brands-section,
-.products-section{
-  color: #ffffff;
-}
-.brands-section .section-sub,
-.products-section .section-sub{
-  color: rgba(255,255,255,0.85);
-}
-.brands-section .section-title,
-.products-section .section-title{
-  color: #ffffff;
-}
-.brands-section .section-title::after,
-.products-section .section-title::after{
-  background: rgba(255,255,255,0.7);
-}
-.logo-slider{ border: 1px solid rgba(255,255,255,0.25); background: #ffffff; }
-.products-section .category-title{ color: #ffffff; }
-/* Services */
-.services-section{ padding: 70px 0; background: var(--tint-1); }
-.services-grid{
-  display:grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
-}
-.service-card{
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 18px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  min-height: 140px;
-  transition: transform .25s ease, border .25s ease;
-}
-.service-card:hover{ transform: translateY(-6px); border-color: rgba(31,159,74,0.45); }
-.service-card img{ width: 42px; margin-bottom: 10px; }
-.service-card p{ font-weight: 700; }
-
-@media (max-width: 1100px){ .services-grid{ grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 700px){ .services-grid{ grid-template-columns: repeat(2, 1fr); } }
-
-/* About */
-.about-section{ padding: 70px 0; background: var(--tint-1); }
-.about-wrap{
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 30px;
-  align-items: center;
-}
-.about-card{
-  background: rgba(15,31,58,0.9);
-  border: 1px solid var(--line);
-  padding: 28px;
-  border-radius: var(--radius);
-}
-.about-card h3{ font-family: "Sora", sans-serif; font-size: 28px; margin-bottom: 12px; }
-.about-card p{ color: var(--muted); line-height: 1.7; font-size: 16px; }
-.about-highlight{
-  background: rgba(15,31,58,0.9);
-  border: 1px solid var(--line);
-  padding: 22px;
-  border-radius: 18px;
-  display: grid;
-  gap: 12px;
-}
-.about-highlight span{ color: var(--accent); font-weight: 700; }
-
-@media (max-width: 900px){ .about-wrap{ grid-template-columns: 1fr; } }
-
-/* Products */
-.products-section{ padding: 70px 0; background: var(--tint-2); }
-.product-category{ margin-bottom: 46px; }
-.category-title{
-  font-family: "Sora", sans-serif;
-  font-size: 24px;
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-.products-grid{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  align-items: stretch;
-}
-.product-item{
-  background: #ffffff;
-  border: 1px solid var(--line);
-  padding: 16px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  height: 100%;
-  transition: transform .25s ease, border .25s ease;
-}
-.product-item:hover{ transform: translateY(-6px); border-color: rgba(31,159,74,0.45); }
-.image-wrapper{
-  background: #eef8f1;
-  border-radius: 12px;
-  padding: 10px;
-  aspect-ratio: 1 / 1;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-.product-item img{ width: 100%; height: 100%; object-fit: contain; }
-.product-item p{ font-weight: 700; color: var(--accent); text-align: center; margin-top: auto; }
-
-@media (max-width: 1100px){ .products-grid{ grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 800px){ .products-grid{ grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px){ .products-grid{ grid-template-columns: 1fr; } }
-
-/* Contact */
-.contact-section{ padding: 80px 0; background: var(--tint-3); }
-.contact-box{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 26px;
-  background: rgba(15,31,58,0.9);
-  border: 1px solid var(--line);
-  padding: 28px;
-  border-radius: 20px;
-}
-.contact-left h2{ font-family: "Sora", sans-serif; font-size: 30px; margin-bottom: 10px; }
-.contact-left p{ color: var(--muted); }
-.contact-right form{ display:grid; gap: 14px; }
-.contact-right input,
-.contact-right textarea{
-  background: #0b1a33;
-  color: var(--ink);
-  border: 1px solid #2a3d63;
-  padding: 12px 14px;
-  border-radius: 10px;
-  font-size: 14px;
-}
-.contact-right button{
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #ffffff;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 10px;
-  font-weight: 700;
-  cursor: pointer;
-}
-#form-status{ color: var(--accent); font-size: 14px; }
-
-@media (max-width: 900px){ .contact-box{ grid-template-columns: 1fr; } }
-
-/* Footer */
-.footer{
-  padding: 70px 0 30px;
-  background: var(--surface-2);
-  border-top: 1px solid var(--line);
-}
-.footer-grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-  align-items: start;
-}
-.footer-logo img{ height: 140px; width:auto; }
-.footer h3{ font-family: "Sora", sans-serif; font-size: 20px; margin-bottom: 12px; }
-.footer ul{ list-style: none; display:grid; gap:8px; color: var(--muted); }
-.footer .whatsapp{ display: inline-flex; align-items: center; gap: 6px; color: var(--ink); font-weight: 700; }
-.footer .whatsapp img{ height: 18px; }
-.copyright{ margin-top: 40px; text-align: center; color: var(--muted); font-size: 13px; }
-
-@media (max-width: 900px){ .footer-grid{ grid-template-columns: 1fr; text-align:center; } .footer-logo img{ height: 110px; } }
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .slider-track{ animation: none; }
-  .hero-slide{ transition: none; }
-}
-</style>
+<link rel="stylesheet" href="technolite.css" />
 </head>
 <body>
 
+<a class="skip" href="#top">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============================ HEADER ============================ -->
 <header class="header">
-  <div class="container header-wrap">
-    <div class="logo">
-      <img src="Technolite3.png" alt="Technolite Logo">
-    </div>
-    <nav class="nav">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <div class="nav-item has-dropdown">
-        <a href="#products">Products</a>
-        <div class="dropdown">
-          <a href="#products-cable">Electrical</a>
-          <a href="/hardware">Hardware & Safety</a>
+  <div class="wrap header-in">
+    <a class="brand" href="#top" aria-label="Technolite TRD FZE — home">
+      <img src="technolite-logo-h-light.png" alt="Technolite TRD FZE" width="1214" height="300" />
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a class="navlink" href="#about">About</a>
+      <div class="has-menu">
+        <a class="navlink" href="#products" aria-haspopup="true">Products <span class="caret">▾</span></a>
+        <div class="menu">
+          <a href="#products">Electrical</a>
+          <a href="/hardware">Hardware &amp; Safety</a>
           <a href="/plumbing">Plumbing</a>
         </div>
       </div>
-      <a href="#partners">Partners</a>
-      <a href="#contact">Contact Us</a>
+      <a class="navlink" href="#brands">Brands</a>
+      <a class="navlink" href="#industries">Industries</a>
+      <a class="navlink" href="#quote">Contact</a>
     </nav>
-    <div class="header-right">
-      <div class="contact">
-        <span>+971 525145572</span>
-        <span>salestaninq@gmail.com</span>
-      </div>
-      <a href="https://wa.me/971525145572" class="btn-pill">
-        <img src="https://i.ibb.co/5h6NDy9J/sm-5af2d4c95ac7b-removebg-preview.png" alt="WhatsApp">
-        Fast Quote
-      </a>
+
+    <div class="header-cta">
+      <a class="header-phone" href="tel:+971525145572"><span>Sales</span>+971 52 514 5572</a>
+      <a class="btn btn--red" href="#quote">Get a quote</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span></span></button>
     </div>
   </div>
 </header>
 
-<section id="home" class="hero">
-  <div class="hero-shell">
-    <div class="hero-slide is-active" data-slide="0" style="--bg-image: url('https://media.istockphoto.com/id/1130957259/photo/composition-with-tools-and-industrial-material-with-industrial-ship-background.jpg?s=612x612&w=0&k=20&c=XDZNptsfq3TASTKWGsmnDajREC820JuDQf9IyRanCsg=');">
-      <div>
-        <span class="hero-tag">We are a leading distributor of</span>
-        <h1 class="hero-title">Electrical Products</h1>
-        <p class="hero-text">Most trusted and reliable range</p>
-        <div class="hero-cta">
-          <a href="#about" class="btn primary">Learn More</a>
-          <a href="#contact" class="btn">Get a Quote</a>
-        </div>
-      </div>
-      <div class="hero-panel">
-        <div class="panel-metric">
-          <h4>Authorized Brands</h4>
-          <p>Direct supply from trusted global partners.</p>
-        </div>
-        <div class="panel-metric">
-          <h4>Fast Delivery</h4>
-          <p>Reliable stock and quick fulfillment across the UAE.</p>
-        </div>
-        <div class="panel-metric">
-          <h4>Technical Support</h4>
-          <p>Product matching and compliance guidance.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-slide" data-slide="1" style="--bg-image: url('https://www.conwire.com/wp-content/uploads/hero-bg.jpg');">
-      <div>
-        <span class="hero-tag">Complete multi-brand supply</span>
-        <h1 class="hero-title">Cables, Accessories & Lighting</h1>
-        <p class="hero-text">Project-ready stock with fast delivery</p>
-        <div class="hero-cta">
-          <a href="#products" class="btn primary">View Products</a>
-          <a href="#services" class="btn">Industries We Serve</a>
-        </div>
-      </div>
-      <div class="hero-panel">
-        <div class="panel-metric">
-          <h4>Project Coverage</h4>
-          <p>Residential, commercial, industrial, and infrastructure.</p>
-        </div>
-        <div class="panel-metric">
-          <h4>Bulk Pricing</h4>
-          <p>Volume rates with dedicated account support.</p>
-        </div>
-        <div class="panel-metric">
-          <h4>Compliance Ready</h4>
-          <p>Products aligned to UAE and global standards.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-slide" data-slide="2" style="--bg-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80');">
-      <div>
-        <span class="hero-tag">Trusted by professionals</span>
-        <h1 class="hero-title">On-time delivery, consistent quality</h1>
-        <p class="hero-text">A long-term partner for contractors</p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn primary">Contact Us</a>
-          <a href="#about" class="btn">About Technolite</a>
-        </div>
-      </div>
-      <div class="hero-panel">
-        <div class="panel-metric">
-          <h4>High Availability</h4>
-          <p>Critical items ready to ship when needed.</p>
-        </div>
-        <div class="panel-metric">
-          <h4>Expert Guidance</h4>
-          <p>Documentation, specs, and selection support.</p>
-        </div>
-        <div class="panel-metric">
-          <h4>Long-Term Partner</h4>
-          <p>Support from bid to final delivery.</p>
-        </div>
-      </div>
-    </div>
-      <div class="hero-anim" aria-hidden="true">
-      <div class="hero-wire"><div class="hero-wire-fill"></div></div>
-      <div class="hero-bulb"></div>
-      <div class="hero-socket"></div>
-    </div>
-
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#about">About</a>
+  <a href="#products">Products <small>Cables · Switchgear · Lighting</small></a>
+  <a href="/hardware">Hardware &amp; Safety</a>
+  <a href="/plumbing">Plumbing</a>
+  <a href="#brands">Brands</a>
+  <a href="#industries">Industries</a>
+  <a href="#quote">Contact</a>
+  <a class="btn btn--red" href="https://wa.me/971525145572">Message us on WhatsApp</a>
 </div>
 
-  <div class="hero-dots" aria-label="Hero slideshow controls">
-    <button class="hero-dot is-active" data-slide="0" aria-label="Slide 1"></button>
-    <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
-    <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
-  </div>
-</section>
-<section class="about-section">
-  <div class="container about-wrap">
-    <div class="about-card">
-      <h3 id="about">About Technolite</h3>
-      <p><strong>Technolite</strong> is a leading distributor of electrical and lighting solutions in the UAE.
-      We provide dependable supply, expert technical support, and fast delivery for projects of any size.</p>
-      <p>Our portfolio spans cables, accessories, switchgear, industrial plugs, and advanced lighting systems
-      backed by trusted global brands.</p>
-    </div>
-    <div class="about-highlight">
-      <span>Why clients choose us</span>
-      <p>Project-ready stock, competitive rates, and a team that helps you match the right products
-      to your specifications without delays.</p>
-      <span>From tender to delivery</span>
-      <p>We support your project through every phase with responsive service and consistent quality.</p>
-    </div>
-  </div>
-</section>
+<!-- ============================ HERO ============================ -->
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-stage" id="hero">
 
-<section class="brands-section">
-  <div class="container">
-    <h2 id="partners" class="section-title">Our Brands</h2>
-    <p class="section-sub">We partner with global manufacturers to deliver verified quality.</p>
-    <div class="logo-slider">
-      <div class="slider-track">
-        <div class="slide"><img src="https://i.ibb.co/tw4bKBgy/image.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/Y79VRQyh/ducab-news-placeholder.jpg" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/pv933MXr/unnamed.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/LhggVrkz/image.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/m553GLrp/image.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/zWjzTM7Z/unnamed.jpg" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/Mx1STxkc/image.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/ccRwFv8h/Legrand-logo.jpg" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/5tTwdXX/hager.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/84m2RMTF/69-SPYb-AJYHys-Ew3a-Fh0bj7s0lf2u2r4-BYi-Umty-LA.webp" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/HT3YbG4v/unnamed.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/V0J9NwfF/MK-Logo.jpg" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/Xfx3HnRc/Cellpack.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/k6rH1yyg/PCE.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/rGr51x2S/unnamed.jpg" alt=""></div>
-        <div class="slide"><img src="https://biofuels-news.com/conference/sustainableaviationfuels/wp-content/uploads/sites/2/2023/12/Alfanar-Logo.png" alt=""></div>
-        <div class="slide"><img src="https://theme.zdassets.com/theme_assets/1986480/215a629f17edb216fedae51fd35fccab75caa881.png" alt=""></div>
-        <div class="slide"><img src="https://clarkehandtools.com/wp-content/uploads/2020/05/logo.png" alt=""></div>
-        <div class="slide"><img src="https://wl-img-prd.s3-accelerate.amazonaws.com/8fd14f1d-b7d6-4677-943c-d437344121e0-h.jpeg" alt=""></div>
-        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRke43qPyAZKQRNXxiR6nYFYWSrSjILPhkbLg&s" alt=""></div>
-        <div class="slide"><img src="https://iep-edistributor.com/brand_img/brand_image-21.png?t=1716175845" alt=""></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/3M_wordmark.svg/1280px-3M_wordmark.svg.png" alt=""></div>
-        <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Mapei_logo.svg/960px-Mapei_logo.svg.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/Y79VRQyh/ducab-news-placeholder.jpg" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/pv933MXr/unnamed.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/LhggVrkz/image.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/m553GLrp/image.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/zWjzTM7Z/unnamed.jpg" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/Mx1STxkc/image.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/ccRwFv8h/Legrand-logo.jpg" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/5tTwdXX/hager.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/84m2RMTF/69-SPYb-AJYHys-Ew3a-Fh0bj7s0lf2u2r4-BYi-Umty-LA.webp" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/HT3YbG4v/unnamed.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/V0J9NwfF/MK-Logo.jpg" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/Xfx3HnRc/Cellpack.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/k6rH1yyg/PCE.png" alt=""></div>
-        <div class="slide"><img src="https://i.ibb.co/rGr51x2S/unnamed.jpg" alt=""></div>
+    <article class="slide is-active" data-slide="0">
+      <div>
+        <span class="eyebrow">Electrical distribution · UAE</span>
+        <h1>Cable to <em>ceiling light</em>, one supplier</h1>
+        <p>Technolite TRD FZE keeps cables, switchgear, accessories and lighting on the shelf so contractors across the Emirates order once and finish the job.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#products">Browse products</a>
+          <a class="btn btn--ghost" href="#quote">Get a quote</a>
+        </div>
       </div>
+      <figure class="plate">
+        <div class="plate-img"><img src="WhatsApp Image 2026-02-03 at 16.01.17.jpeg" alt="Armoured cable" loading="eager" /></div>
+        <figcaption class="plate-bar"><b>Armoured cable</b><span>CBL</span></figcaption>
+      </figure>
+    </article>
+
+    <article class="slide" data-slide="1">
+      <div>
+        <span class="eyebrow">Stocked and specified</span>
+        <h1>Twenty brands. <em>Sixty</em> product lines</h1>
+        <p>Ducab, Legrand, Hager, MK, PCE, 3M and more — held side by side, so a mixed order leaves as one delivery instead of five.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#brands">See the brands</a>
+          <a class="btn btn--ghost" href="#products">Product range</a>
+        </div>
+      </div>
+      <figure class="plate">
+        <div class="plate-img"><img src="WhatsApp Image 2026-02-16 at 12.17.27.jpeg" alt="Miniature circuit breaker" loading="lazy" /></div>
+        <figcaption class="plate-bar"><b>MCB</b><span>SWG</span></figcaption>
+      </figure>
+    </article>
+
+    <article class="slide" data-slide="2">
+      <div>
+        <span class="eyebrow">Tender to handover</span>
+        <h1>Send a <em>BOQ</em>. Get it priced</h1>
+        <p>Share a bill of quantities, a spec sheet or a photo of the part. We price it, confirm what is in stock and deliver anywhere in the UAE.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#quote">Send your list</a>
+          <a class="btn btn--ghost" href="#about">About Technolite</a>
+        </div>
+      </div>
+      <figure class="plate">
+        <div class="plate-img"><img src="WhatsApp Image 2026-02-03 at 16.01.40.jpeg" alt="LED flood light" loading="lazy" /></div>
+        <figcaption class="plate-bar"><b>Flood light</b><span>LGT</span></figcaption>
+      </figure>
+    </article>
+
+  </div>
+
+  <div class="wrap hero-foot">
+    <span class="hero-count"><b id="hero-index">01</b> / 03</span>
+    <div class="hero-bars" role="tablist" aria-label="Choose slide">
+      <button class="hero-bar is-active" data-go="0" role="tab" aria-label="Slide 1"></button>
+      <button class="hero-bar" data-go="1" role="tab" aria-label="Slide 2"></button>
+      <button class="hero-bar" data-go="2" role="tab" aria-label="Slide 3"></button>
     </div>
   </div>
 </section>
 
-<section class="services-section">
-  <div class="container">
-    <h2 id="services" class="section-title">Industries We Serve</h2>
-    <p class="section-sub">End-to-end supply for every scale of project.</p>
-    <div class="services-grid">
-      <div class="service-card"><img src="https://i.ibb.co/JF5KXCJ2/house.png" alt=""><p>Residential Wiring</p></div>
-      <div class="service-card"><img src="https://i.ibb.co/RGcyRCXz/smart-grid.png" alt=""><p>Power Distribution</p></div>
-      <div class="service-card"><img src="https://i.ibb.co/M5cGNmsJ/skyline-1.png" alt=""><p>Commercial Buildings</p></div>
-      <div class="service-card"><img src="https://i.ibb.co/HZRysy5/factory-1.png" alt=""><p>Industrial Plants</p></div>
-      <div class="service-card"><img src="https://i.ibb.co/MxLr2Wfp/telecommunication-1.png" alt=""><p>Telecommunication</p></div>
-      <div class="service-card"><img src="https://i.ibb.co/dsn9hnpj/health-insurance-1.png" alt=""><p>Safety & Security</p></div>
-      <div class="service-card"><img src="https://i.ibb.co/q3N9Nxhg/construction.png" alt=""><p>Construction Projects</p></div>
-      <div class="service-card"><img src="https://i.ibb.co/Gf3PVT6Y/train-station-1.png" alt=""><p>Transport & Railways</p></div>
-      <div class="service-card"><img src="https://i.ibb.co/7NdsR0XM/smarthome-1.png" alt=""><p>Lighting Solutions</p></div>
-      <div class="service-card"><img src="https://i.ibb.co/WWMP3gqF/renewable-energy.png" alt=""><p>Renewable Energy</p></div>
-    </div>
+<!-- ============================ FACTS ============================ -->
+<section class="facts">
+  <div class="wrap facts-grid">
+    <div class="fact"><b>20<i>+</i></b><span>Brands stocked</span></div>
+    <div class="fact"><b>60<i>+</i></b><span>Product lines</span></div>
+    <div class="fact"><b>06</b><span>Product categories</span></div>
+    <div class="fact"><b>10</b><span>Industries served</span></div>
   </div>
 </section>
 
-
-
-<section class="products-section">
-  <div class="container">
-    <h2 id="products" class="section-title">Our Products</h2>
-
-    <div class="product-category" id="products-cable">
-      <h3 class="category-title">Electrical Cable</h3>
-      <div class="products-grid">
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.17.jpeg" alt=""></div><p>Armoured cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.18.jpeg" alt=""></div><p>Rubber cables</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.18 (1).jpeg" alt=""></div><p>Control cables</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.19.jpeg" alt=""></div><p>Shield cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.19 (1).jpeg" alt=""></div><p>Fire cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.20.jpeg" alt=""></div><p>PVC flexible cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.20 (1).jpeg" alt=""></div><p>Cat 6 cables</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.22.jpeg" alt=""></div><p>YG Earth cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.14.12.jpeg" alt=""></div><p>Falt Cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.15.04.jpeg" alt=""></div><p>Pendant cable</p></div>
-        
-      </div>
+<!-- ============================ ABOUT ============================ -->
+<div class="seam" aria-hidden="true"></div>
+<section class="section tex mark" id="about">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Who we are</span>
+      <h2>A distributor built around the site schedule</h2>
     </div>
 
-    <div class="product-category" id="products-support">
-      <h3 class="category-title">Cable Support System</h3>
-      <div class="products-grid">
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.30.jpeg" alt=""></div><p>Metal enclosure</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.30 (1).jpeg" alt=""></div><p>Cable tray (GI)</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.26.38.jpeg" alt=""></div><p>Cable Tray</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.27.44.jpeg" alt=""></div><p>PVC Cable Trunking</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.28.22.jpeg" alt=""></div><p>PVC Floor Trunking</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.35.54.jpeg" alt=""></div><p>Conduit Pipe</p></div>
-        
+    <div class="about-grid">
+      <div class="about-body rv">
+        <p class="about-lead">Technolite TRD FZE supplies electrical and lighting materials to contractors, consultants and facilities teams across the United Arab Emirates.</p>
+        <p>The range runs from HV and LV cable through trays, trunking, glands, lugs and conduit, into switchgear, industrial plugs and the full lighting catalogue — all from manufacturers whose approvals hold up under consultant review.</p>
+        <p>Bring us a bill of quantities or a single replacement part. Either way you get a price, a stock position and a delivery date, not a promise to check.</p>
       </div>
-    </div>
 
-    <div class="product-category" id="products-accessories">
-      <h3 class="category-title">Cable Accessories</h3>
-      <div class="products-grid">
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.23.jpeg" alt=""></div><p>Cable lugs</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.25.jpeg" alt=""></div><p>Cable gland brass</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.25 (1).jpeg" alt=""></div><p>PG cable gland</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.25 (2).jpeg" alt=""></div><p>Decoduct PVC conduit</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.26.jpeg" alt=""></div><p>PVC flexible conduit</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.26 (1).jpeg" alt=""></div><p>GI flexible conduit</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.27.jpeg" alt=""></div><p>Cable markers</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.29.jpeg" alt=""></div><p>PVC cable tie</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.31.jpeg" alt=""></div><p>PVC connector strip</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.31 (1).jpeg" alt=""></div><p>Plug top</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.32.jpeg" alt=""></div><p>Cable cutter</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.33.jpeg" alt=""></div><p>Crimping tool</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.36.28.jpeg" alt=""></div><p>Electrical Tape</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.50.10.jpeg" alt=""></div><p>Copper Earth Rod
-</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.46.44.jpeg" alt=""></div><p>PVC Junction Box</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.45.08.jpeg" alt=""></div><p>Insulated Lugs</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.44.27.jpeg" alt=""></div><p>Heat Shrink Sleeves</p></div>
-      </div>
-    </div>
-
-    <div class="product-category" id="products-switches">
-      <h3 class="category-title">Electrical Switches & Switchgear</h3>
-      <div class="products-grid">
-      <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.17.27.jpeg" alt=""></div><p>MCB</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.18.04.jpeg" alt=""></div><p>MCCB</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.18.39.jpeg" alt=""></div><p>Waterproof Isolator</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.19.08.jpeg" alt=""></div><p>Main Isolator</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.19.37.jpeg" alt=""></div><p>Enclosed Isolator</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.20.42.jpeg" alt=""></div><p>Step Down Transformer</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.34.jpeg" alt=""></div><p>Switch socket #1</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.37.jpeg" alt=""></div><p>Switch socket #2</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.35.jpeg" alt=""></div><p>Switch socket #3</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.40.32.jpeg" alt=""></div><p>Power distribution Board</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.41.31.jpeg" alt=""></div><p>Changeover Switch</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.42.43.jpeg" alt=""></div><p>OT Isolator Switch
-</p></div>
-<div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.48.30.jpeg" alt=""></div><p>Soft Starter</p></div>
-      </div>
-    </div>
-
-    <div class="product-category" id="products-sockets">
-      <h3 class="category-title">Electrical Plugs & Sockets</h3>
-      <div class="products-grid">
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.37 (1).jpeg" alt=""></div><p>Industrial plug</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.38.jpeg" alt=""></div><p>Industrial socket</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.39.jpeg" alt=""></div><p>Industrial socket 3 way</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.39 (1).jpeg" alt=""></div><p>Wall mounted socket</p></div>
-      </div>
-    </div>
-
-    <div class="product-category" id="products-lights">
-      <h3 class="category-title">Lights</h3>
-      <div class="products-grid">
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.40.jpeg" alt=""></div><p>Flood light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.40 (1).jpeg" alt=""></div><p>Tube light with fittings W/P</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.41.jpeg" alt=""></div><p>High bay light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.41 (1).jpeg" alt=""></div><p>Ceiling down light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.42.jpeg" alt=""></div><p>LED panel light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.42 (1).jpeg" alt=""></div><p>LED spot light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.43.jpeg" alt=""></div><p>LED bulb</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.41.05.jpeg" alt=""></div><p>LED Strip Lights</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.42.26.jpeg" alt=""></div><p>Garden Spike Lights</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.43.17.jpeg" alt=""></div><p>Swimming Pool Light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.46.22.jpeg" alt=""></div><p>High Lumen Floodlight</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact-section">
-  <div class="container">
-    <div class="contact-box">
-      <div class="contact-left">
-        <h2 id="contact">Get a Quote</h2>
-        <p>Contact our technical team today for the best rates in the UAE.</p>
-      </div>
-      <div class="contact-right">
-        <form id="contact-form" action="https://formspree.io/f/xkoonpwe" method="POST">
-          <input type="text" name="name" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-          <button type="submit">Submit Inquiry</button>
-          <p id="form-status"></p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container footer-grid">
-    <div class="footer-logo">
-      <img src="Technolite3.png" alt="Technolite Logo" style="height:110px;">
-    </div>
-    <div class="footer-products">
-      <h3>Our Products</h3>
-      <ul>
-        <li>HV & LV Cables & Wires</li>
-        <li>Cable Accessories</li>
-        <li>Cable Support Systems</li>
-        <li>Electrical Switches</li>
-        <li>Industrial Plug and Socket</li>
-        <li>Lights</li>
+      <ul class="about-list rv">
+        <li>
+          <span class="k">01</span>
+          <div>
+            <h3>Matched to spec</h3>
+            <p>Send the specification and we come back with the exact item or a documented equivalent, with datasheets attached.</p>
+          </div>
+        </li>
+        <li>
+          <span class="k">02</span>
+          <div>
+            <h3>One order, one delivery</h3>
+            <p>Cable, containment, accessories and fittings ship together instead of arriving from four separate suppliers.</p>
+          </div>
+        </li>
+        <li>
+          <span class="k">03</span>
+          <div>
+            <h3>Project pricing</h3>
+            <p>Volume rates for tendered work, with the same account contact from bid stage through to final delivery.</p>
+          </div>
+        </li>
+        <li>
+          <span class="k">04</span>
+          <div>
+            <h3>Emirates-wide delivery</h3>
+            <p>Dispatch across Dubai, Sharjah, Abu Dhabi and the northern emirates, including urgent site drops.</p>
+          </div>
+        </li>
       </ul>
     </div>
-    <div class="footer-contact">
-      <h3>Contact Us</h3>
-      <p>salestaninq@gmail.com</p>
-      <a href="https://wa.me/971525145572" class="whatsapp">
-        <img src="https://i.ibb.co/5h6NDy9J/sm-5af2d4c95ac7b-removebg-preview.png" alt="WhatsApp"> WhatsApp
-      </a>
-      <p><a href="tel:+971525145572" style="color:var(--accent); font-weight:700;">+971 525145572</a></p>
+  </div>
+</section>
+
+<!-- ============================ BRANDS ============================ -->
+<section class="section section--panel tex tex--diag" id="brands">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Brands we carry</span>
+      <h2>Names your consultant already approved</h2>
+      <p>We buy from manufacturers and authorised channels, so certificates and country of origin match what the submittal asks for.</p>
+    </div>
+
+    <div class="rail rv">
+      <div class="rail-track" id="rail-track">
+        <div class="rail-item"><img src="https://i.ibb.co/tw4bKBgy/image.png" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/Y79VRQyh/ducab-news-placeholder.jpg" alt="Ducab" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/pv933MXr/unnamed.png" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/LhggVrkz/image.png" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/m553GLrp/image.png" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/zWjzTM7Z/unnamed.jpg" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/Mx1STxkc/image.png" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/ccRwFv8h/Legrand-logo.jpg" alt="Legrand" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/5tTwdXX/hager.png" alt="Hager" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/84m2RMTF/69-SPYb-AJYHys-Ew3a-Fh0bj7s0lf2u2r4-BYi-Umty-LA.webp" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/HT3YbG4v/unnamed.png" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/V0J9NwfF/MK-Logo.jpg" alt="MK" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/Xfx3HnRc/Cellpack.png" alt="Cellpack" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/k6rH1yyg/PCE.png" alt="PCE" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://i.ibb.co/rGr51x2S/unnamed.jpg" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://biofuels-news.com/conference/sustainableaviationfuels/wp-content/uploads/sites/2/2023/12/Alfanar-Logo.png" alt="Alfanar" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://theme.zdassets.com/theme_assets/1986480/215a629f17edb216fedae51fd35fccab75caa881.png" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://clarkehandtools.com/wp-content/uploads/2020/05/logo.png" alt="Clarke" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://wl-img-prd.s3-accelerate.amazonaws.com/8fd14f1d-b7d6-4677-943c-d437344121e0-h.jpeg" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://iep-edistributor.com/brand_img/brand_image-21.png?t=1716175845" alt="" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/3M_wordmark.svg/1280px-3M_wordmark.svg.png" alt="3M" loading="lazy" /></div>
+        <div class="rail-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Mapei_logo.svg/960px-Mapei_logo.svg.png" alt="Mapei" loading="lazy" /></div>
+      </div>
     </div>
   </div>
-  <div class="copyright">© 2026 Technolite. All rights reserved.</div>
+</section>
+
+<!-- ============================ INDUSTRIES ============================ -->
+<div class="seam seam--ink" aria-hidden="true"></div>
+<section class="section section--ink on-ink" id="industries">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Where our material ends up</span>
+      <h2>Industries we supply</h2>
+      <p>From a villa rewire to a substation feeder run, the same catalogue and the same account team.</p>
+    </div>
+
+    <div class="ind-grid rv">
+      <div class="ind"><img src="https://i.ibb.co/JF5KXCJ2/house.png" alt="" loading="lazy" /><p>Residential wiring</p></div>
+      <div class="ind"><img src="https://i.ibb.co/RGcyRCXz/smart-grid.png" alt="" loading="lazy" /><p>Power distribution</p></div>
+      <div class="ind"><img src="https://i.ibb.co/M5cGNmsJ/skyline-1.png" alt="" loading="lazy" /><p>Commercial buildings</p></div>
+      <div class="ind"><img src="https://i.ibb.co/HZRysy5/factory-1.png" alt="" loading="lazy" /><p>Industrial plants</p></div>
+      <div class="ind"><img src="https://i.ibb.co/MxLr2Wfp/telecommunication-1.png" alt="" loading="lazy" /><p>Telecommunication</p></div>
+      <div class="ind"><img src="https://i.ibb.co/dsn9hnpj/health-insurance-1.png" alt="" loading="lazy" /><p>Safety &amp; security</p></div>
+      <div class="ind"><img src="https://i.ibb.co/q3N9Nxhg/construction.png" alt="" loading="lazy" /><p>Construction projects</p></div>
+      <div class="ind"><img src="https://i.ibb.co/Gf3PVT6Y/train-station-1.png" alt="" loading="lazy" /><p>Transport &amp; railways</p></div>
+      <div class="ind"><img src="https://i.ibb.co/7NdsR0XM/smarthome-1.png" alt="" loading="lazy" /><p>Lighting solutions</p></div>
+      <div class="ind"><img src="https://i.ibb.co/WWMP3gqF/renewable-energy.png" alt="" loading="lazy" /><p>Renewable energy</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PRODUCTS ============================ -->
+<section class="section tex" id="products">
+  <div class="wrap">
+    <div class="prod-head rv">
+      <div class="section-head">
+        <span class="eyebrow">The range</span>
+        <h2>Products</h2>
+        <p>Six categories, sixty-plus lines. Search by name or filter by category — and if you cannot see it here, ask, because the shelf is wider than the site.</p>
+      </div>
+      <div class="terms">
+        <h4>How we supply</h4>
+        <ul>
+          <li>Held in stock in the UAE, ready to dispatch</li>
+          <li>Sizes and ratings beyond those listed on request</li>
+          <li>Project rates on tendered quantities</li>
+          <li>Datasheets and certificates sent with every quote</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="finder">
+    <div class="wrap finder-in">
+      <label class="search" for="product-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="product-search" type="search" placeholder="Search products" autocomplete="off" />
+      </label>
+      <div class="chips" id="chips">
+        <button class="chip is-active" data-cat="all">All</button>
+        <button class="chip" data-cat="cbl">Cable</button>
+        <button class="chip" data-cat="sup">Support</button>
+        <button class="chip" data-cat="acc">Accessories</button>
+        <button class="chip" data-cat="swg">Switchgear</button>
+        <button class="chip" data-cat="plg">Plugs</button>
+        <button class="chip" data-cat="lgt">Lighting</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" id="catalogue">
+
+    <!-- CBL -->
+    <div class="cat" data-cat="cbl" id="cat-cbl">
+      <div class="cat-head">
+        <span class="cat-code">CBL</span>
+        <h3>Electrical cable</h3>
+        <span class="count"></span>
+      </div>
+      <div class="p-grid">
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.17.jpeg" alt="Armoured cable" loading="lazy" /></div><p>Armoured cable</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.18.jpeg" alt="Rubber cable" loading="lazy" /></div><p>Rubber cable</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.18 (1).jpeg" alt="Control cable" loading="lazy" /></div><p>Control cable</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.19.jpeg" alt="Shielded cable" loading="lazy" /></div><p>Shielded cable</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.19 (1).jpeg" alt="Fire rated cable" loading="lazy" /></div><p>Fire rated cable</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.20.jpeg" alt="PVC flexible cable" loading="lazy" /></div><p>PVC flexible cable</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.20 (1).jpeg" alt="Cat 6 cable" loading="lazy" /></div><p>Cat 6 cable</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.22.jpeg" alt="Yellow green earth cable" loading="lazy" /></div><p>Earth cable (Y/G)</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.14.12.jpeg" alt="Flat cable" loading="lazy" /></div><p>Flat cable</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.15.04.jpeg" alt="Pendant cable" loading="lazy" /></div><p>Pendant cable</p></article>
+      </div>
+    </div>
+
+    <!-- SUP -->
+    <div class="cat" data-cat="sup" id="cat-sup">
+      <div class="cat-head">
+        <span class="cat-code">SUP</span>
+        <h3>Cable support systems</h3>
+        <span class="count"></span>
+      </div>
+      <div class="p-grid">
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.30.jpeg" alt="Metal enclosure" loading="lazy" /></div><p>Metal enclosure</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.30 (1).jpeg" alt="GI cable tray" loading="lazy" /></div><p>Cable tray (GI)</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.26.38.jpeg" alt="Cable tray" loading="lazy" /></div><p>Cable tray</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.27.44.jpeg" alt="PVC cable trunking" loading="lazy" /></div><p>PVC cable trunking</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.28.22.jpeg" alt="PVC floor trunking" loading="lazy" /></div><p>PVC floor trunking</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-27 at 00.35.54.jpeg" alt="Conduit pipe" loading="lazy" /></div><p>Conduit pipe</p></article>
+      </div>
+    </div>
+
+    <!-- ACC -->
+    <div class="cat" data-cat="acc" id="cat-acc">
+      <div class="cat-head">
+        <span class="cat-code">ACC</span>
+        <h3>Cable accessories</h3>
+        <span class="count"></span>
+      </div>
+      <div class="p-grid">
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.23.jpeg" alt="Cable lugs" loading="lazy" /></div><p>Cable lugs</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.25.jpeg" alt="Brass cable gland" loading="lazy" /></div><p>Brass cable gland</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.25 (1).jpeg" alt="PG cable gland" loading="lazy" /></div><p>PG cable gland</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.25 (2).jpeg" alt="Decoduct PVC conduit" loading="lazy" /></div><p>Decoduct PVC conduit</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.26.jpeg" alt="PVC flexible conduit" loading="lazy" /></div><p>PVC flexible conduit</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.26 (1).jpeg" alt="GI flexible conduit" loading="lazy" /></div><p>GI flexible conduit</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.27.jpeg" alt="Cable markers" loading="lazy" /></div><p>Cable markers</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.29.jpeg" alt="PVC cable tie" loading="lazy" /></div><p>PVC cable tie</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.31.jpeg" alt="PVC connector strip" loading="lazy" /></div><p>PVC connector strip</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.31 (1).jpeg" alt="Plug top" loading="lazy" /></div><p>Plug top</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.32.jpeg" alt="Cable cutter" loading="lazy" /></div><p>Cable cutter</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.33.jpeg" alt="Crimping tool" loading="lazy" /></div><p>Crimping tool</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.36.28.jpeg" alt="Electrical tape" loading="lazy" /></div><p>Electrical tape</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-27 at 00.50.10.jpeg" alt="Copper earth rod" loading="lazy" /></div><p>Copper earth rod</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-27 at 00.46.44.jpeg" alt="PVC junction box" loading="lazy" /></div><p>PVC junction box</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-27 at 00.45.08.jpeg" alt="Insulated lugs" loading="lazy" /></div><p>Insulated lugs</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-27 at 00.44.27.jpeg" alt="Heat shrink sleeves" loading="lazy" /></div><p>Heat shrink sleeves</p></article>
+      </div>
+    </div>
+
+    <!-- SWG -->
+    <div class="cat" data-cat="swg" id="cat-swg">
+      <div class="cat-head">
+        <span class="cat-code">SWG</span>
+        <h3>Switches &amp; switchgear</h3>
+        <span class="count"></span>
+      </div>
+      <div class="p-grid">
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.17.27.jpeg" alt="MCB" loading="lazy" /></div><p>MCB</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.18.04.jpeg" alt="MCCB" loading="lazy" /></div><p>MCCB</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.18.39.jpeg" alt="Waterproof isolator" loading="lazy" /></div><p>Waterproof isolator</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.19.08.jpeg" alt="Main isolator" loading="lazy" /></div><p>Main isolator</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.19.37.jpeg" alt="Enclosed isolator" loading="lazy" /></div><p>Enclosed isolator</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.20.42.jpeg" alt="Step down transformer" loading="lazy" /></div><p>Step down transformer</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.34.jpeg" alt="Switch socket" loading="lazy" /></div><p>Switch socket — flush</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.37.jpeg" alt="Switch socket" loading="lazy" /></div><p>Switch socket — metal clad</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.35.jpeg" alt="Switch socket" loading="lazy" /></div><p>Switch socket — weatherproof</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-27 at 00.40.32.jpeg" alt="Power distribution board" loading="lazy" /></div><p>Power distribution board</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-27 at 00.41.31.jpeg" alt="Changeover switch" loading="lazy" /></div><p>Changeover switch</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-27 at 00.42.43.jpeg" alt="OT isolator switch" loading="lazy" /></div><p>OT isolator switch</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-27 at 00.48.30.jpeg" alt="Soft starter" loading="lazy" /></div><p>Soft starter</p></article>
+      </div>
+    </div>
+
+    <!-- PLG -->
+    <div class="cat" data-cat="plg" id="cat-plg">
+      <div class="cat-head">
+        <span class="cat-code">PLG</span>
+        <h3>Industrial plugs &amp; sockets</h3>
+        <span class="count"></span>
+      </div>
+      <div class="p-grid">
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.37 (1).jpeg" alt="Industrial plug" loading="lazy" /></div><p>Industrial plug</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.38.jpeg" alt="Industrial socket" loading="lazy" /></div><p>Industrial socket</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.39.jpeg" alt="Three way industrial socket" loading="lazy" /></div><p>Industrial socket — 3 way</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.39 (1).jpeg" alt="Wall mounted socket" loading="lazy" /></div><p>Wall mounted socket</p></article>
+      </div>
+    </div>
+
+    <!-- LGT -->
+    <div class="cat" data-cat="lgt" id="cat-lgt">
+      <div class="cat-head">
+        <span class="cat-code">LGT</span>
+        <h3>Lighting</h3>
+        <span class="count"></span>
+      </div>
+      <div class="p-grid">
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.40.jpeg" alt="Flood light" loading="lazy" /></div><p>Flood light</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.40 (1).jpeg" alt="Weatherproof tube light fitting" loading="lazy" /></div><p>Tube light fitting (W/P)</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.41.jpeg" alt="High bay light" loading="lazy" /></div><p>High bay light</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.41 (1).jpeg" alt="Ceiling down light" loading="lazy" /></div><p>Ceiling down light</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.42.jpeg" alt="LED panel light" loading="lazy" /></div><p>LED panel light</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.42 (1).jpeg" alt="LED spot light" loading="lazy" /></div><p>LED spot light</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-03 at 16.01.43.jpeg" alt="LED bulb" loading="lazy" /></div><p>LED bulb</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.41.05.jpeg" alt="LED strip light" loading="lazy" /></div><p>LED strip light</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.42.26.jpeg" alt="Garden spike light" loading="lazy" /></div><p>Garden spike light</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.43.17.jpeg" alt="Swimming pool light" loading="lazy" /></div><p>Swimming pool light</p></article>
+        <article class="p-item"><div class="p-thumb"><img src="WhatsApp Image 2026-02-16 at 12.46.22.jpeg" alt="High lumen flood light" loading="lazy" /></div><p>High lumen flood light</p></article>
+      </div>
+    </div>
+
+    <div class="empty" id="empty">
+      <h3>Nothing matches that</h3>
+      <p>Try a shorter word, or clear the filter. The shelf carries more than the site lists — send the part name and we will confirm it.</p>
+      <a class="btn btn--red" href="https://wa.me/971525145572">Ask on WhatsApp</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ CALL STRIP ============================ -->
+<section class="strip">
+  <div class="wrap strip-in">
+    <h3>Not on the list? We probably still have it</h3>
+    <p>Send a photo of the part, a model number or a page of the BOQ. We confirm stock the same working day.</p>
+    <a class="btn" href="https://wa.me/971525145572">WhatsApp us</a>
+  </div>
+</section>
+
+<!-- ============================ QUOTE ============================ -->
+<section class="section quote" id="quote">
+  <div class="wrap quote-grid">
+    <div class="rv">
+      <span class="eyebrow">Request a price</span>
+      <h2>Send the list. Get it priced</h2>
+      <p class="quote-lead">Attach a BOQ, paste a spec or describe the part. We reply with availability, price and a delivery date.</p>
+
+      <div class="direct">
+        <a href="https://wa.me/971525145572">
+          <span><small>WhatsApp — fastest</small>+971 52 514 5572</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="tel:+971525145572">
+          <span><small>Call sales</small>+971 52 514 5572</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="mailto:salestaninq@gmail.com">
+          <span><small>Email</small>salestaninq@gmail.com</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="form rv">
+      <h3>Request a quote</h3>
+      <form id="contact-form" action="https://formspree.io/f/xkoonpwe" method="POST">
+        <div class="fields">
+          <div class="row2">
+            <div class="field">
+              <label for="f-name">Full name</label>
+              <input id="f-name" type="text" name="name" required />
+            </div>
+            <div class="field">
+              <label for="f-company">Company</label>
+              <input id="f-company" type="text" name="company" />
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" type="email" name="email" required />
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone</label>
+              <input id="f-phone" type="tel" name="phone" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-cat">What do you need</label>
+            <select id="f-cat" name="category">
+              <option>Electrical cable</option>
+              <option>Cable support systems</option>
+              <option>Cable accessories</option>
+              <option>Switches &amp; switchgear</option>
+              <option>Industrial plugs &amp; sockets</option>
+              <option>Lighting</option>
+              <option>Mixed / full BOQ</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">Items, sizes and quantities</label>
+            <textarea id="f-msg" name="message" required placeholder="e.g. 3C x 16mm² XLPE/SWA/PVC — 400m, plus glands and lugs to suit"></textarea>
+          </div>
+          <button class="btn btn--red" type="submit">Send request</button>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="technolite-logo-light.png" alt="Technolite TRD FZE" width="1000" height="645" />
+        <p>Electrical, cable and lighting distribution for contractors across the United Arab Emirates.</p>
+      </div>
+
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#cat-cbl">Electrical cable</a></li>
+          <li><a href="#cat-sup">Cable support systems</a></li>
+          <li><a href="#cat-acc">Cable accessories</a></li>
+          <li><a href="#cat-swg">Switches &amp; switchgear</a></li>
+          <li><a href="#cat-plg">Plugs &amp; sockets</a></li>
+          <li><a href="#cat-lgt">Lighting</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#brands">Brands</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="/hardware">Hardware &amp; safety</a></li>
+          <li><a href="/plumbing">Plumbing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+971525145572">+971 52 514 5572</a></li>
+          <li><a href="mailto:salestaninq@gmail.com">salestaninq@gmail.com</a></li>
+          <li>
+            <a class="wa" href="https://wa.me/971525145572">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+              WhatsApp us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-base">
+      <span>© <span id="year">2026</span> Technolite TRD FZE</span>
+      <span>Dubai · United Arab Emirates</span>
+    </div>
+  </div>
 </footer>
 
-<script>
-  const slides = Array.from(document.querySelectorAll(".hero-slide"));
-  const dots = Array.from(document.querySelectorAll(".hero-dot"));
-  let index = 0;
-  let timer = null;
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+<a class="wa-float" href="https://wa.me/971525145572" aria-label="Chat with Technolite on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+</a>
 
-  function showSlide(i) {
-    slides.forEach(s => s.classList.remove("is-active"));
-    dots.forEach(d => d.classList.remove("is-active"));
-    slides[i].classList.add("is-active");
-    dots[i].classList.add("is-active");
-    index = i;
-  }
-
-  function nextSlide() {
-    showSlide((index + 1) % slides.length);
-  }
-
-  function startAuto() {
-    if (prefersReducedMotion) return;
-    timer = setInterval(nextSlide, 3000);
-  }
-
-  function stopAuto() {
-    if (timer) clearInterval(timer);
-  }
-
-  dots.forEach(dot => {
-    dot.addEventListener("click", () => {
-      stopAuto();
-      showSlide(Number(dot.dataset.slide));
-      startAuto();
-    });
-  });
-
-  const heroShell = document.querySelector(".hero-shell");
-  heroShell.addEventListener("mouseenter", stopAuto);
-  heroShell.addEventListener("mouseleave", startAuto);
-
-  showSlide(0);
-  startAuto();
-
-
-  const revealEls = document.querySelectorAll('.service-card, .product-item, .about-card, .about-highlight, .contact-box, .logo-slider');
-  revealEls.forEach(el => el.classList.add('reveal'));
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  revealEls.forEach(el => revealObserver.observe(el));
-
-  const form = document.getElementById("contact-form");
-  form.onsubmit = async (e) => {
-    e.preventDefault();
-    const status = document.getElementById("form-status");
-    const data = new FormData(e.target);
-    status.style.display = "block";
-    status.innerHTML = "Sending...";
-    fetch(e.target.action, { method: "POST", body: data, headers: { "Accept": "application/json" } })
-      .then(response => {
-        if (response.ok) {
-          status.innerHTML = "Sent Successfully!";
-          form.reset();
-        } else {
-          status.innerHTML = "Error. Please try again.";
-        }
-      });
-  };
-</script>
+<script src="technolite.js"></script>
 </body>
 </html>
