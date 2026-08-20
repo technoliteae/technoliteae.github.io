@@ -132,7 +132,7 @@
           if (!status) return;
           if (r.ok) {
             status.className = "ok";
-            status.textContent = "Request sent. We'll reply from salestaninq@gmail.com.";
+            status.textContent = "Request sent. We'll reply from taher@technolite.me.";
             form.reset();
           } else {
             status.className = "err";
