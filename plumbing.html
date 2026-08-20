@@ -1,847 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Technolite | Leading Electrical Distributor</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="Technolite3.png">
-  <link rel="shortcut icon" href="Technolite3.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="Technolite3.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg: #0b1530;
-  --surface: #0f1f3a;
-  --surface-2: #0c1a33;
-  --ink: #f8fafc;
-  --muted: #b7c2d6;
-  --accent: #1f9f4a;
-  --accent-2: #22c55e;
-  --accent-soft: #162845;
-  --accent-warm: #1f9f4a;
-  --tint-1: #0f1f3a;   /* dark blue */
-  --tint-2: #1f8f46;   /* solid green */
-  --tint-3: #0c1932;   /* darker blue */
-  --line: #2b3a5c;
-  --shadow: 0 18px 44px rgba(3, 8, 20, 0.5);
-  --radius: 18px;
-  --header-h: 88px;
-}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plumbing | Technolite TRD FZE — UAE</title>
+<meta name="description" content="Pipe and fittings, valves, sanitary ware, drainage, pumps and insulation supplied across the UAE by Technolite TRD FZE." />
+<meta name="theme-color" content="#262d36" />
 
-*{ box-sizing: border-box; margin:0; padding:0; }
-html{ scroll-behavior: smooth; }
-body{
-  font-family: "Manrope", system-ui, sans-serif;
-  color: var(--ink);
-  background:
-    radial-gradient(900px 600px at 10% -10%, rgba(31,159,74,0.18), transparent 60%),
-    radial-gradient(900px 600px at 90% 10%, rgba(31,159,74,0.12), transparent 60%),
-    linear-gradient(180deg, #0b1530 0%, #0a142b 100%);
-  min-height: 100vh;
-}
-img{ max-width:100%; display:block; }
-a{ color: inherit; text-decoration: none; }
+<link rel="icon" href="favicon.ico?v=3" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3" />
+<link rel="icon" type="image/png" sizes="512x512" href="favicon.png?v=3" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3" />
 
-.container{
-  width: min(1200px, 92%);
-  margin: 0 auto;
-}
-
-/* Ensure anchor targets show section titles under sticky header */
-section[id],
-.product-category[id],
-h2[id],
-h3[id]{
-  scroll-margin-top: 120px;
-}
-
-/* Header */
-.header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  background: rgba(11,21,48,0.95);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(8px);
-}
-.header-wrap{
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 12px 0;
-}
-.logo{
-  background: transparent;
-  padding: 2px 0;
-  border-radius: 0;
-  display: inline-flex;
-  align-items: center;
-  border: none;
-  box-shadow: none;
-}
-.logo img{ height: 92px; width:auto; filter: drop-shadow(0 1px 3px rgba(15,23,42,0.35)); }
-
-.nav{
-  display:flex;
-  gap: 22px;
-  font-size: 14px;
-  letter-spacing: 0.3px;
-  align-items: center;
-}
-.nav a{
-  color: var(--muted);
-  font-weight: 600;
-  transition: color .2s ease;
-}
-.nav a:hover,
-.nav a.active{ color: var(--accent); }
-
-.nav-item{ position: relative; padding: 10px 0; }
-.nav-item.has-dropdown > a{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.nav-item.has-dropdown > a::after{
-  content: "▾";
-  font-size: 12px;
-  color: var(--muted);
-}
-/* Hover bridge to prevent accidental close */
-.nav-item.has-dropdown::after{
-  content: "";
-  position: absolute;
-  left: -12px;
-  right: -12px;
-  top: 100%;
-  height: 12px;
-}
-
-.dropdown{
-  position: absolute;
-  top: 100%;
-  margin-top: 6px;
-  left: 0;
-  background: #0f203f;
-  border: 1px solid #1f3358;
-  border-radius: 12px;
-  padding: 10px;
-  min-width: 230px;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  transform: translateY(8px);
-  pointer-events: none;
-  transition: opacity .2s ease, transform .2s ease;
-  z-index: 60;
-}
-.dropdown a{
-  display: block;
-  padding: 10px 12px;
-  border-radius: 8px;
-  color: var(--ink);
-  font-weight: 600;
-  white-space: nowrap;
-}
-.dropdown a:hover{ background: rgba(31,159,74,0.18); color: #f0fff5; }
-
-.nav-item:hover .dropdown,
-.nav-item:focus-within .dropdown{
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.header-right{
-  display:flex;
-  align-items:center;
-  gap: 18px;
-}
-.contact{
-  font-size: 13px;
-  color: var(--muted);
-  display:grid;
-  gap: 3px;
-}
-.btn-pill{
-  display:inline-flex;
-  align-items:center;
-  gap: 8px;
-  padding: 9px 16px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 13px;
-  box-shadow: 0 12px 24px rgba(14,165,233,0.25);
-}
-.btn-pill img{ height: 18px; width:auto; }
-
-@media (max-width: 980px){
-  :root{ --header-h: 72px; }
-  .nav{ display:none; }
-  .contact{ display:none; }
-  .logo img{ height: 78px; }
-}
-
-/* Hero Slideshow */
-.hero{ padding: 0; }
-.hero-shell{
-  position: relative;
-  width: 100%;
-  border-radius: 0;
-  overflow: hidden;
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
-  box-shadow: none;
-  min-height: 100vh;
-  height: 100vh;
-}
-.hero-slide{
-  position: absolute;
-  inset: 0;
-  padding: 120px 10% 60px;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-  color: #ffffff;
-  background:
-    linear-gradient(180deg, rgba(11,21,48,0.45) 0%, rgba(11,21,48,0.60) 55%, rgba(11,21,48,0.70) 100%),
-    var(--bg-image) center/cover no-repeat;
-}
-.hero-slide.is-active{
-  opacity: 1;
-  transform: translateY(0);
-  position: relative;
-}
-.hero-slide > div{ max-width: 640px; }
-.hero-tag{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #ffffff;
-  padding: 6px 0;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.hero-tag::before,
-.hero-tag::after{
-  content: "";
-  width: 28px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  border-radius: 999px;
-}
-.hero-title{
-  font-family: "Sora", sans-serif;
-  font-size: clamp(38px, 4.6vw, 68px);
-  line-height: 1.05;
-  margin: 10px 0 10px;
-  font-weight: 700;
-}
-.hero-text{
-  color: rgba(255,255,255,0.9);
-  font-size: 17px;
-  line-height: 1.6;
-  max-width: 560px;
-}
-.hero-cta{
-  display: flex;
-  gap: 14px;
-  margin-top: 22px;
-  flex-wrap: wrap;
-}
-.btn{
-  padding: 12px 26px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.45);
-  color: #ffffff;
-  background: rgba(255,255,255,0.12);
-  font-weight: 700;
-  transition: transform 0.2s ease, border 0.2s ease;
-}
-.btn:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,0.75); }
-.btn.primary{
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #ffffff;
-  border: none;
-}
-.hero-panel{ display: none; }
-.panel-metric{ display: grid; gap: 4px; }
-.panel-metric h4{ font-family: "Sora", sans-serif; font-size: 22px; }
-.panel-metric p{ color: var(--muted); font-size: 13px; }
-
-.hero-dots{
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 22px;
-}
-.hero-dot{
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.65);
-  background: rgba(255,255,255,0.35);
-  cursor: pointer;
-}
-.hero-dot.is-active{ background: #ffffff; border-color: #ffffff; }
-
-@media (max-width: 960px){
-  .hero-shell{ min-height: 100vh;
-  height: 100vh; }
-  .hero-slide{ padding: 110px 8% 60px; min-height: 100vh; }
-}
-
-/* Trust */
-.trust-strip{ padding: 40px 0; background: var(--tint-1); }
-
-.trust{
-  margin-top: 22px;
-  background: linear-gradient(180deg, rgba(31,159,74,0.10), rgba(31,159,74,0.02));
-  padding: 16px;
-  border-radius: 18px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.trust-card{
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--accent);
-  padding: 18px;
-  border-radius: 16px;
-  text-align: center;
-}
-.trust-card h3{ font-family: "Sora", sans-serif; font-size: 20px; }
-.trust-card p{ color: var(--muted); font-size: 14px; }
-
-@media (max-width: 820px){
-  .trust{ grid-template-columns: 1fr; }
-}
-
-/* Reveal on scroll */
-.reveal{
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.is-visible{
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Brands */
-.brands-section{
-  padding: 60px 0 30px;
-  background: var(--tint-2);
-}
-.section-title{
-  font-family: "Sora", sans-serif;
-  font-size: clamp(26px, 2.4vw, 36px);
-  margin-bottom: 10px;
-  position: relative;
-  display: inline-block;
-}
-.section-title::after{
-  content: "";
-  display: block;
-  width: 70px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  border-radius: 999px;
-  margin: 10px auto 0;
-}
-.section-sub{ color: var(--muted); }
-
-.logo-slider{
-  width: 100%;
-  overflow: hidden;
-  background: #ffffff;
-  padding: 26px 0;
-  position: relative;
-  margin-top: 28px;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-}
-.logo-slider::before,
-.logo-slider::after{
-  content:"";
-  position:absolute;
-  top:0;
-  width:120px;
-  height:100%;
-  z-index:2;
-}
-.logo-slider::before{ left:0; background: linear-gradient(to right, white, transparent); }
-.logo-slider::after{ right:0; background: linear-gradient(to left, white, transparent); }
-.slider-track{ display:flex; width:max-content; animation: scroll 22s linear infinite; }
-.slide{ flex:0 0 auto; width:280px; display:flex; justify-content:center; align-items:center; }
-.slide img{ height: 76px; width:auto; opacity:0.9; transition: transform .3s ease, opacity .3s ease; }
-.slide img:hover{ transform: scale(1.06); opacity:1; }
-@keyframes scroll{ 0%{ transform: translateX(0); } 100%{ transform: translateX(-50%); } }
-
-/* Contrast section text */
-.brands-section,
-.products-section{
-  color: #ffffff;
-}
-.brands-section .section-sub,
-.products-section .section-sub{
-  color: rgba(255,255,255,0.85);
-}
-.brands-section .section-title,
-.products-section .section-title{
-  color: #ffffff;
-}
-.brands-section .section-title::after,
-.products-section .section-title::after{
-  background: rgba(255,255,255,0.7);
-}
-.logo-slider{ border: 1px solid rgba(255,255,255,0.25); background: #ffffff; }
-.products-section .category-title{ color: #ffffff; }
-/* Services */
-.services-section{ padding: 70px 0; background: var(--tint-1); }
-.services-grid{
-  display:grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
-}
-.service-card{
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 18px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  min-height: 140px;
-  transition: transform .25s ease, border .25s ease;
-}
-.service-card:hover{ transform: translateY(-6px); border-color: rgba(31,159,74,0.45); }
-.service-card img{ width: 42px; margin-bottom: 10px; }
-.service-card p{ font-weight: 700; }
-
-@media (max-width: 1100px){ .services-grid{ grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 700px){ .services-grid{ grid-template-columns: repeat(2, 1fr); } }
-
-/* About */
-.about-section{ padding: 70px 0; background: var(--tint-1); }
-.about-wrap{
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 30px;
-  align-items: center;
-}
-.about-card{
-  background: rgba(15,31,58,0.9);
-  border: 1px solid var(--line);
-  padding: 28px;
-  border-radius: var(--radius);
-}
-.about-card h3{ font-family: "Sora", sans-serif; font-size: 28px; margin-bottom: 12px; }
-.about-card p{ color: var(--muted); line-height: 1.7; font-size: 16px; }
-.about-highlight{
-  background: rgba(15,31,58,0.9);
-  border: 1px solid var(--line);
-  padding: 22px;
-  border-radius: 18px;
-  display: grid;
-  gap: 12px;
-}
-.about-highlight span{ color: var(--accent); font-weight: 700; }
-
-@media (max-width: 900px){ .about-wrap{ grid-template-columns: 1fr; } }
-
-/* Products */
-.products-section{ padding: 70px 0; background: var(--tint-2); }
-.product-category{ margin-bottom: 46px; }
-.category-title{
-  font-family: "Sora", sans-serif;
-  font-size: 24px;
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-.products-grid{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  align-items: stretch;
-}
-.product-item{
-  background: #ffffff;
-  border: 1px solid var(--line);
-  padding: 16px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  height: 100%;
-  transition: transform .25s ease, border .25s ease;
-}
-.product-item:hover{ transform: translateY(-6px); border-color: rgba(31,159,74,0.45); }
-.image-wrapper{
-  background: #eef8f1;
-  border-radius: 12px;
-  padding: 10px;
-  aspect-ratio: 1 / 1;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-.product-item img{ width: 100%; height: 100%; object-fit: contain; }
-.product-item p{ font-weight: 700; color: var(--accent); text-align: center; margin-top: auto; }
-
-@media (max-width: 1100px){ .products-grid{ grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 800px){ .products-grid{ grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px){ .products-grid{ grid-template-columns: 1fr; } }
-
-/* Contact */
-.contact-section{ padding: 80px 0; background: var(--tint-3); }
-.contact-box{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 26px;
-  background: rgba(15,31,58,0.9);
-  border: 1px solid var(--line);
-  padding: 28px;
-  border-radius: 20px;
-}
-.contact-left h2{ font-family: "Sora", sans-serif; font-size: 30px; margin-bottom: 10px; }
-.contact-left p{ color: var(--muted); }
-.contact-right form{ display:grid; gap: 14px; }
-.contact-right input,
-.contact-right textarea{
-  background: #0b1a33;
-  color: var(--ink);
-  border: 1px solid #2a3d63;
-  padding: 12px 14px;
-  border-radius: 10px;
-  font-size: 14px;
-}
-.contact-right button{
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #ffffff;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 10px;
-  font-weight: 700;
-  cursor: pointer;
-}
-#form-status{ color: var(--accent); font-size: 14px; }
-
-@media (max-width: 900px){ .contact-box{ grid-template-columns: 1fr; } }
-
-/* Footer */
-.footer{
-  padding: 70px 0 30px;
-  background: var(--surface-2);
-  border-top: 1px solid var(--line);
-}
-.footer-grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-  align-items: start;
-}
-.footer-logo img{ height: 140px; width:auto; }
-.footer h3{ font-family: "Sora", sans-serif; font-size: 20px; margin-bottom: 12px; }
-.footer ul{ list-style: none; display:grid; gap:8px; color: var(--muted); }
-.footer .whatsapp{ display: inline-flex; align-items: center; gap: 6px; color: var(--ink); font-weight: 700; }
-.footer .whatsapp img{ height: 18px; }
-.copyright{ margin-top: 40px; text-align: center; color: var(--muted); font-size: 13px; }
-
-@media (max-width: 900px){ .footer-grid{ grid-template-columns: 1fr; text-align:center; } .footer-logo img{ height: 110px; } }
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .slider-track{ animation: none; }
-  .hero-slide{ transition: none; }
-}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="technolite.css" />
 </head>
 <body>
 
+<a class="skip" href="#top">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
 <header class="header">
-  <div class="container header-wrap">
-    <div class="logo">
-      <img src="Technolite3.png" alt="Technolite Logo">
-    </div>
-    <nav class="nav">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <div class="nav-item has-dropdown">
-        <a href="#products">Products</a>
-        <div class="dropdown">
-          <a href="/#products-cable">Electrical</a>
-          <a href="/hardware">Hardware & Safety</a>
-          <a href="/plumbing">Plumbing</a>
+  <div class="wrap header-in">
+    <a class="brand" href="index.html" aria-label="Technolite TRD FZE — home">
+      <img src="technolite-logo-h-light.png" alt="Technolite TRD FZE" width="1214" height="300" />
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a class="navlink" href="index.html#about">About</a>
+      <div class="has-menu">
+        <a class="navlink" href="#products" aria-haspopup="true">Products <span class="caret">▾</span></a>
+        <div class="menu">
+          <a href="index.html#products">Electrical</a>
+          <a href="hardware.html">Hardware &amp; Safety</a>
+          <a href="plumbing.html" aria-current="page">Plumbing</a>
         </div>
       </div>
-      <a href="#partners">Partners</a>
-      <a href="#contact">Contact Us</a>
+      <a class="navlink" href="index.html#brands">Brands</a>
+      <a class="navlink" href="index.html#industries">Industries</a>
+      <a class="navlink" href="#quote">Contact</a>
     </nav>
-    <div class="header-right">
-      <div class="contact">
-        <span>+971 525145572</span>
-        <span>salestaninq@gmail.com</span>
-      </div>
-      <a href="https://wa.me/971525145572" class="btn-pill">
-        <img src="https://i.ibb.co/5h6NDy9J/sm-5af2d4c95ac7b-removebg-preview.png" alt="WhatsApp">
-        Fast Quote
-      </a>
+
+    <div class="header-cta">
+      <a class="header-phone" href="tel:+971525145572"><span>Sales</span>+971 52 514 5572</a>
+      <a class="btn btn--red" href="#quote">Get a quote</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span></span></button>
     </div>
   </div>
 </header>
 
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html#about">About</a>
+  <a href="index.html#products">Electrical <small>Cables · Switchgear · Lighting</small></a>
+  <a href="hardware.html">Hardware &amp; Safety</a>
+  <a href="plumbing.html">Plumbing</a>
+  <a href="index.html#brands">Brands</a>
+  <a href="index.html#industries">Industries</a>
+  <a href="#quote">Contact</a>
+  <a class="btn btn--red" href="https://wa.me/971525145572">Message us on WhatsApp</a>
+</div>
 
+<main id="top">
 
-
-
-<section class="products-section">
-  <div class="container">
-  <br>
-    <br>
-      <br>
-        <br>
-    <h2 id="products" class="section-title">Plumbing Products</h2>
-
-    <div class="product-category" id="products-cable">
-      <h3 class="category-title">Electrical Cable</h3>
-      <div class="products-grid">
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.17.jpeg" alt=""></div><p>Armoured cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.18.jpeg" alt=""></div><p>Rubber cables</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.18 (1).jpeg" alt=""></div><p>Control cables</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.19.jpeg" alt=""></div><p>Shield cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.19 (1).jpeg" alt=""></div><p>Fire cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.20.jpeg" alt=""></div><p>PVC flexible cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.20 (1).jpeg" alt=""></div><p>Cat 6 cables</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.22.jpeg" alt=""></div><p>YG Earth cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.14.12.jpeg" alt=""></div><p>Falt Cable</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.15.04.jpeg" alt=""></div><p>Pendant cable</p></div>
-        
+<section class="page-hero">
+  <div class="wrap page-hero-in">
+    <div>
+      <span class="eyebrow">Division 03 · Plumbing</span>
+      <h1>Pipe, valve and <em>fixture</em>, supplied to spec</h1>
+      <p class="lead">Water supply, drainage and sanitary ware for villas, towers and industrial plant — quoted from your BOQ and delivered anywhere in the Emirates.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#ranges">See what we supply</a>
+        <a class="btn btn--ghost" href="#quote">Send your BOQ</a>
       </div>
     </div>
 
-    <div class="product-category" id="products-support">
-      <h3 class="category-title">Cable Support System</h3>
-      <div class="products-grid">
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.30.jpeg" alt=""></div><p>Metal enclosure</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.30 (1).jpeg" alt=""></div><p>Cable tray (GI)</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.26.38.jpeg" alt=""></div><p>Cable Tray</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.27.44.jpeg" alt=""></div><p>PVC Cable Trunking</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.28.22.jpeg" alt=""></div><p>PVC Floor Trunking</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.35.54.jpeg" alt=""></div><p>Conduit Pipe</p></div>
-        
-      </div>
-    </div>
-
-    <div class="product-category" id="products-accessories">
-      <h3 class="category-title">Cable Accessories</h3>
-      <div class="products-grid">
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.23.jpeg" alt=""></div><p>Cable lugs</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.25.jpeg" alt=""></div><p>Cable gland brass</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.25 (1).jpeg" alt=""></div><p>PG cable gland</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.25 (2).jpeg" alt=""></div><p>Decoduct PVC conduit</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.26.jpeg" alt=""></div><p>PVC flexible conduit</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.26 (1).jpeg" alt=""></div><p>GI flexible conduit</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.27.jpeg" alt=""></div><p>Cable markers</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.29.jpeg" alt=""></div><p>PVC cable tie</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.31.jpeg" alt=""></div><p>PVC connector strip</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.31 (1).jpeg" alt=""></div><p>Plug top</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.32.jpeg" alt=""></div><p>Cable cutter</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.33.jpeg" alt=""></div><p>Crimping tool</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.36.28.jpeg" alt=""></div><p>Electrical Tape</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.50.10.jpeg" alt=""></div><p>Copper Earth Rod
-</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.46.44.jpeg" alt=""></div><p>PVC Junction Box</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.45.08.jpeg" alt=""></div><p>Insulated Lugs</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.44.27.jpeg" alt=""></div><p>Heat Shrink Sleeves</p></div>
-      </div>
-    </div>
-
-    <div class="product-category" id="products-switches">
-      <h3 class="category-title">Electrical Switches & Switchgear</h3>
-      <div class="products-grid">
-      <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.17.27.jpeg" alt=""></div><p>MCB</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.18.04.jpeg" alt=""></div><p>MCCB</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.18.39.jpeg" alt=""></div><p>Waterproof Isolator</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.19.08.jpeg" alt=""></div><p>Main Isolator</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.19.37.jpeg" alt=""></div><p>Enclosed Isolator</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.20.42.jpeg" alt=""></div><p>Step Down Transformer</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.34.jpeg" alt=""></div><p>Switch socket #1</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.37.jpeg" alt=""></div><p>Switch socket #2</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.35.jpeg" alt=""></div><p>Switch socket #3</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.40.32.jpeg" alt=""></div><p>Power distribution Board</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.41.31.jpeg" alt=""></div><p>Changeover Switch</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.42.43.jpeg" alt=""></div><p>OT Isolator Switch
-</p></div>
-<div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-27 at 00.48.30.jpeg" alt=""></div><p>Soft Starter</p></div>
-      </div>
-    </div>
-
-    <div class="product-category" id="products-sockets">
-      <h3 class="category-title">Electrical Plugs & Sockets</h3>
-      <div class="products-grid">
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.37 (1).jpeg" alt=""></div><p>Industrial plug</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.38.jpeg" alt=""></div><p>Industrial socket</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.39.jpeg" alt=""></div><p>Industrial socket 3 way</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.39 (1).jpeg" alt=""></div><p>Wall mounted socket</p></div>
-      </div>
-    </div>
-
-    <div class="product-category" id="products-lights">
-      <h3 class="category-title">Lights</h3>
-      <div class="products-grid">
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.40.jpeg" alt=""></div><p>Flood light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.40 (1).jpeg" alt=""></div><p>Tube light with fittings W/P</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.41.jpeg" alt=""></div><p>High bay light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.41 (1).jpeg" alt=""></div><p>Ceiling down light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.42.jpeg" alt=""></div><p>LED panel light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.42 (1).jpeg" alt=""></div><p>LED spot light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-03 at 16.01.43.jpeg" alt=""></div><p>LED bulb</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.41.05.jpeg" alt=""></div><p>LED Strip Lights</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.42.26.jpeg" alt=""></div><p>Garden Spike Lights</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.43.17.jpeg" alt=""></div><p>Swimming Pool Light</p></div>
-        <div class="product-item"><div class="image-wrapper"><img src="WhatsApp Image 2026-02-16 at 12.46.22.jpeg" alt=""></div><p>High Lumen Floodlight</p></div>
-      </div>
+    <div class="index-card">
+      <h2>In this division</h2>
+      <div class="row" style="--c:#3b86e8"><span class="code">PIP</span><span class="name">Pipe &amp; fittings</span></div>
+      <div class="row" style="--c:#c3dd4a"><span class="code">VLV</span><span class="name">Valves &amp; controls</span></div>
+      <div class="row" style="--c:#ffd23f"><span class="code">SAN</span><span class="name">Sanitary ware</span></div>
+      <div class="row" style="--c:#ff6a2b"><span class="code">DRN</span><span class="name">Drainage</span></div>
+      <div class="row" style="--c:#d51e1c"><span class="code">PMP</span><span class="name">Pumps &amp; water systems</span></div>
+      <div class="row" style="--c:#9b8cff"><span class="code">INS</span><span class="name">Insulation &amp; sealing</span></div>
     </div>
   </div>
 </section>
 
-<section class="contact-section">
-  <div class="container">
-    <div class="contact-box">
-      <div class="contact-left">
-        <h2 id="contact">Get a Quote</h2>
-        <p>Contact our technical team today for the best rates in the UAE.</p>
-      </div>
-      <div class="contact-right">
-        <form id="contact-form" action="https://formspree.io/f/xkoonpwe" method="POST">
-          <input type="text" name="name" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-          <button type="submit">Submit Inquiry</button>
-          <p id="form-status"></p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container footer-grid">
-    <div class="footer-logo">
-      <img src="Technolite3.png" alt="Technolite Logo" style="height:110px;">
-    </div>
-    <div class="footer-products">
-      <h3>Our Products</h3>
-      <ul>
-        <li>HV & LV Cables & Wires</li>
-        <li>Cable Accessories</li>
-        <li>Cable Support Systems</li>
-        <li>Electrical Switches</li>
-        <li>Industrial Plug and Socket</li>
-        <li>Lights</li>
-      </ul>
-    </div>
-    <div class="footer-contact">
-      <h3>Contact Us</h3>
-      <p>salestaninq@gmail.com</p>
-      <a href="https://wa.me/971525145572" class="whatsapp">
-        <img src="https://i.ibb.co/5h6NDy9J/sm-5af2d4c95ac7b-removebg-preview.png" alt="WhatsApp"> WhatsApp
+<section class="divisions">
+  <div class="wrap">
+    <div class="div-grid rv">
+      <a class="div-card" href="index.html#products" style="--c:#d51e1c">
+        <span class="tag">Division 01</span>
+        <h3>Electrical</h3>
+        <p>Cable, containment, accessories, switchgear, industrial plugs and the full lighting range.</p>
+        <span class="go">View range →</span>
       </a>
-      <p><a href="tel:+971525145572" style="color:var(--accent); font-weight:700;">+971 525145572</a></p>
+      <a class="div-card" href="hardware.html" style="--c:#f5a623">
+        <span class="tag">Division 02</span>
+        <h3>Hardware &amp; Safety</h3>
+        <p>Building materials, fixings, site consumables and traffic or site protection equipment.</p>
+        <span class="go">View range →</span>
+      </a>
+      <a class="div-card" href="plumbing.html" style="--c:#3b86e8" aria-current="page">
+        <span class="tag">Division 03</span>
+        <h3>Plumbing</h3>
+        <p>Pipe and fittings, valves, sanitary ware, drainage, pumps and insulation.</p>
+        <span class="go">You are here →</span>
+      </a>
     </div>
   </div>
-  <div class="copyright">© 2026 Technolite. All rights reserved.</div>
+</section>
+
+<section class="section" id="ranges" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">The range</span>
+      <h2>What we supply</h2>
+      <p>Six groups covering a full plumbing scope. Brands and pressure ratings matched to your specification — tell us the system and we quote the equivalent.</p>
+    </div>
+
+    <div class="range-grid rv">
+      <div class="range" data-cat="pip">
+        <span class="code">PIP</span>
+        <h3>Pipe &amp; fittings</h3>
+        <ul>
+        <li>UPVC pressure pipe and fittings</li>
+        <li>PPR hot and cold water systems</li>
+        <li>CPVC pipe and fittings</li>
+        <li>GI and MS pipe, sockets and nipples</li>
+        <li>Copper tube and press fittings</li>
+        <li>Flexible connectors and hoses</li>
+        </ul>
+      </div>
+      <div class="range" data-cat="vlv">
+        <span class="code">VLV</span>
+        <h3>Valves &amp; controls</h3>
+        <ul>
+        <li>Gate, globe and check valves</li>
+        <li>Ball valves — brass and PVC</li>
+        <li>Butterfly and balancing valves</li>
+        <li>Pressure reducing valves</li>
+        <li>Float and angle valves</li>
+        <li>Strainers and non-return valves</li>
+        </ul>
+      </div>
+      <div class="range" data-cat="san">
+        <span class="code">SAN</span>
+        <h3>Sanitary ware</h3>
+        <ul>
+        <li>WC suites and cisterns</li>
+        <li>Wash basins and pedestals</li>
+        <li>Mixers, taps and shower sets</li>
+        <li>Urinals and flush valves</li>
+        <li>Sinks and laundry troughs</li>
+        <li>Accessories and fixing kits</li>
+        </ul>
+      </div>
+      <div class="range" data-cat="drn">
+        <span class="code">DRN</span>
+        <h3>Drainage</h3>
+        <ul>
+        <li>UPVC soil and waste pipe</li>
+        <li>Floor drains and gully traps</li>
+        <li>Channel drains and gratings</li>
+        <li>Cleanouts and inspection chambers</li>
+        <li>Bottle and P-traps</li>
+        <li>Roof outlets and rainwater goods</li>
+        </ul>
+      </div>
+      <div class="range" data-cat="pmp">
+        <span class="code">PMP</span>
+        <h3>Pumps &amp; water systems</h3>
+        <ul>
+        <li>Booster and pressure pumps</li>
+        <li>Submersible and sump pumps</li>
+        <li>Circulation pumps</li>
+        <li>Water heaters — storage and instant</li>
+        <li>Pressure vessels and tanks</li>
+        <li>Filters and softeners</li>
+        </ul>
+      </div>
+      <div class="range" data-cat="ins">
+        <span class="code">INS</span>
+        <h3>Insulation &amp; sealing</h3>
+        <ul>
+        <li>Pipe insulation — closed cell and rockwool</li>
+        <li>Insulation tape and cladding</li>
+        <li>Thread sealants and PTFE tape</li>
+        <li>Pipe clamps, hangers and brackets</li>
+        <li>Silicone and polyurethane sealants</li>
+        <li>Gaskets and jointing sheet</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="notice rv">
+      <div>
+        <h3>Photographed catalogue on the way</h3>
+        <p>This division is quoted from specification rather than browsed from a shelf, so we list the groups here and price against your BOQ. Ask for the current plumbing price list and we will send it the same working day.</p>
+        <a class="btn btn--red" href="https://wa.me/971525145572">Request the plumbing list</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="caps rv">
+      <div class="cap">
+        <span class="k">01</span>
+        <h3>Matched to specification</h3>
+        <p>Send the spec and we return the exact item or a documented equivalent, with datasheets and approvals attached.</p>
+      </div>
+      <div class="cap">
+        <span class="k">02</span>
+        <h3>Full-scope quoting</h3>
+        <p>Pipe, fittings, valves, brackets and sealants priced as one package rather than line by line across suppliers.</p>
+      </div>
+      <div class="cap">
+        <span class="k">03</span>
+        <h3>Delivered to site</h3>
+        <p>Dispatch across Dubai, Sharjah, Abu Dhabi and the northern emirates, including staged deliveries by floor or phase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap strip-in">
+    <h3>Send the BOQ. We will price the plumbing scope</h3>
+    <p>A drawing, a spec sheet or a photograph of the fitting is enough to start. We confirm availability the same working day.</p>
+    <a class="btn" href="https://wa.me/971525145572">WhatsApp us</a>
+  </div>
+</section>
+
+<section class="section quote" id="quote">
+  <div class="wrap quote-grid">
+    <div class="rv">
+      <span class="eyebrow">Request a price</span>
+      <h2>Send the list. Get it priced</h2>
+      <p class="quote-lead">Attach a BOQ, paste a spec or describe the part. We reply with availability, price and a delivery date.</p>
+
+      <div class="direct">
+        <a href="https://wa.me/971525145572">
+          <span><small>WhatsApp — fastest</small>+971 52 514 5572</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="tel:+971525145572">
+          <span><small>Call sales</small>+971 52 514 5572</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="mailto:salestaninq@gmail.com">
+          <span><small>Email</small>salestaninq@gmail.com</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="form rv">
+      <h3>Request a quote</h3>
+      <form id="contact-form" action="https://formspree.io/f/xkoonpwe" method="POST">
+        <div class="fields">
+          <div class="row2">
+            <div class="field">
+              <label for="f-name">Full name</label>
+              <input id="f-name" type="text" name="name" required />
+            </div>
+            <div class="field">
+              <label for="f-company">Company</label>
+              <input id="f-company" type="text" name="company" />
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" type="email" name="email" required />
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone</label>
+              <input id="f-phone" type="tel" name="phone" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-cat">What do you need</label>
+            <select id="f-cat" name="category">
+              <option>Pipe &amp; fittings</option>
+              <option>Valves &amp; controls</option>
+              <option>Sanitary ware</option>
+              <option>Drainage</option>
+              <option>Pumps &amp; water systems</option>
+              <option>Insulation &amp; sealing</option>
+              <option>Electrical</option>
+              <option>Hardware &amp; safety</option>
+              <option>Mixed / full BOQ</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">Items, sizes and quantities</label>
+            <textarea id="f-msg" name="message" required placeholder="e.g. 120m UPVC 110mm soil pipe with fittings, 24 × floor drains, 6 × PRV 1 inch"></textarea>
+          </div>
+          <button class="btn btn--red" type="submit">Send request</button>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="technolite-logo-light.png" alt="Technolite TRD FZE" width="1000" height="645" />
+        <p>Electrical, cable and lighting distribution for contractors across the United Arab Emirates.</p>
+      </div>
+
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="index.html#cat-cbl">Electrical cable</a></li>
+          <li><a href="index.html#cat-sup">Cable support systems</a></li>
+          <li><a href="index.html#cat-acc">Cable accessories</a></li>
+          <li><a href="index.html#cat-swg">Switches &amp; switchgear</a></li>
+          <li><a href="index.html#cat-plg">Plugs &amp; sockets</a></li>
+          <li><a href="index.html#cat-lgt">Lighting</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#about">About us</a></li>
+          <li><a href="index.html#brands">Brands</a></li>
+          <li><a href="index.html#industries">Industries</a></li>
+          <li><a href="hardware.html">Hardware &amp; safety</a></li>
+          <li><a href="plumbing.html">Plumbing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+971525145572">+971 52 514 5572</a></li>
+          <li><a href="mailto:salestaninq@gmail.com">salestaninq@gmail.com</a></li>
+          <li>
+            <a class="wa" href="https://wa.me/971525145572">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+              WhatsApp us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-base">
+      <span>© <span id="year">2026</span> Technolite TRD FZE</span>
+      <span>Dubai · United Arab Emirates</span>
+    </div>
+  </div>
 </footer>
 
-<script>
-  const slides = Array.from(document.querySelectorAll(".hero-slide"));
-  const dots = Array.from(document.querySelectorAll(".hero-dot"));
-  let index = 0;
-  let timer = null;
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  function showSlide(i) {
-    slides.forEach(s => s.classList.remove("is-active"));
-    dots.forEach(d => d.classList.remove("is-active"));
-    slides[i].classList.add("is-active");
-    dots[i].classList.add("is-active");
-    index = i;
-  }
-
-  function nextSlide() {
-    showSlide((index + 1) % slides.length);
-  }
-
-  function startAuto() {
-    if (prefersReducedMotion) return;
-    timer = setInterval(nextSlide, 3000);
-  }
-
-  function stopAuto() {
-    if (timer) clearInterval(timer);
-  }
-
-  dots.forEach(dot => {
-    dot.addEventListener("click", () => {
-      stopAuto();
-      showSlide(Number(dot.dataset.slide));
-      startAuto();
-    });
-  });
-
-  const heroShell = document.querySelector(".hero-shell");
-  heroShell.addEventListener("mouseenter", stopAuto);
-  heroShell.addEventListener("mouseleave", startAuto);
-
-  showSlide(0);
-  startAuto();
+<a class="wa-float" href="https://wa.me/971525145572" aria-label="Chat with Technolite on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+</a>
 
 
-  const revealEls = document.querySelectorAll('.service-card, .product-item, .about-card, .about-highlight, .contact-box, .logo-slider');
-  revealEls.forEach(el => el.classList.add('reveal'));
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  revealEls.forEach(el => revealObserver.observe(el));
+<a class="wa-float" href="https://wa.me/971525145572" aria-label="Chat with Technolite on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+</a>
 
-  const form = document.getElementById("contact-form");
-  form.onsubmit = async (e) => {
-    e.preventDefault();
-    const status = document.getElementById("form-status");
-    const data = new FormData(e.target);
-    status.style.display = "block";
-    status.innerHTML = "Sending...";
-    fetch(e.target.action, { method: "POST", body: data, headers: { "Accept": "application/json" } })
-      .then(response => {
-        if (response.ok) {
-          status.innerHTML = "Sent Successfully!";
-          form.reset();
-        } else {
-          status.innerHTML = "Error. Please try again.";
-        }
-      });
-  };
-</script>
+<script src="technolite.js"></script>
 </body>
 </html>
