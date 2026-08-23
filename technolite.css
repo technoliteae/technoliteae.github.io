@@ -1839,3 +1839,40 @@ body{
 .plate-bar{ font-size: 13.5px; }
 .p-item p{ font-size: 17px; }
 #form-status{ font-size: 13.5px; }
+
+/* ============================================================
+   v11 — section eyebrows adopt the "WHO WE ARE" treatment
+   ============================================================ */
+.section-head .eyebrow,
+.quote .eyebrow{
+  display: inline-flex; align-items: center; gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid rgba(213,30,28,.55);
+  font-family: var(--display); font-weight: 800; font-style: italic;
+  font-size: clamp(24px, 2.5vw, 34px);
+  text-transform: uppercase; letter-spacing: .01em;
+  color: #fff;
+}
+.section-head .eyebrow::before,
+.quote .eyebrow::before{
+  content: ""; flex: none;
+  width: 9px; height: 30px;
+  background: var(--red);
+  transform: none; border-radius: 0;
+}
+/* the taller eyebrow needs air before the headline */
+.section-head h2{ margin-top: 26px; }
+.quote h2{ margin-top: 26px; }
+
+/* hero and division-page banners keep the compact mono tag,
+   so the eyebrow doesn't compete with the headline above the fold */
+.hero .eyebrow,
+.page-hero .eyebrow{
+  font-family: var(--mono); font-style: normal; font-weight: 500;
+  font-size: 15px; letter-spacing: .2em; color: #fff;
+  border-bottom: none; padding-bottom: 0; gap: 12px;
+}
+.hero .eyebrow::before,
+.page-hero .eyebrow::before{
+  width: 32px; height: 12px; background: #fff; transform: skewX(-24deg);
+}
