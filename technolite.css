@@ -607,7 +607,7 @@ body{ background: var(--bg); }
   content: ""; position: absolute; z-index: -1; pointer-events: none;
   right: -60px; top: 50%; transform: translateY(-50%);
   width: clamp(280px, 34vw, 520px); aspect-ratio: 1;
-  background: url("favicon.png") center/contain no-repeat;
+  background: url("asset/favicon.png") center/contain no-repeat;
   opacity: .05;
 }
 @media (max-width: 900px){ .mark::after{ display: none; } }
@@ -801,7 +801,7 @@ body{
   background-image: repeating-linear-gradient(-45deg, rgba(213,30,28,.13) 0 2px, transparent 2px 13px);
   background-size: auto;
 }
-.mark::after{ background-image: url("favicon-light.png"); opacity: .07; }
+.mark::after{ background-image: url("asset/favicon-light.png"); opacity: .07; }
 
 /* ---------- header ---------- */
 .header{ background: rgba(18,16,16,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--hairline); }
@@ -1803,3 +1803,39 @@ body{
   max-width: none; max-height: none;
   object-fit: contain;
 }
+
+/* ============================================================
+   v10 — small labels and sub-headings scaled up
+   ============================================================ */
+.eyebrow{ font-size: 15px; letter-spacing: .2em; }
+.eyebrow::before{ width: 32px; height: 12px; }
+
+.terms h4{ font-size: 15px; letter-spacing: .18em; }
+.index-card h2{ font-size: 14.5px; letter-spacing: .18em; }
+.footer h4{ font-size: 17px; letter-spacing: .16em; }
+.direct a small{ font-size: 13px; letter-spacing: .16em; }
+.field label{ font-size: 13px; letter-spacing: .14em; }
+.fact span{ font-size: 14.5px; letter-spacing: .13em; }
+.ind p{ font-size: 15px; }
+.value h3{ font-size: 17px; }
+.cap .k, .about-list .k{ font-size: 13.5px; }
+.div-card .tag{ font-size: 13px; letter-spacing: .16em; }
+.div-card .go{ font-size: 13.5px; }
+.chip{ font-size: 14px; padding: 12px 19px; }
+.search input, .search input::placeholder{ font-size: 16px; }
+.cat-code{ font-size: 13px; padding: 8px 13px; letter-spacing: .16em; }
+.cat-head .count{ font-size: 14px; letter-spacing: .12em; }
+.index-card .code, .range .code{ font-size: 12.5px; padding: 7px 11px; }
+.index-card .qty{ font-size: 14px; }
+.hero-count{ font-size: 14px; }
+.header-phone b{ font-size: 16px; }
+.header-phone span i{ font-size: 14px; }
+.btn{ font-size: 14.5px; }
+.header .btn{ font-size: 15px; }
+.nav a.navlink{ font-size: 15.5px; }
+.menu a{ font-size: 15px; }
+.footer-base{ font-size: 13px; }
+.who{ font-size: clamp(24px, 2.5vw, 34px); }
+.plate-bar{ font-size: 13.5px; }
+.p-item p{ font-size: 17px; }
+#form-status{ font-size: 13.5px; }
