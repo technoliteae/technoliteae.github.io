@@ -115,9 +115,13 @@
     $$(".rv").forEach(function(el){ el.classList.add("in"); });
   }
 
-  /* ---------- brand rail (home only) ---------- */
-  var track = $("#rail-track");
-  if (track) track.innerHTML += track.innerHTML;
+  /* ---------- logo rails: duplicate each track for a seamless loop ---------- */
+  $$(".rail-track").forEach(function(track){
+    if (!track.dataset.looped) {
+      track.innerHTML += track.innerHTML;
+      track.dataset.looped = "1";
+    }
+  });
 
   /* ---------- quote form ---------- */
   var form = $("#contact-form"), status = $("#form-status");
